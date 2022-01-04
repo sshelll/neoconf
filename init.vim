@@ -105,7 +105,19 @@ let g:ackhighlight = 1
 "let g:airline_theme = 'github'
 
 " another github theme
-colorscheme github_light_default
+" " Example config in VimScript
+let g:github_function_style = "italic"
+let g:github_sidebars = ["qf", "vista_kind", "terminal", "packer"]
+
+" Change the "hint" color to the "orange" color, and make the "error" color bright red
+let g:github_colors = {
+  \ 'hint': 'orange',
+  \ 'error': '#ff0000',
+  \ 'bg_search': '#7f7f7f'
+\ }
+
+" Load the colorscheme
+colorscheme github_dark_default
 let g:airline_theme = 'github'
 
 " NERDTree
@@ -153,6 +165,10 @@ autocmd BufWinEnter *.thrift :set filetype=idl
 " godef
 autocmd FileType go nnoremap <buffer> gd :call GodefUnderCursor()<cr>
 autocmd FileType go nnoremap <buffer> <C-]> :call GodefUnderCursor()<cr>
+
+" ctags
+nnoremap <C-]> :execute "vertical ptag " . expand("<cword>")<CR>
+set previewheight=90
 
 " ale-setting
 let g:ale_set_highlights = 1
