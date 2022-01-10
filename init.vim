@@ -117,7 +117,7 @@ let g:github_colors = {
 \ }
 
 " Load the colorscheme
-colorscheme github_dark_default
+colorscheme github_dark
 let g:airline_theme = 'github'
 
 " NERDTree
