@@ -39,6 +39,7 @@ set cursorline
 nnoremap <F12> :vertical res+3<CR>
 nnoremap <F11> :vertical res-1<CR>
 nnoremap <leader>tt :new<CR>:terminal<CR>
+nnoremap p "0p
 
 " startify
 let g:startify_custom_header = [
@@ -137,6 +138,8 @@ let g:lazygit_use_neovim_remote = 1                               " fallback to 
 nnoremap <silent> <leader>gg :LazyGit<CR>
 nnoremap <silent> <leader>bb :Git blame<CR>
 
+" coc-json
+nnoremap <silent> <leader>js :call CocAction("format")<CR>
 
 " vim-go
 let g:go_def_mode = 'gopls' 
