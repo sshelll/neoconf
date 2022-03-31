@@ -31,8 +31,8 @@ call plug#end()
 syntax enable
 set t_Co=256
 set number
-"set cursorline cursorcolumn
-set cursorline
+set cursorline cursorcolumn
+"set cursorline
 :filetype on
 
 " common
@@ -40,8 +40,9 @@ nnoremap <F12> :vertical res+3<CR>
 nnoremap <F11> :vertical res-1<CR>
 nnoremap <leader>tt :new<CR>:terminal<CR>
 nnoremap p "0p
+nnoremap <leader>p p
 
-" startify
+"startify
 let g:startify_custom_header = [
 			\ '   ██╗  ██╗███████╗██╗     ██╗      ██████╗        ███████╗     ██╗██╗       ██╗',
 			\ '   ██║  ██║██╔════╝██║     ██║     ██╔═══██╗       ██╔════╝     ██║██║       ██║',
