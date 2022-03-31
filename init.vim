@@ -31,8 +31,8 @@ call plug#end()
 syntax enable
 set t_Co=256
 set number
-set cursorline cursorcolumn
-"set cursorline
+"set cursorline cursorcolumn
+set cursorline
 :filetype on
 
 " common
