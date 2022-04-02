@@ -34,6 +34,11 @@ set number
 "set cursorline cursorcolumn
 set cursorline
 :filetype on
+set ts=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
 
 " common
 nnoremap <F12> :vertical res+3<CR>
@@ -173,6 +178,16 @@ autocmd FileType go nnoremap <buffer> <C-]> :call GodefUnderCursor()<cr>
 " ctags
 nnoremap <C-]> :execute "vertical ptag " . expand("<cword>")<CR>
 set previewheight=90
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
 " ale-setting
 let g:ale_set_highlights = 1
