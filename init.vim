@@ -25,6 +25,7 @@ Plug 'buoto/gotests-vim'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'cormacrelf/vim-colors-github'
 Plug 'projekt0n/github-nvim-theme'
+Plug 'akinsho/toggleterm.nvim'
 call plug#end()
 
 " basic setting
@@ -43,7 +44,6 @@ set autoindent
 " common
 nnoremap <F12> :vertical res+3<CR>
 nnoremap <F11> :vertical res-1<CR>
-nnoremap <leader>tt :new<CR>:terminal<CR>
 nnoremap p "0p
 nnoremap <leader>p p
 
@@ -85,6 +85,9 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 nnoremap <F5> :Windows<CR>
 nnoremap <C-f> :BLines<CR>
+
+" toggleterm
+nnoremap <leader>tt :ToggleTerm direction=float<CR>
 
 " ack
 "cnoreabbrev Ack Ack!
@@ -213,10 +216,10 @@ let g:ale_thrift_thriftcheck_executable = 1
 nmap sp <Plug>(ale_previous_wrap)
 nmap sn <Plug>(ale_next_wrap)
 
-"<Leader>s触发/关闭语法检查
+"<Leader>s 触发/关闭语法检查
 " nmap <Leader>l :ALEToggle<CR>
 "
-"<Leader>d查看错误或警告的详细信息
+"<Leader>d 查看错误或警告的详细信息
 nmap <Leader>d :ALEDetail<CR>
 let g:ale_linters = {
     \ 'go': ['golint', 'go vet', 'go fmt'],
