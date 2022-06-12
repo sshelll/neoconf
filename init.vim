@@ -25,6 +25,7 @@ Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'cormacrelf/vim-colors-github'
 Plug 'projekt0n/github-nvim-theme'
 Plug 'akinsho/toggleterm.nvim'
+Plug 'joshdick/onedark.vim'
 call plug#end()
 
 " basic setting
@@ -93,7 +94,13 @@ nnoremap <leader>tt :ToggleTerm direction=float<CR>
 map <C-p> :Ack! 
 let g:ackhighlight = 1
 
-" theme
+" Load the colorscheme
+"colorscheme onedark
+"let g:airline_theme='onedark'
+
+"colorscheme github_dark
+"let g:airline_theme = 'github'
+
 "colorscheme onehalflight
 "let g:rehash256 = 1
 "let g:molokai_original = 1
@@ -101,11 +108,11 @@ let g:ackhighlight = 1
 "let g:material_terminal_italics = 1
 "let g:airline_theme = 'ayu_light'
 
-"set background=light
-"set termguicolors
-"let g:one_allow_italics=1
-"colorscheme one
-"let g:airline_theme='one'
+set background=dark
+set termguicolors
+let g:one_allow_italics=1
+colorscheme one
+let g:airline_theme='one'
 
 "let g:github_colors_soft = 1
 "set background=light
@@ -124,10 +131,6 @@ let g:github_colors = {
   \ 'error': '#ff0000',
   \ 'bg_search': '#7f7f7f'
 \ }
-
-" Load the colorscheme
-colorscheme github_dark
-let g:airline_theme = 'github'
 
 " NERDTree
 nnoremap <F3> :NERDTreeToggle<CR>
