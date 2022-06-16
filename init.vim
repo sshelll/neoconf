@@ -43,7 +43,8 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set autoindent
-autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2
+set smartindent
+autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 expandtab
 
 " common
 nnoremap <F12> :vertical res+3<CR>
