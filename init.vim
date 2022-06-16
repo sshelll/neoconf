@@ -37,11 +37,13 @@ set number
 "set cursorline cursorcolumn
 set cursorline
 :filetype on
+
 set ts=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
 set autoindent
+autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2
 
 " common
 nnoremap <F12> :vertical res+3<CR>
@@ -193,8 +195,9 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+"xmap <leader>f  <Plug>(coc-format-selected)
+"nmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f :CocCommand editor.action.formatDocument<CR>
 
 " ale-setting
 let g:ale_set_highlights = 1
