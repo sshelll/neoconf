@@ -169,6 +169,8 @@ nnoremap <silent> <leader>js :call CocAction("format")<CR>
 "let g:go_highlight_generate_tags = 1
 "let g:godef_split = 1
 "let g:go_fmt_autosave = 1 
+let g:go_def_mapping_enabled = 0
+
 
 " Open :GoDeclsDir with ctrl-g
 "nnoremap <C-g> :GoDeclsDir<cr>
@@ -190,7 +192,8 @@ nnoremap <C-]> :execute "vertical ptag " . expand("<cword>")<CR>
 set previewheight=90
 
 " GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
+"nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gd :call CocAction('jumpDefinition', 'vsplit')<CR>
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
