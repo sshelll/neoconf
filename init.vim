@@ -19,7 +19,6 @@ Plug 'mileszs/ack.vim'
 Plug 'ellisonleao/glow.nvim'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'tpope/vim-fugitive'
-Plug 'uguu-org/vim-matrix-screensaver'
 Plug 'buoto/gotests-vim'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'cormacrelf/vim-colors-github'
@@ -28,6 +27,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'joshdick/onedark.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
+Plug 'github/copilot.vim'
 call plug#end()
 
 " basic setting
