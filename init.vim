@@ -6,7 +6,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'machakann/vim-highlightedyank'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'}
+"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'}
+Plug 'sebdah/vim-delve'
 Plug 'majutsushi/tagbar'
 Plug 'mhinz/vim-startify'
 Plug 'neoclide/coc.nvim', { 'branch': 'release'}
@@ -192,8 +193,7 @@ nnoremap <C-]> :execute "vertical ptag " . expand("<cword>")<CR>
 set previewheight=90
 
 " GoTo code navigation.
-"nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gd :call CocAction('jumpDefinition', 'vsplit')<CR>
+nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
@@ -202,6 +202,7 @@ nmap <silent> gr <Plug>(coc-references)
 "xmap <leader>f  <Plug>(coc-format-selected)
 "nmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f :CocCommand editor.action.formatDocument<CR>
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
 " ale-setting
 let g:ale_set_highlights = 1
