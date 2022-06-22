@@ -28,7 +28,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'joshdick/onedark.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
-Plug 'github/copilot.vim'
+"Plug 'github/copilot.vim'
 call plug#end()
 
 " basic setting
