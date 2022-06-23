@@ -28,6 +28,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'joshdick/onedark.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
+Plug 'darrikonn/vim-gofmt', { 'do': ':GoUpdateBinaries' }
 "Plug 'github/copilot.vim'
 call plug#end()
 
@@ -207,6 +208,7 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 "nmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f :CocCommand editor.action.formatDocument<CR>
 autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+autocmd BufWritePre *.go :GoFmt
 
 " ale-setting
 let g:ale_set_highlights = 1
