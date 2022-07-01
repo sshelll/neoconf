@@ -36,6 +36,8 @@ call plug#end()
 syntax enable
 set t_Co=256
 set number
+set nohlsearch
+
 "set cursorline cursorcolumn
 set cursorline
 :filetype on
