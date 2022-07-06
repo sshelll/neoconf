@@ -6,6 +6,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'machakann/vim-highlightedyank'
+Plug 'rhysd/vim-go-impl'
 "Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'}
 Plug 'sebdah/vim-delve'
 Plug 'majutsushi/tagbar'
