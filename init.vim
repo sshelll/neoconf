@@ -58,6 +58,8 @@ nnoremap <F11> :vertical res-1<CR>
 nnoremap p "0p
 nnoremap <leader>p p
 
+vnoremap <leader>y "+y
+
 "startify
 let g:startify_custom_header = [
 			\ '   ██╗  ██╗███████╗██╗     ██╗      ██████╗        ███████╗     ██╗██╗       ██╗',
