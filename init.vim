@@ -245,7 +245,7 @@ nmap sn <Plug>(ale_next_wrap)
 "<Leader>d 查看错误或警告的详细信息
 nmap <Leader>d :ALEDetail<CR>
 let g:ale_linters = {
-    \ 'go': ['golint', 'go vet', 'go fmt'],
+    \ 'go': ['golint', 'go tool vet', 'go fmt'],
     \ 'c': ['gcc'],
     \ 'python': ['pylint'],
     \ 'thrift': ['thriftcheck'],
