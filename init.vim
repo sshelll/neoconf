@@ -166,8 +166,8 @@ nnoremap <silent> <leader>gg :LazyGit<CR>
 nnoremap <silent> <leader>bb :Git blame<CR>
 
 " coc
-highlight CocMenuSel ctermbg=8 guibg=#DCDCDC
- 
+highlight CocMenuSel ctermbg=8 guibg=#494f59
+
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
 set signcolumn=yes
