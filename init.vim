@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'rakr/vim-one'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -32,6 +33,8 @@ Plug 'easymotion/vim-easymotion'
 Plug 'darrikonn/vim-gofmt', { 'do': ':GoUpdateBinaries' }
 "Plug 'github/copilot.vim'
 call plug#end()
+
+lua require('plugin-config/nvim-treesitter')
 
 " basic setting
 syntax enable
