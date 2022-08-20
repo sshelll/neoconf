@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'karb94/neoscroll.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'rakr/vim-one'
 Plug 'vim-airline/vim-airline'
@@ -35,6 +36,7 @@ Plug 'darrikonn/vim-gofmt', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 lua require('plugin-config/nvim-treesitter')
+lua require('plugin-config/neoscroll')
 
 " basic setting
 syntax enable
