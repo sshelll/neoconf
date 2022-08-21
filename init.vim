@@ -32,6 +32,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
 Plug 'darrikonn/vim-gofmt', { 'do': ':GoUpdateBinaries' }
+Plug 'projekt0n/github-nvim-theme'
 "Plug 'github/copilot.vim'
 call plug#end()
 
@@ -43,6 +44,7 @@ syntax enable
 set t_Co=256
 set number
 set nohlsearch
+set termguicolors
 
 "set cursorline cursorcolumn
 set cursorline
@@ -113,35 +115,19 @@ map <C-p> :Ack!
 let g:ackhighlight = 1
 
 " Load the colorscheme
-"colorscheme onedark
-"let g:airline_theme='onedark'
 
-"colorscheme github_dark
-"let g:airline_theme = 'github'
+" one dark thme
+"let g:one_allow_italics=1
+"colorscheme one
+"let g:airline_theme='one'
 
-"colorscheme onehalflight
-"let g:rehash256 = 1
-"let g:molokai_original = 1
-"let g:material_theme_style = 'lighter'
-"let g:material_terminal_italics = 1
-"let g:airline_theme = 'ayu_light'
-
-set background=dark
-set termguicolors
-let g:one_allow_italics=1
-colorscheme one
-let g:airline_theme='one'
-
-"let g:github_colors_soft = 1
-"set background=light
-"let g:github_colors_block_diffmark = 0
-"colorscheme github
-"let g:airline_theme = 'github'
-
-" another github theme
-" " Example config in VimScript
-let g:github_function_style = "italic"
+let g:github_comment_style = "NONE"
+let g:github_keyword_style = "NONE"
+let g:github_function_style = "NONE"
+let g:github_variable_style = "NONE"
 let g:github_sidebars = ["qf", "vista_kind", "terminal", "packer"]
+let g:airline_theme = "github"
+let g:github_dark_sidebar = 0
 
 " Change the "hint" color to the "orange" color, and make the "error" color bright red
 let g:github_colors = {
@@ -149,6 +135,7 @@ let g:github_colors = {
   \ 'error': '#ff0000',
   \ 'bg_search': '#7f7f7f'
 \ }
+colorscheme github_dark
 
 " NERDTree
 nnoremap <F3> :NERDTreeToggle<CR>
