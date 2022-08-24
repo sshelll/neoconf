@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'Pocco81/true-zen.nvim'
 Plug 'karb94/neoscroll.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'rakr/vim-one'
@@ -145,6 +146,10 @@ let g:tagbar_sort = 0
 let g:tagbar_width = 30
 nnoremap <F4> :Tagbar<CR>
 
+" TrueZen
+nnoremap <leader>za :TZAtaraxis<CR>
+nnoremap <leader>zf :TZFocus<CR>
+
 " lazygit
 let g:lazygit_floating_window_winblend = 0                        " transparency of floating window
 let g:lazygit_floating_window_scaling_factor = 0.9                " scaling factor for floating window
@@ -188,6 +193,8 @@ if has('nvim')
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
+
+nmap <silent> <leader>ss :CocCommand cSpell.addWordToDictionary<CR>
 
 " vim-go
 "let g:go_def_mode = 'gopls' 

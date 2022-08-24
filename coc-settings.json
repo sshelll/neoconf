@@ -1,3 +1,17 @@
 {
-    "coc.preferences.jumpCommand": "drop"
+  "coc.preferences.jumpCommand": "drop",
+  "cSpell.enabledLanguageIds": [
+    "csharp",
+    "c",
+    "go",
+    "java",
+    "javascript",
+    "javascriptreact",
+    "markdown",
+    "php",
+    "plaintext",
+    "typescript",
+    "typescriptreact",
+    "yml"
+  ]
 }
