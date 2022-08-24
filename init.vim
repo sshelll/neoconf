@@ -1,4 +1,7 @@
 call plug#begin()
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'folke/todo-comments.nvim'
 Plug 'Pocco81/true-zen.nvim'
 Plug 'karb94/neoscroll.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -39,6 +42,8 @@ call plug#end()
 
 lua require('plugin-config/nvim-treesitter')
 lua require('plugin-config/neoscroll')
+lua require('plugin-config/todo-comments')
+lua require('plugin-config/telescope')
 
 " basic setting
 syntax enable
@@ -149,6 +154,9 @@ nnoremap <F4> :Tagbar<CR>
 " TrueZen
 nnoremap <leader>za :TZAtaraxis<CR>
 nnoremap <leader>zf :TZFocus<CR>
+
+" TODO
+nnoremap <leader>td :TodoTelescope<CR>
 
 " lazygit
 let g:lazygit_floating_window_winblend = 0                        " transparency of floating window
