@@ -33,5 +33,9 @@ let g:lazygit_use_neovim_remote = 1                               " fallback to 
 nnoremap <silent> <leader>gg :LazyGit<CR>
 nnoremap <silent> <leader>bb :Git blame<CR>
 
+" diffview
+nnoremap <silent> ∂o :DiffviewOpen<CR>
+nnoremap <silent> ∂c :DiffviewClose<CR>
+
 " GoFmt
 autocmd BufWritePre *.go :GoFmt

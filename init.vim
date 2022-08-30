@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'sindrets/diffview.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
 Plug 'nvim-lua/plenary.nvim'
