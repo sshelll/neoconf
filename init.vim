@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'glepnir/dashboard-nvim'
 Plug 'sindrets/diffview.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
@@ -20,7 +21,7 @@ Plug 'rhysd/vim-go-impl'
 "Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'}
 Plug 'sebdah/vim-delve'
 Plug 'majutsushi/tagbar'
-Plug 'mhinz/vim-startify'
+"Plug 'mhinz/vim-startify'
 Plug 'neoclide/coc.nvim', { 'branch': 'release'}
 Plug 'fatih/molokai'
 Plug 'ryanoasis/vim-devicons'
@@ -54,3 +55,4 @@ for f in glob('~/.config/nvim/init/*.vim', 0, 1)
 endfor
 
 source ~/.config/nvim/init/defer.vim
+lua require('plugin-config/dashboard')
