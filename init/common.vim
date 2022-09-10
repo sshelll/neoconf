@@ -9,8 +9,8 @@ nnoremap <leader>tt :FloatermNew<CR>
 map <C-p> :Ack! 
 let g:ackhighlight = 1
 
-" NERDTree
-nnoremap <F3> :NERDTreeToggle<CR>
+" NvimTree
+nnoremap <F3> :NvimTreeToggle<CR>
 
 " Tagbar
 let g:tagbar_sort = 0

@@ -13,7 +13,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdcommenter'
-Plug 'scrooloose/nerdtree'
+"Plug 'scrooloose/nerdtree'
+Plug 'kyazdani42/nvim-tree.lua'
 Plug 'machakann/vim-highlightedyank'
 Plug 'rhysd/vim-go-impl'
 "Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'}
@@ -46,6 +47,7 @@ lua require('plugin-config/nvim-treesitter')
 lua require('plugin-config/neoscroll')
 lua require('plugin-config/todo-comments')
 lua require('plugin-config/telescope')
+lua require('plugin-config/nvimtree')
 
 for f in glob('~/.config/nvim/init/*.vim', 0, 1)
     execute 'source' f
