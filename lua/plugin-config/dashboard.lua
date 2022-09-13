@@ -12,22 +12,22 @@ db.custom_footer = {
 
 db.custom_center = {
     {
-        icon = "  ",
+        icon = "                      ",
         desc = "File Explorer                            ",
         action = "NvimTreeToggle",
     },
     {
-        icon = "  ",
+        icon = "                      ",
         desc = "File Finder                              ",
         action = "Files",
     },
     {
-        icon = "  ",
+        icon = "                      ",
         desc = "Lazy Git                                 ",
         action = "LazyGit",
     },
     {
-        icon = "  ",
+        icon = "                      ",
         desc = "Find Text                               ",
         action = "Telescope live_grep",
     },
