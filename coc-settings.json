@@ -1,5 +1,6 @@
 {
   "coc.preferences.jumpCommand": "drop",
+  "cSpell.enabled": false,
   "cSpell.enabledLanguageIds": [
     "csharp",
     "c",

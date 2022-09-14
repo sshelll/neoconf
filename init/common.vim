@@ -6,7 +6,7 @@ nnoremap <leader>tt :FloatermNew<CR>
 
 " ack
 "cnoreabbrev Ack Ack!
-map <C-p> :Ack! 
+map <C-p> :Telescope live_grep<CR>
 let g:ackhighlight = 1
 
 " NvimTree
