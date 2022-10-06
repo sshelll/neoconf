@@ -9,6 +9,9 @@ nnoremap <leader>tt :FloatermNew<CR>
 map <C-p> :Telescope live_grep<CR>
 let g:ackhighlight = 1
 
+" Airline
+let g:airline#extensions#tabline#enabled = 0
+
 " NvimTree
 nnoremap <F3> :NvimTreeToggle<CR>
 

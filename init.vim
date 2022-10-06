@@ -20,7 +20,8 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'rhysd/vim-go-impl'
 "Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'}
 Plug 'sebdah/vim-delve'
-Plug 'majutsushi/tagbar'
+"Plug 'majutsushi/tagbar'
+Plug 'preservim/tagbar'
 "Plug 'mhinz/vim-startify'
 Plug 'neoclide/coc.nvim', { 'branch': 'release'}
 Plug 'fatih/molokai'

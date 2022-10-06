@@ -1,4 +1,4 @@
-" NOTE conf below is for macOS only
+" NOTE: key mappings below for macOS only
 
 " Move to previous/next
 nnoremap <silent> ≤ <Cmd>BufferPrevious<CR>
