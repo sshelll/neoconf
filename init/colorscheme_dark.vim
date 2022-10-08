@@ -11,7 +11,7 @@ let g:github_colors = {
   \ 'error': '#ff0000',
   \ 'bg_search': '#7f7f7f'
 \ }
-colorscheme github_dark
+colorscheme github_dark_default
 
 " One Dark Theme
 "let g:one_allow_italics=1
