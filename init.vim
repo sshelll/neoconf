@@ -1,4 +1,6 @@
 call plug#begin()
+Plug 'tom-anders/telescope-vim-bookmarks.nvim'
+Plug 'MattesGroeger/vim-bookmarks'
 Plug 'glepnir/dashboard-nvim'
 Plug 'sindrets/diffview.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
