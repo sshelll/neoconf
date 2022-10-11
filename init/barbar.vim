@@ -21,7 +21,7 @@ nnoremap <silent> œ <Cmd>BufferClose<CR>
 "Alt-p
 nnoremap <silent> π <Cmd>BufferPin<CR>
 "Alt-c
-nnoremap <silent> ç <Cmd>BufferCloseAllButPinned<CR>
+nnoremap <silent> ç <Cmd>BufferCloseAllButCurrentOrPinned<CR>
 
 let bufferline = get(g:, 'bufferline', {})
 let bufferline.icon_pinned = '車'
