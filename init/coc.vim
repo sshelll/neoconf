@@ -27,8 +27,6 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
-nmap <silent> <leader>ss :CocCommand cSpell.addWordToDictionary<CR>
-
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
