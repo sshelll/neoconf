@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'rhysd/clever-f.vim'
 Plug 'tom-anders/telescope-vim-bookmarks.nvim'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'glepnir/dashboard-nvim'
