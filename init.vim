@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'rhysd/clever-f.vim'
 Plug 'tom-anders/telescope-vim-bookmarks.nvim'
 Plug 'MattesGroeger/vim-bookmarks'
@@ -54,10 +55,10 @@ lua require('plugin-config/todo-comments')
 lua require('plugin-config/telescope')
 lua require('plugin-config/nvimtree')
 lua require('plugin-config/github-nvim-theme')
+lua require('plugin-config/dashboard')
 
 for f in glob('~/.config/nvim/init/*.vim', 0, 1)
     execute 'source' f
 endfor
 
 source ~/.config/nvim/init/defer.vim
-lua require('plugin-config/dashboard')
