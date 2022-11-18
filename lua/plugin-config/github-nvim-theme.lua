@@ -1,5 +1,5 @@
 require("github-theme").setup({
-  theme_style = "light",
+  theme_style = "dark_default",
 
   function_style = "NONE",
   comment_style = "NONE",
