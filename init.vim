@@ -20,7 +20,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdcommenter'
 "Plug 'scrooloose/nerdtree'
 Plug 'kyazdani42/nvim-tree.lua'
-Plug 'machakann/vim-highlightedyank'
+"Plug 'machakann/vim-highlightedyank'
 Plug 'mattn/vim-goimpl'
 "Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'}
 Plug 'sebdah/vim-delve'

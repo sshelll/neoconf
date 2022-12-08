@@ -1,5 +1,5 @@
 " highlightedyank
-let g:highlightedyank_highlight_duration = 5000
+"let g:highlightedyank_highlight_duration = 5000
 
 " toggleterm
 nnoremap <leader>tt :FloatermNew<CR>
