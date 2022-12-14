@@ -42,7 +42,8 @@ Plug 'cormacrelf/vim-colors-github'
 Plug 'projekt0n/github-nvim-theme'
 Plug 'voldikss/vim-floaterm'
 Plug 'joshdick/onedark.vim'
-Plug 'terryma/vim-multiple-cursors'
+"Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'easymotion/vim-easymotion'
 Plug 'darrikonn/vim-gofmt', { 'do': ':GoUpdateBinaries' }
 Plug 'projekt0n/github-nvim-theme'
