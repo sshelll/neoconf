@@ -50,6 +50,7 @@ Plug 'projekt0n/github-nvim-theme'
 "Plug 'github/copilot.vim'
 call plug#end()
 
+lua require('plugin-config/diffview')
 lua require('plugin-config/nvim-treesitter')
 lua require('plugin-config/neoscroll')
 lua require('plugin-config/todo-comments')
