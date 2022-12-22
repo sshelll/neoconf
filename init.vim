@@ -1,5 +1,5 @@
 call plug#begin()
-Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'cocopon/iceberg.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'rhysd/clever-f.vim'
 Plug 'tom-anders/telescope-vim-bookmarks.nvim'
@@ -51,7 +51,6 @@ Plug 'projekt0n/github-nvim-theme'
 "Plug 'github/copilot.vim'
 call plug#end()
 
-lua require('plugin-config/indent-blankline')
 lua require('plugin-config/nvim-treesitter')
 lua require('plugin-config/neoscroll')
 lua require('plugin-config/todo-comments')

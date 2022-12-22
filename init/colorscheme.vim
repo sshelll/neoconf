@@ -3,4 +3,5 @@
 "colorscheme one
 "let g:airline_theme='one'
 
-let g:airline_theme='github'
+colorscheme iceberg
+let g:airline_theme='iceberg'
