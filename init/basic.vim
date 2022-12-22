@@ -8,11 +8,11 @@ set cursorline
 :filetype on
 
 set ts=4
+set expandtab
 set softtabstop=4
 set shiftwidth=4
-set expandtab
-set autoindent
 set smartindent
+
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType go setlocal noexpandtab
 autocmd BufWinEnter *.thrift :set filetype=idl
