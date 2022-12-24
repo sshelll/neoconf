@@ -4,4 +4,3 @@
 "let g:airline_theme='one'
 
 colorscheme iceberg
-let g:airline_theme='iceberg'
