@@ -56,7 +56,7 @@ lua require('plugin-config/neoscroll')
 lua require('plugin-config/todo-comments')
 lua require('plugin-config/telescope')
 lua require('plugin-config/nvimtree')
-lua require('plugin-config/github-nvim-theme')
+"lua require('plugin-config/github-nvim-theme')
 lua require('plugin-config/dashboard')
 
 for f in glob('~/.config/nvim/init/*.vim', 0, 1)
