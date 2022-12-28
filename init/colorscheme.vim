@@ -6,4 +6,4 @@
 set background=dark
 colorscheme iceberg
 
-autocmd VimEnter * :highlight BufferDefaultInactive ctermfg=233 ctermbg=238 guifg=#c6c8d1 guibg=#3e445e
+autocmd VimEnter * :highlight BufferDefaultInactive ctermfg=233 ctermbg=238 guifg=#9a9ca5 guibg=#3e445e
