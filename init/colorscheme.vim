@@ -3,7 +3,5 @@
 "colorscheme one
 "let g:airline_theme='one'
 
-set background=dark
+set background=light
 colorscheme iceberg
-
-autocmd VimEnter * :highlight BufferDefaultInactive ctermfg=233 ctermbg=238 guifg=#9a9ca5 guibg=#3e445e
