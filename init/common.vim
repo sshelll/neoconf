@@ -1,12 +1,9 @@
-" highlightedyank
-"let g:highlightedyank_highlight_duration = 5000
-
 " toggleterm
 nnoremap <leader>tt :FloatermNew<CR>
 
-" ack
-"cnoreabbrev Ack Ack!
+" Telescope
 map <C-p> :Telescope live_grep<CR>
+map <C-f> :Telescope current_buffer_fuzzy_find<CR>
 let g:ackhighlight = 1
 
 " Airline
@@ -43,5 +40,5 @@ nnoremap <silent> ∂c :DiffviewClose<CR>
 " GoFmt
 autocmd BufWritePre *.go :GoFmt
 
-" GoFmt
+" GoImports
 autocmd BufWritePre *.go :GoImports
