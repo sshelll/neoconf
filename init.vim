@@ -12,7 +12,7 @@ Plug 'sindrets/diffview.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.x' }
 Plug 'folke/todo-comments.nvim'
 Plug 'Pocco81/true-zen.nvim'
 Plug 'karb94/neoscroll.nvim'
