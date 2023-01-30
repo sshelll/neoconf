@@ -22,8 +22,4 @@ nnoremap <F11> :vertical res-1<CR>
 nnoremap p "0p
 nnoremap <leader>p p
 vnoremap <leader>y "+y
-
-" ctags
-"nnoremap <C-]> :execute "vertical ptag " . expand("<cword>")<CR>
-"set previewheight=90
-
+nnoremap <D-v> "+p
