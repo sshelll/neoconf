@@ -3,7 +3,7 @@ nnoremap <leader>tt :FloatermNew<CR>
 
 " Telescope
 map <C-p> :Telescope live_grep<CR>
-map <C-f> :Telescope current_buffer_fuzzy_find<CR>
+map <C-f> :BLines<CR>
 let g:ackhighlight = 1
 
 " Airline
