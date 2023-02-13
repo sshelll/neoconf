@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'github/copilot.vim'
 Plug 'aklt/plantuml-syntax'
 Plug 'tyru/open-browser.vim'
 Plug 'weirongxu/plantuml-previewer.vim'
