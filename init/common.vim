@@ -41,4 +41,4 @@ nnoremap <silent> ∂c :DiffviewClose<CR>
 autocmd BufWritePre *.go :GoFmt
 
 " GoImports
-autocmd BufWritePre *.go :GoImports
+"autocmd BufWritePre *.go :GoImports
