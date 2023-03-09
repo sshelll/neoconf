@@ -22,8 +22,9 @@ Plug 'folke/todo-comments.nvim'
 Plug 'Pocco81/true-zen.nvim'
 Plug 'karb94/neoscroll.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdcommenter'
 Plug 'kyazdani42/nvim-tree.lua'
@@ -50,6 +51,7 @@ lua require('plugin-config/neoscroll')
 lua require('plugin-config/todo-comments')
 lua require('plugin-config/telescope')
 lua require('plugin-config/nvimtree')
+lua require('plugin-config/lualine')
 "lua require('plugin-config/github-nvim-theme')
 
 for f in glob('~/.config/nvim/init/*.vim', 0, 1)
