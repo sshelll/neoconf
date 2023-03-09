@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'myusuf3/numbers.vim'
 Plug 'github/copilot.vim'
 Plug 'aklt/plantuml-syntax'
 Plug 'tyru/open-browser.vim'
