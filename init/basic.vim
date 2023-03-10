@@ -1,6 +1,7 @@
 syntax enable
 set t_Co=256
 set number
+set relativenumber
 set termguicolors
 set signcolumn=yes
 "set cursorline cursorcolumn
