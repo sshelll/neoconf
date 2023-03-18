@@ -45,5 +45,8 @@ nmap <leader>d :CocDiagnostics<CR>
 " Git blame doc
 nmap <leader>gb :CocCommand git.showBlameDoc<CR>
 
+" Go to test file
+nmap <leader>gt :CocCommand go.test.toggle<CR>
+
 " Import on save
 autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
