@@ -17,7 +17,6 @@ set mouse=
 
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType go setlocal noexpandtab
-autocmd BufWinEnter *.thrift :set filetype=idl
 
 nnoremap <F12> :vertical res+3<CR>
 nnoremap <F11> :vertical res-1<CR>
