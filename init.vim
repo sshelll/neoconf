@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'solarnz/thrift.vim'
 Plug 'kevinhwang91/nvim-hlslens'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'github/copilot.vim'
@@ -23,8 +24,6 @@ Plug 'folke/todo-comments.nvim'
 Plug 'Pocco81/true-zen.nvim'
 Plug 'karb94/neoscroll.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdcommenter'
