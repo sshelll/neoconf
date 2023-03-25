@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'solarnz/thrift.vim'
 Plug 'kevinhwang91/nvim-hlslens'
 Plug 'lukas-reineke/indent-blankline.nvim'
