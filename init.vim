@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'wuelnerdotexe/vim-enfocado'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'solarnz/thrift.vim'
 Plug 'kevinhwang91/nvim-hlslens'
