@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'wuelnerdotexe/vim-enfocado'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'solarnz/thrift.vim'
