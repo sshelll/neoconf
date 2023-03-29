@@ -15,7 +15,8 @@ nnoremap <F3> :NvimTreeToggle<CR>
 " Tagbar
 let g:tagbar_sort = 0
 let g:tagbar_width = 30
-nnoremap <F4> :Tagbar<CR>
+nnoremap <F4> :CocOutline<CR>
+autocmd FileType go nmap <buffer> <F4> :TagbarToggle<CR>
 
 " TrueZen
 nnoremap <leader>za :TZAtaraxis<CR>
