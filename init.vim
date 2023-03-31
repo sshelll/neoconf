@@ -57,6 +57,7 @@ lua require('plugin-config/nvimtree')
 lua require('plugin-config/lualine')
 lua require('plugin-config/indent-blankline')
 lua require('plugin-config/hlslens')
+lua require('plugin-config/github-nvim-theme')
 
 for f in glob('~/.config/nvim/init/*.vim', 0, 1)
     execute 'source' f
