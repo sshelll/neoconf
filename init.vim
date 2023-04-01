@@ -19,7 +19,6 @@ Plug 'rhysd/clever-f.vim'
 Plug 'tom-anders/telescope-vim-bookmarks.nvim'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'sindrets/diffview.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.x' }
@@ -36,7 +35,7 @@ Plug 'sebdah/vim-delve'
 Plug 'preservim/tagbar'
 Plug 'neoclide/coc.nvim', { 'branch': 'release'}
 Plug 'fatih/molokai'
-Plug 'ryanoasis/vim-devicons'
+Plug 'nvim-tree/nvim-web-devicons'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'buoto/gotests-vim'
@@ -49,6 +48,8 @@ Plug 'darrikonn/vim-gofmt', { 'do': ':GoUpdateBinaries' }
 Plug 'projekt0n/github-nvim-theme'
 call plug#end()
 
+lua require('plugin-config/devicons')
+lua require('plugin-config/barbar')
 lua require('plugin-config/nvim-treesitter')
 lua require('plugin-config/neoscroll')
 lua require('plugin-config/todo-comments')
