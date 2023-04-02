@@ -15,6 +15,8 @@ map('n', '≥', '<Cmd>BufferNext<CR>', opts)
 map('n', 'π', '<Cmd>BufferPin<CR>', opts)
 -- Close buffer
 map('n', 'œ', '<Cmd>BufferClose<CR>', opts)
+map('n', 'ç', '<Cmd>BufferCloseAllButCurrentOrPinned<CR>', opts)
+
 
 vim.api.nvim_create_autocmd('FileType', {
     callback = function(tbl)
