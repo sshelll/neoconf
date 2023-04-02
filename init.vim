@@ -38,7 +38,6 @@ Plug 'fatih/molokai'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'tpope/vim-fugitive'
-Plug 'buoto/gotests-vim'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'cormacrelf/vim-colors-github'
 Plug 'voldikss/vim-floaterm'
