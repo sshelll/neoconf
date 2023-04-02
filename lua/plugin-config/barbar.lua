@@ -1,9 +1,4 @@
-require("barbar").setup {
-    icons = {
-        modified = { separator = '⋄' },
-        pinned = { button = '車' },
-    }
-}
+require("barbar").setup {}
 
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
