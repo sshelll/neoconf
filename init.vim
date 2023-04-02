@@ -1,4 +1,8 @@
 call plug#begin()
+Plug 'theHamsta/nvim-dap-virtual-text'
+Plug 'rcarriga/nvim-dap-ui'
+Plug 'mfussenegger/nvim-dap'
+Plug 'leoluz/nvim-dap-go'
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'wuelnerdotexe/vim-enfocado'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
@@ -58,6 +62,10 @@ lua require('plugin-config/lualine')
 lua require('plugin-config/indent-blankline')
 lua require('plugin-config/hlslens')
 lua require('plugin-config/github-nvim-theme')
+lua require('plugin-config/dap')
+lua require('plugin-config/dap-ui')
+lua require('plugin-config/dap-virtual-text')
+lua require('plugin-config/dap-go')
 
 for f in glob('~/.config/nvim/init/*.vim', 0, 1)
     execute 'source' f

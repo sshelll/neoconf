@@ -40,7 +40,7 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nmap <leader>f :CocCommand editor.action.formatDocument<CR>
 
 " Diagnostics
-nmap <leader>d :CocDiagnostics<CR>
+nmap <leader>dd :CocDiagnostics<CR>
 
 " Git blame doc
 nmap <leader>gb :CocCommand git.showBlameDoc<CR>
