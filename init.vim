@@ -52,7 +52,6 @@ Plug 'projekt0n/github-nvim-theme'
 call plug#end()
 
 lua require('plugin-config/devicons')
-lua require('plugin-config/barbar')
 lua require('plugin-config/nvim-treesitter')
 lua require('plugin-config/neoscroll')
 lua require('plugin-config/todo-comments')
@@ -66,6 +65,7 @@ lua require('plugin-config/dap')
 lua require('plugin-config/dap-ui')
 lua require('plugin-config/dap-virtual-text')
 lua require('plugin-config/dap-go')
+lua require('plugin-config/barbar')
 
 for f in glob('~/.config/nvim/init/*.vim', 0, 1)
     execute 'source' f
