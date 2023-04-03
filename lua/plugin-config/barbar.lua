@@ -1,8 +1,3 @@
-require 'barbar'.setup { icons = {
-    modified = { separator = '⋄' },
-    pinned = { button = '車' },
-} }
-
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
@@ -44,3 +39,9 @@ vim.api.nvim_create_autocmd('FileType', {
     end,
     pattern = 'NvimTree', -- or any other filetree's `ft`
 })
+
+require 'barbar'.setup {
+    icons = {
+        pinned = { button = '車' },
+    }
+}
