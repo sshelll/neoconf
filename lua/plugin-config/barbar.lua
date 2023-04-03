@@ -1,4 +1,7 @@
-require("barbar").setup {}
+require 'barbar'.setup { icons = {
+    modified = { separator = '⋄' },
+    pinned = { button = '車' },
+} }
 
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
@@ -11,7 +14,6 @@ map('n', 'π', '<Cmd>BufferPin<CR>', opts)
 -- Close buffer
 map('n', 'œ', '<Cmd>BufferClose<CR>', opts)
 map('n', 'ç', '<Cmd>BufferCloseAllButCurrentOrPinned<CR>', opts)
-
 
 vim.api.nvim_create_autocmd('FileType', {
     callback = function(tbl)
