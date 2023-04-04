@@ -31,5 +31,7 @@
     "diagnostic.errorSign": "",
     "diagnostic.warningSign": "",
     "diagnostic.infoSign": "",
-    "yank.highlight.duration": 5000
+    "yank.highlight.duration": 5000,
+    "leetcode.language": "golang",
+    "leetcode.enabled": true
 }
