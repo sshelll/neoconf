@@ -9,3 +9,5 @@
 
 "autocmd VimEnter * :highlight BufferDefaultInactive ctermfg=233 ctermbg=238 guifg=#9a9ca5 guibg=#3e445e
 "autocmd VimEnter * :highlight BufferDefaultInactive ctermfg=233 ctermbg=238 guifg=#656565 guibg=#181818
+
+colorscheme github_light
