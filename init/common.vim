@@ -38,8 +38,5 @@ nnoremap <silent> <leader>bb :Git blame<CR>
 nnoremap <silent> ∂o :DiffviewOpen<CR>
 nnoremap <silent> ∂c :DiffviewClose<CR>
 
-" GoFmt
-autocmd BufWritePre *.go :GoFmt
-
 " GoImports
 "autocmd BufWritePre *.go :GoImports

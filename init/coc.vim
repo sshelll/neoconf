@@ -50,3 +50,6 @@ nmap <leader>gt :CocCommand go.test.toggle<CR>
 
 " Import on save
 autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+
+" Format on save
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.formatDocument')
