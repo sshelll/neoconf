@@ -27,26 +27,6 @@ if has('nvim')
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> <leader>rn <Plug>(coc-rename)
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" Format
-nmap <leader>f :CocCommand editor.action.formatDocument<CR>
-
-" Diagnostics
-nmap <leader>dd :CocDiagnostics<CR>
-
-" Git blame doc
-nmap <leader>gb :CocCommand git.showBlameDoc<CR>
-
-" Go to test file
-nmap <leader>gt :CocCommand go.test.toggle<CR>
 
 " Import on save
 autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')

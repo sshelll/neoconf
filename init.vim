@@ -1,4 +1,8 @@
 call plug#begin()
+Plug 'nvim-telescope/telescope-ui-select.nvim'
+Plug 'stevearc/dressing.nvim'
+Plug 'mrjones2014/legendary.nvim'
+Plug 'kkharji/sqlite.lua'
 Plug 'theHamsta/nvim-dap-virtual-text'
 Plug 'rcarriga/nvim-dap-ui'
 Plug 'mfussenegger/nvim-dap'
@@ -64,9 +68,8 @@ lua require('plugin-config/dap-ui')
 lua require('plugin-config/dap-virtual-text')
 lua require('plugin-config/barbar')
 lua require('plugin-config/lualine')
+lua require('plugin-config/legendary')
 
 for f in glob('~/.config/nvim/init/*.vim', 0, 1)
     execute 'source' f
 endfor
-
-source ~/.config/nvim/init/defer.vim
