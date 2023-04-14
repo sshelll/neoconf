@@ -1,19 +1,23 @@
-require("github-theme").setup({
-    function_style = "NONE",
-    comment_style = "NONE",
-    keyword_style = "NONE",
-    variable_style = "NONE",
-    dark_float = true,
-    dark_sidebar = false,
-    sidebars = { "qf", "vista_kind", "terminal", "packer" },
-    colors = { hint = "orange", error = "#ff0000" },
-    -- Overwrite the highlight groups
-    overrides = function(c)
-        return {
-            htmlTag = { fg = c.red, bg = "#282c34", sp = c.hint, style = "underline" },
-            DiagnosticHint = { link = "LspDiagnosticsDefaultHint" },
-            -- this will remove the highlight groups
-            TSField = {},
-        }
-    end
+require('github-theme').setup({
+  options = {
+    transparent = false,
+    hide_end_of_buffer = true,
+    hide_nc_statusline = true,
+    styles = {
+      comments = 'NONE',
+      functions = 'NONE',
+      keywords = 'NONE',
+      variables = 'NONE',
+    },
+    darken = {
+      floats = true,
+      sidebars = {
+        enable = true,
+        list = { 'qf', 'vista_kind', 'terminal', 'packer' },
+      },
+    },
+  },
+  colors = { hint = 'orange', error = '#ff0000' },
 })
+
+vim.cmd('colorscheme github_light')
