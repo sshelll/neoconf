@@ -12,6 +12,7 @@ require('legendary').setup({
                 { '<leader>y', '"+y',                 description = 'copy to os',                      mode = { 'n', 'v' } },
                 { '…',       ':ExecNormal<CR>',     description = 'enter cmd mode',                  mode = { 'n' } },
                 { '…',       ':ExecVisual<CR>',     description = 'enter cmd mode',                  mode = { 'v' } },
+                { '<leader>l', ':noh<CR>',            description = 'no highlight',                    mode = { 'n' } },
             },
         },
         {
@@ -51,6 +52,39 @@ require('legendary').setup({
                 { '<leader>gg', ':LazyGit<CR>',      description = 'open lazygit window' },
                 { '<leader>bb', ':Git blame<CR>',    description = 'show git blame' },
                 { '<leader>gd', ':DiffviewOpen<CR>', description = 'open diffview' },
+            },
+        },
+        {
+            itemgroup = 'dap',
+            description = 'keymaps for dap',
+            icon = '',
+            keymaps = {
+                { '<leader>da', function() require('dap').toggle_breakpoint() end, description = 'toggle breakpoint' },
+                { '<leader>dc', function() require('dap').continue() end,          description = 'continue' },
+                { '<leader>ds', function() require('dap').step_into() end,         description = 'step into' },
+                { '<leader>dw', function() require('dap').step_over() end,         description = 'step over' },
+                { '<leader>do', function() require('dap').step_out() end,          description = 'step out' },
+                { '<leader>dt', function() require('dap').run_to_cursor() end,     description = 'run to cursor' },
+                { '<leader>dq', function() require('dap').disconnect() end,        description = 'disconnect' },
+                { '<leader>dr', function() require('dap').clear_breakpoints() end, description = 'clean breakpoints' },
+                {
+                    '<leader>de',
+                    function() require('dapui').eval() end,
+                    description = 'eval',
+                    mode = { 'n', 'v' },
+                },
+            },
+        },
+        {
+            itemgroup = 'barbar',
+            description = 'keymaps for barbar',
+            icon = '',
+            keymaps = {
+                { '≤', ':BufferPrevious<CR>',                   description = 'previous buffer' },
+                { '≥', ':BufferNext<CR>',                       description = 'next buffer' },
+                { 'œ',  ':BufferClose<CR>',                      description = 'close buffer' },
+                { 'π',  ':BufferPin<CR>',                        description = 'pin buffer' },
+                { 'ç',  ':BufferCloseAllButCurrentOrPinned<CR>', description = 'close all buffers but pinned' },
             },
         },
         {
