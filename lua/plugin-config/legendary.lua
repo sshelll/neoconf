@@ -161,6 +161,20 @@ require('legendary').setup({
                     description = 'join lines'
                 },
             },
+        },
+        {
+            itemgroup = 'rust',
+            description = 'commands for rust',
+            icon = '',
+            commands = {
+                {
+                    ':RustBuild',
+                    function()
+                        vim.cmd('silent !cargo build')
+                    end,
+                    description = 'build rust project'
+                },
+            },
         }
     },
     which_key = {
