@@ -1,6 +1,5 @@
 {
     "coc.preferences.jumpCommand": "drop",
-    "coc.preferences.formatOnSave": true,
     "suggest.completionItemKindLabels": {
         "keyword": "\uf1de",
         "variable": "\ue79b",
@@ -32,6 +31,7 @@
     "diagnostic.warningSign": "",
     "diagnostic.infoSign": "",
     "yank.highlight.duration": 5000,
-    "leetcode.language": "golang",
-    "leetcode.enabled": true
+    "go.goplsOptions": {
+        "memoryMode": "DegradeClosed"
+    }
 }

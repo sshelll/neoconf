@@ -4,7 +4,6 @@ set number
 set relativenumber
 set termguicolors
 set signcolumn=yes
-"set cursorline cursorcolumn
 set cursorline
 :filetype on
 
@@ -17,10 +16,3 @@ set mouse=
 
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType go setlocal noexpandtab
-
-nnoremap <F12> :vertical res+3<CR>
-nnoremap <F11> :vertical res-1<CR>
-nnoremap p "0p
-nnoremap <leader>p p
-vnoremap <leader>y "+y
-nnoremap <D-v> "+p
