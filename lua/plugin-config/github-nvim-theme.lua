@@ -20,4 +20,4 @@ require('github-theme').setup({
   colors = { hint = 'orange', error = '#ff0000' },
 })
 
-vim.cmd('colorscheme github_light')
+vim.cmd('colorscheme github_dark')
