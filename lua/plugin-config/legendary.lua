@@ -10,6 +10,8 @@ require('legendary').setup({
                 { 'p',         '"0p',                 description = 'paste from the first nvim buffer' },
                 { '<leader>p', 'p',                   description = 'paste last',                      mode = { 'n', 'v' } },
                 { '<leader>y', '"+y',                 description = 'copy to os',                      mode = { 'n', 'v' } },
+                { '…',       ':ExecNormal<CR>',     description = 'enter cmd mode',                  mode = { 'n' } },
+                { '…',       ':ExecVisual<CR>',     description = 'enter cmd mode',                  mode = { 'v' } },
             },
         },
         {
@@ -34,36 +36,11 @@ require('legendary').setup({
             description = 'keymaps for search',
             icon = '',
             keymaps = {
-                {
-                    '<C-p>',
-                    ':Telescope live_grep<CR>',
-                    description =
-                    'search in the current work dir with Telescope'
-                },
-                {
-                    '<C-f>',
-                    ':BLines<CR>',
-                    description =
-                    'search in the current buffer with FZF'
-                },
-                {
-                    '<C-k>',
-                    ':lua require(\'legendary\').find()<CR>',
-                    description =
-                    'open keymap search box'
-                },
-                {
-                    '<C-l>',
-                    ':lua require(\'legendary\').find({ filters = { require(\'legendary.filters\').commands() } })<CR>',
-                    description =
-                    'open command search box'
-                },
-                {
-                    '<leader>td',
-                    ':TodoTelescope<CR>',
-                    description =
-                    'search todo items with Telescope'
-                },
+                { '<C-p>',      ':Telescope live_grep<CR>', description = 'search in the current work dir with Telescope' },
+                { '<C-f>',      ':BLines<CR>',              description = 'search in the current buffer with FZF' },
+                { '<C-k>',      ':SearchKeymaps<CR>',       description = 'open keymap search box' },
+                { '<C-l>',      ':SearchCommands<CR>',      description = 'open command search box' },
+                { '<leader>td', ':TodoTelescope<CR>',       description = 'search todo items with Telescope' },
             },
         },
         {
@@ -71,8 +48,9 @@ require('legendary').setup({
             description = 'keymaps for git',
             icon = '',
             keymaps = {
-                { '<leader>gg', ':LazyGit<CR>',   description = 'open lazygit window' },
-                { '<leader>bb', ':Git blame<CR>', description = 'show git blame' },
+                { '<leader>gg', ':LazyGit<CR>',      description = 'open lazygit window' },
+                { '<leader>bb', ':Git blame<CR>',    description = 'show git blame' },
+                { '<leader>gd', ':DiffviewOpen<CR>', description = 'open diffview' },
             },
         },
         {
@@ -85,8 +63,51 @@ require('legendary').setup({
             },
         },
     },
+    commands = {
+        {
+            ':ExecNormal',
+            function()
+                require('./util').exec_cmd('')
+            end,
+            description = 'exec cmd',
+        },
+        {
+            ':ExecVisual',
+            function()
+                require('./util').exec_cmd('\'<,\'>')
+            end,
+            description = 'exec cmd',
+        },
+        {
+            itemgroup = 'search',
+            description = 'commands for search',
+            icon = '',
+            commands = {
+                {
+                    ':SearchKeymaps',
+                    function()
+                        require('legendary').find()
+                    end,
+                    description = 'open legendary to search keymaps'
+                },
+                {
+                    ':SearchCommands',
+                    function()
+                        local commands = require('legendary.filters').commands()
+                        require('legendary').find({ filters = commands })
+                    end,
+                    description = 'open legendary to search commands'
+                },
+            }
+        },
+    },
+    which_key = {
+        auto_register = true,
+        do_binding = true,
+    },
     extensions = {
         nvim_tree = true,
+        diffview = true,
     },
     select_prompt = 'legendary',
     include_legendary_cmds = false,
