@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'bennypowers/splitjoin.nvim'
 Plug 'folke/which-key.nvim'
 Plug 'nvim-telescope/telescope-ui-select.nvim'
 Plug 'stevearc/dressing.nvim'

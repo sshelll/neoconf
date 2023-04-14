@@ -1,6 +1,5 @@
 {
     "coc.preferences.jumpCommand": "drop",
-    "coc.preferences.formatOnSave": true,
     "suggest.completionItemKindLabels": {
         "keyword": "\uf1de",
         "variable": "\ue79b",

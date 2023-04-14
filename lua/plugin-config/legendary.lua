@@ -65,18 +65,25 @@ require('legendary').setup({
     },
     commands = {
         {
-            ':ExecNormal',
-            function()
-                require('./util').exec_cmd('')
-            end,
-            description = 'exec cmd',
-        },
-        {
-            ':ExecVisual',
-            function()
-                require('./util').exec_cmd('\'<,\'>')
-            end,
-            description = 'exec cmd',
+            itemgroup = 'cmd',
+            description = 'exec cmd in pop up input box',
+            icon = '',
+            commands = {
+                {
+                    ':ExecNormal',
+                    function()
+                        require('./util').exec_cmd('')
+                    end,
+                    description = 'exec cmd',
+                },
+                {
+                    ':ExecVisual',
+                    function()
+                        require('./util').exec_cmd('\'<,\'>')
+                    end,
+                    description = 'exec cmd',
+                },
+            }
         },
         {
             itemgroup = 'search',
@@ -100,6 +107,27 @@ require('legendary').setup({
                 },
             }
         },
+        {
+            itemgroup = 'splitjoin',
+            description = 'commands for splitjoin',
+            icon = '',
+            commands = {
+                {
+                    ':SplitLines',
+                    function()
+                        require('splitjoin').split()
+                    end,
+                    description = 'split lines'
+                },
+                {
+                    ':JoinLines',
+                    function()
+                        require('splitjoin').join()
+                    end,
+                    description = 'join lines'
+                },
+            },
+        }
     },
     which_key = {
         auto_register = true,
