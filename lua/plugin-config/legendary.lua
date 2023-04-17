@@ -177,10 +177,6 @@ require('legendary').setup({
             },
         }
     },
-    which_key = {
-        auto_register = true,
-        do_binding = true,
-    },
     extensions = {
         nvim_tree = true,
         diffview = true,
