@@ -1,6 +1,5 @@
 call plug#begin()
 Plug 'bennypowers/splitjoin.nvim'
-Plug 'folke/which-key.nvim'
 Plug 'nvim-telescope/telescope-ui-select.nvim'
 Plug 'stevearc/dressing.nvim'
 Plug 'mrjones2014/legendary.nvim'
@@ -53,7 +52,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'easymotion/vim-easymotion'
 Plug 'darrikonn/vim-gofmt', { 'do': ':GoUpdateBinaries' }
-Plug 'projekt0n/github-nvim-theme'
+Plug 'projekt0n/github-nvim-theme', { 'branch': '0.0.x' }
 call plug#end()
 
 lua require('plugin-config/devicons')
@@ -71,7 +70,6 @@ lua require('plugin-config/dap-virtual-text')
 lua require('plugin-config/barbar')
 lua require('plugin-config/lualine')
 lua require('plugin-config/legendary')
-lua require('plugin-config/which-key')
 
 for f in glob('~/.config/nvim/init/*.vim', 0, 1)
     execute 'source' f
