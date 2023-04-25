@@ -5,14 +5,15 @@ require('legendary').setup({
             description = 'basic keymaps',
             icon = '',
             keymaps = {
-                { '<F12>',     ':vertical res+3<CR>', description = 'incr vertical window width' },
-                { '<F11>',     ':vertical res-1<CR>', description = 'decr vertical window width' },
-                { 'p',         '"0p',                 description = 'paste from the first nvim buffer' },
-                { '<leader>p', 'p',                   description = 'paste last',                      mode = { 'n', 'v' } },
-                { '<leader>y', '"+y',                 description = 'copy to os',                      mode = { 'n', 'v' } },
-                { '…',       ':ExecNormal<CR>',     description = 'enter cmd mode',                  mode = { 'n' } },
-                { '…',       ':ExecVisual<CR>',     description = 'enter cmd mode',                  mode = { 'v' } },
-                { '<leader>l', ':noh<CR>',            description = 'no highlight',                    mode = { 'n' } },
+                { '<F12>',     ':vertical res+3<CR>',       description = 'incr vertical window width' },
+                { '<F11>',     ':vertical res-1<CR>',       description = 'decr vertical window width' },
+                { 'p',         '"0p',                       description = 'paste from the first nvim buffer' },
+                { '<leader>p', 'p',                         description = 'paste last',                 mode = { 'n', 'v' } },
+                { '<leader>y', '"+y',                       description = 'copy to os',                 mode = { 'n', 'v' } },
+                { '…',         ':ExecNormal<CR>',           description = 'enter cmd mode',             mode = { 'n' } },
+                { '…',         ':ExecVisual<CR>',           description = 'enter cmd mode',             mode = { 'v' } },
+                { '<leader>l', ':noh<CR>',                  description = 'no highlight',               mode = { 'n' } },
+                { 'K',         ':CocShowDocumentation<CR>', description = 'show doc in preview window', mode = { 'n' } }
             },
         },
         {
@@ -98,6 +99,27 @@ require('legendary').setup({
         },
     },
     commands = {
+        {
+            itemgroup = 'coc',
+            description = 'coc commands',
+            icon = '',
+            commands = {
+                {
+                    ':CocShowDocumentation',
+                    function ()
+                        local cw = vim.fn.expand('<cword>')
+                        if vim.fn.index({'vim', 'help'}, vim.bo.filetype) >= 0 then
+                            vim.api.nvim_command('h ' .. cw)
+                        elseif vim.api.nvim_eval('coc#rpc#ready()') then
+                            vim.fn.CocActionAsync('doHover')
+                        else
+                            vim.api.nvim_command('!' .. vim.o.keywordprg .. ' ' .. cw)
+                        end
+                    end,
+                    description = 'show doc in preview window'
+                },
+            }
+        },
         {
             itemgroup = 'cmd',
             description = 'exec cmd in pop up input box',
