@@ -30,7 +30,7 @@
     "diagnostic.errorSign": "",
     "diagnostic.warningSign": "",
     "diagnostic.infoSign": "",
-    "yank.highlight.duration": 5000,
+    "yank.highlight.duration": 3000,
     "go.goplsOptions": {
         "memoryMode": "DegradeClosed"
     }
