@@ -38,11 +38,11 @@ require('legendary').setup({
             description = 'keymaps for search',
             icon = '',
             keymaps = {
-                { '<C-p>',      ':Telescope live_grep<CR>', description = 'search in the current work dir with Telescope' },
-                { '<C-f>',      ':BLines<CR>',              description = 'search in the current buffer with FZF' },
-                { '<C-k>',      ':SearchKeymaps<CR>',       description = 'open keymap search box' },
-                { '<C-l>',      ':SearchCommands<CR>',      description = 'open command search box' },
-                { '<leader>td', ':TodoTelescope<CR>',       description = 'search todo items with Telescope' },
+                { '<C-p>',      ':Telescope live_grep<CR>',                 description = 'search in the current work dir with Telescope' },
+                { '<C-f>',      ':Telescope current_buffer_fuzzy_find<CR>', description = 'search in the current buffer with Telescope' },
+                { '<C-k>',      ':SearchKeymaps<CR>',                       description = 'open keymap search box' },
+                { '<C-l>',      ':SearchCommands<CR>',                      description = 'open command search box' },
+                { '<leader>td', ':TodoTelescope<CR>',                       description = 'search todo items with Telescope' },
             },
         },
         {

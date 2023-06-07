@@ -4,7 +4,7 @@ let g:ackhighlight = 1
 " Tagbar
 let g:tagbar_sort = 0
 let g:tagbar_width = 30
-autocmd FileType go nmap <buffer> <F4> :TagbarToggle<CR>
+"autocmd FileType go nmap <buffer> <F4> :TagbarToggle<CR>
 
 " lazygit
 let g:lazygit_floating_window_winblend = 0                        " transparency of floating window

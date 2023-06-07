@@ -1,8 +1,8 @@
 {
     "coc.preferences.jumpCommand": "drop",
     "suggest.completionItemKindLabels": {
-        "keyword": "\uf1de",
-        "variable": "\ue79b",
+        "keyword": "",
+        "variable": "",
         "value": "\uf89f",
         "operator": "\u03a8",
         "function": "\u0192",
@@ -18,7 +18,7 @@
         "module": "\uf40d",
         "color": "\ue22b",
         "property": "\ue624",
-        "field": "\uf9be",
+        "field": "",
         "unit": "\uf475",
         "event": "\ufacd",
         "file": "\uf723",
