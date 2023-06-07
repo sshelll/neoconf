@@ -30,6 +30,6 @@ vim.api.nvim_create_autocmd('FileType', {
 
 require 'barbar'.setup {
     icons = {
-        pinned = { button = '車' },
+        pinned = { button = '󰐃', filename = true },
     }
 }
