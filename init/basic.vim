@@ -14,5 +14,8 @@ set shiftwidth=4
 set smartindent
 set mouse=
 
+set ignorecase
+set smartcase
+
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType go setlocal noexpandtab
