@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'bennypowers/splitjoin.nvim'
 Plug 'nvim-telescope/telescope-ui-select.nvim'
