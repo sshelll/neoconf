@@ -13,7 +13,6 @@ require('legendary').setup({
                 { '…',         ':ExecNormal<CR>',           description = 'enter cmd mode',             mode = { 'n' } },
                 { '…',         ':ExecVisual<CR>',           description = 'enter cmd mode',             mode = { 'v' } },
                 { '<leader>l', ':noh<CR>',                  description = 'no highlight',               mode = { 'n' } },
-                { 'K',         ':CocShowDocumentation<CR>', description = 'show doc in preview window', mode = { 'n' } }
             },
         },
         {
@@ -31,6 +30,7 @@ require('legendary').setup({
                 { '<leader>gb', ':CocCommand git.showBlameDoc<CR>',             description = 'show git blame doc' },
                 { '<leader>gt', ':CocCommand go.test.toggle<CR>',               description = 'toggle go test file' },
                 { '<F4>',       ':CocOutline<CR>',                              description = 'toggle outline' },
+                { 'K',          ':CocShowDocumentation<CR>',                    description = 'show doc in preview window', mode = { 'n' } },
             },
         },
         {
@@ -43,6 +43,8 @@ require('legendary').setup({
                 { '<C-k>',      ':SearchKeymaps<CR>',                       description = 'open keymap search box' },
                 { '<C-l>',      ':SearchCommands<CR>',                      description = 'open command search box' },
                 { '<leader>td', ':TodoTelescope<CR>',                       description = 'search todo items with Telescope' },
+                { '<leader>tf', ':Telescope find_files<CR>',                description = 'search files with Telescope' },
+                { '<leader>e',  '<Plug>(easymotion-overwin-w)',             description = 'easymotion jump words' },
             },
         },
         {
