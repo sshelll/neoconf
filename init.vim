@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'RRethy/vim-illuminate'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'bennypowers/splitjoin.nvim'
@@ -73,6 +74,7 @@ lua require('plugin-config/barbar')
 lua require('plugin-config/lualine')
 lua require('plugin-config/legendary')
 lua require('plugin-config/gitsigns')
+lua require('plugin-config/illuminate')
 
 for f in glob('~/.config/nvim/init/*.vim', 0, 1)
     execute 'source' f
