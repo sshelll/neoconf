@@ -37,8 +37,9 @@ Plug 'folke/todo-comments.nvim'
 Plug 'Pocco81/true-zen.nvim'
 Plug 'karb94/neoscroll.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-context'
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-lualine/lualine.nvim'
-Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdcommenter'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'mattn/vim-goimpl'
@@ -60,6 +61,8 @@ call plug#end()
 
 lua require('plugin-config/devicons')
 lua require('plugin-config/nvim-treesitter')
+lua require('plugin-config/nvim-treesitter-ctx')
+lua require('plugin-config/nvim-treesitter-text-obj')
 lua require('plugin-config/neoscroll')
 lua require('plugin-config/todo-comments')
 lua require('plugin-config/telescope')
