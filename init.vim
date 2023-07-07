@@ -1,4 +1,6 @@
 call plug#begin()
+Plug 'nvimdev/dashboard-nvim'
+Plug 'ahmedkhalf/project.nvim'
 Plug 'RRethy/vim-illuminate'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'lewis6991/gitsigns.nvim'
@@ -22,7 +24,6 @@ Plug 'tyru/open-browser.vim'
 Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'mhinz/vim-startify'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'cocopon/iceberg.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -78,6 +79,8 @@ lua require('plugin-config/lualine')
 lua require('plugin-config/legendary')
 lua require('plugin-config/gitsigns')
 lua require('plugin-config/illuminate')
+lua require('plugin-config/project')
+lua require('plugin-config/dashboard')
 
 for f in glob('~/.config/nvim/init/*.vim', 0, 1)
     execute 'source' f
