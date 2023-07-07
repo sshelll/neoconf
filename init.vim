@@ -60,6 +60,10 @@ Plug 'darrikonn/vim-gofmt', { 'do': ':GoUpdateBinaries' }
 Plug 'projekt0n/github-nvim-theme', { 'branch': '0.0.x' }
 call plug#end()
 
+"very start of init.vim
+let loaded_netrw = 1
+let loaded_netrwPlugin = 1
+
 lua require('plugin-config/devicons')
 lua require('plugin-config/nvim-treesitter')
 lua require('plugin-config/nvim-treesitter-ctx')
