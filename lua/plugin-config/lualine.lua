@@ -39,7 +39,7 @@ local config = {
         -- Disable sections and component separators
         component_separators = '',
         section_separators = '',
-        theme = 'github_light',
+        theme = 'vscode',
         disabled_filetypes = {
             -- Filetypes to disable lualine for.
             'NvimTree',

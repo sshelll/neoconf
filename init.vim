@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'Mofiqul/vscode.nvim'
 Plug 'nvimdev/dashboard-nvim'
 Plug 'ahmedkhalf/project.nvim'
 Plug 'RRethy/vim-illuminate'
@@ -74,7 +75,7 @@ lua require('plugin-config/telescope')
 lua require('plugin-config/nvimtree')
 lua require('plugin-config/indent-blankline')
 lua require('plugin-config/hlslens')
-lua require('plugin-config/github-nvim-theme')
+"lua require('plugin-config/github-nvim-theme')
 lua require('plugin-config/dap')
 lua require('plugin-config/dap-ui')
 lua require('plugin-config/dap-virtual-text')
@@ -85,6 +86,7 @@ lua require('plugin-config/gitsigns')
 lua require('plugin-config/illuminate')
 lua require('plugin-config/project')
 lua require('plugin-config/dashboard')
+lua require('plugin-config/vscode-theme')
 
 for f in glob('~/.config/nvim/init/*.vim', 0, 1)
     execute 'source' f
