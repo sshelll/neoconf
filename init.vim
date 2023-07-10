@@ -57,7 +57,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'easymotion/vim-easymotion'
 Plug 'darrikonn/vim-gofmt', { 'do': ':GoUpdateBinaries' }
-Plug 'projekt0n/github-nvim-theme', { 'branch': '0.0.x' }
+Plug 'projekt0n/github-nvim-theme'
 call plug#end()
 
 "very start of init.vim
