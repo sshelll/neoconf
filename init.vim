@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'numToStr/Comment.nvim'
 Plug 'nvimdev/dashboard-nvim'
 Plug 'ahmedkhalf/project.nvim'
 Plug 'RRethy/vim-illuminate'
@@ -41,7 +42,6 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-lualine/lualine.nvim'
-Plug 'preservim/nerdcommenter'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'mattn/vim-goimpl'
 Plug 'sebdah/vim-delve'
@@ -85,6 +85,7 @@ lua require('plugin-config/gitsigns')
 lua require('plugin-config/illuminate')
 lua require('plugin-config/project')
 lua require('plugin-config/dashboard')
+lua require('plugin-config/comment')
 
 for f in glob('~/.config/nvim/init/*.vim', 0, 1)
     execute 'source' f
