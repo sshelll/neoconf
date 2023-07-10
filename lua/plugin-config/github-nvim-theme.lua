@@ -4,9 +4,22 @@ require('github-theme').setup({
             comments = 'italic',
             keywords = 'bold',
             types = 'italic,bold',
-            strings = 'italic,bold',
-            numbers = 'italic,bold',
-        }
+        },
+        modules = {
+            coc = true,
+            dapui = true,
+            dashboard = true,
+            diagnostics = true,
+            fzf = true,
+            gitgutter = true,
+            gitsigns = true,
+            indent_blankline = true,
+            nvimtree = true,
+            telescope = true,
+            treesitter = true,
+            treesitter_context = true,
+            whichkey = true,
+        },
     }
 })
-vim.cmd('colorscheme github_light')
+vim.cmd('colorscheme github_light_high_contrast')
