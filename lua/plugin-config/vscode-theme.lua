@@ -25,6 +25,7 @@ require('vscode').setup({
         GitSignsCurrentLineBlame = { fg = '#767676' },
         DiffChange = { bg = '#FFCC99' },
         DiffAdd = { bg = c.vscLightGreen },
+        WinSeparator = { fg = '#000000' },
     },
 
 })
