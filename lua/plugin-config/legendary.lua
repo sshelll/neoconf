@@ -163,6 +163,13 @@ require('legendary').setup({
                     end,
                     description = 'open legendary to search commands'
                 },
+                {
+                    ':SearchGitCommits',
+                    function ()
+                        require('telescope').extensions.git_diffs.diff_commits()
+                    end,
+                    description = 'search git commits and open it in diffview'
+                },
             }
         },
         {

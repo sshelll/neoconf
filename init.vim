@@ -1,4 +1,6 @@
 call plug#begin()
+Plug 'nvim-telescope/telescope-dap.nvim'
+Plug 'paopaol/telescope-git-diffs.nvim'
 Plug 'numToStr/Comment.nvim'
 Plug 'Mofiqul/vscode.nvim'
 Plug 'nvimdev/dashboard-nvim'
