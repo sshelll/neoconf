@@ -26,6 +26,7 @@ require('vscode').setup({
         DiffChange = { bg = '#FFCC99' },
         DiffAdd = { bg = c.vscLightGreen },
         WinSeparator = { fg = '#000000' },
+        TelescopeSelection = { bg = '#e6f3ff' },
     },
 
 })

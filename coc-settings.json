@@ -1,4 +1,5 @@
 {
+    "colors.enable": true,
     "coc.preferences.jumpCommand": "drop",
     "suggest.completionItemKindLabels": {
         "keyword": "",
