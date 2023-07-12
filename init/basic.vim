@@ -5,6 +5,7 @@ set relativenumber
 set termguicolors
 set signcolumn=yes
 set cursorline
+set laststatus=3
 :filetype on
 
 set ts=4

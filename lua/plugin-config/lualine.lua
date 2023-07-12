@@ -35,24 +35,12 @@ local conditions = {
 
 -- Config
 local config = {
+    extensions = { 'fugitive', 'nvim-tree', 'man', 'fzf', 'quickfix', 'nvim-dap-ui' },
     options = {
         -- Disable sections and component separators
         component_separators = '',
         section_separators = '',
         theme = 'vscode',
-        disabled_filetypes = {
-            -- Filetypes to disable lualine for.
-            'NvimTree',
-            statusline = {}, -- only ignores the ft for statusline.
-            winbar = {},     -- only ignores the ft for winbar.
-        },
-        --[[theme = {]]
-        --[[-- We are going to use lualine_c an lualine_x as left and]]
-        --[[-- right section. Both are highlighted by c theme .  So we]]
-        --[[-- are just setting default looks o statusline]]
-        --[[normal = { c = { fg = colors.fg, bg = colors.bg } },]]
-        --[[inactive = { c = { fg = colors.fg, bg = colors.bg } },]]
-        --[[},]]
     },
     sections = {
         -- these are to remove the defaults
@@ -135,6 +123,7 @@ ins_left {
 
 ins_left {
     'filename',
+    path = 4,
     cond = conditions.buffer_not_empty,
     color = { fg = colors.magenta, gui = 'bold' },
 }
@@ -183,32 +172,20 @@ ins_left {
     color = { fg = '#a9a1e1', gui = 'bold' },
 }
 
---[[ins_left {]]
---[[-- Lsp server name .]]
---[[function()]]
---[[--local msg = 'No Active Lsp']]
---[[local msg = 'sjl\'s fuckin cool editor']]
---[[local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')]]
---[[local clients = vim.lsp.get_active_clients()]]
---[[if next(clients) == nil then]]
---[[return msg]]
---[[end]]
---[[for _, client in ipairs(clients) do]]
---[[local filetypes = client.config.filetypes]]
---[[if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then]]
---[[return client.name]]
---[[end]]
---[[end]]
---[[return msg]]
---[[end,]]
---[[icon = ' :',]]
---[[color = { fg = '#a9a1e1', gui = 'bold' },]]
---[[}]]
+ins_left {
+    function()
+        return '  kayce\'s work station'
+    end,
+    color = { fg = colors.blue }
+}
+
 -- Add components to right sections
 
 ins_right { 'location' }
 
 ins_right { 'progress', color = { fg = colors.fg, gui = 'bold' } }
+
+ins_right { 'filesize' }
 
 ins_right {
     'o:encoding',       -- option component same as &encoding in viml
