@@ -23,8 +23,9 @@ require('vscode').setup({
         -- use colors from this colorscheme by requiring vscode.colors!
         Cursor = { fg = c.vscLightGreen, bg = c.vscDarkBlue, bold = true },
         GitSignsCurrentLineBlame = { fg = '#767676' },
-        DiffChange = { bg = '#FFCC99' },
-        DiffAdd = { bg = c.vscLightGreen },
+        DiffChange = { fg='#b08800', bg = '#fff5b1' },
+        DiffAdd = { fg='#22863a', bg='#d4f8db' },
+        DiffDelete = { fg='#cb2431', bg='#fae5e7'},
         WinSeparator = { fg = '#000000' },
         TelescopeSelection = { bg = '#e6f3ff' },
         TelescopeMatching = { fg = '#ff8700' },
