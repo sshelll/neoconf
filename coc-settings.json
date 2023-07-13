@@ -1,6 +1,7 @@
 {
     "colors.enable": true,
     "coc.preferences.jumpCommand": "drop",
+    "coc.preferences.currentFunctionSymbolAutoUpdate": true,
     "suggest.completionItemKindLabels": {
         "keyword": "",
         "variable": "",

@@ -129,6 +129,12 @@ ins_left {
 }
 
 ins_left {
+    "b:coc_current_function",
+    icon = ' ',
+    color = { fg = colors.blue, gui = 'bold' },
+}
+
+ins_left {
     'branch',
     icon = '',
     color = { fg = colors.violet, gui = 'bold' },
@@ -171,12 +177,6 @@ ins_left {
         return '  kayce\'s work station'
     end,
     color = { fg = colors.blue }
-}
-
-ins_left {
-    'g:coc_status',
-    icon = ' :',
-    color = { fg = '#a9a1e1', gui = 'bold' },
 }
 
 -- Add components to right sections
