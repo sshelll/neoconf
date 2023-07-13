@@ -27,6 +27,17 @@ require('vscode').setup({
         DiffAdd = { bg = c.vscLightGreen },
         WinSeparator = { fg = '#000000' },
         TelescopeSelection = { bg = '#e6f3ff' },
+        TelescopeMatching = { fg = '#ff8700' },
+        NotifyINFOTitle = { fg = '#008700' },
+        NotifyINFOIcon = { fg = '#008700' },
+        DapUILineNumber = { fg = '#008700' },
+        DapUIThread = { fg = '#008700' },
+        DapUIScope = { fg = '#008700' },
+        DapUIBreakpointsCurrentLine = { fg = '#767676' },
+        DapUIFloatBorder = { fg = '#000000' },
+        DapUIDecoration = { fg = '#008700' },
+        DapUIStoppedThread = { fg = '#008700' },
+        DapUIBreakpointsPath = { fg = '#008700' },
     },
 
 })
