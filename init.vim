@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'rcarriga/nvim-notify'
 Plug 'nvim-telescope/telescope-dap.nvim'
 Plug 'paopaol/telescope-git-diffs.nvim'
 Plug 'numToStr/Comment.nvim'
@@ -76,7 +77,6 @@ lua require('plugin-config/telescope')
 lua require('plugin-config/nvimtree')
 lua require('plugin-config/indent-blankline')
 lua require('plugin-config/hlslens')
-"lua require('plugin-config/github-nvim-theme')
 lua require('plugin-config/dap')
 lua require('plugin-config/dap-ui')
 lua require('plugin-config/dap-virtual-text')
@@ -88,6 +88,7 @@ lua require('plugin-config/illuminate')
 lua require('plugin-config/project')
 lua require('plugin-config/dashboard')
 lua require('plugin-config/comment')
+lua require('plugin-config/nvim-notify')
 
 for f in glob('~/.config/nvim/init/*.vim', 0, 1)
     execute 'source' f
