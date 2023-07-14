@@ -173,16 +173,10 @@ ins_left {
 }
 
 ins_left {
-    'g:coc_status',
-    icon = ' :',
-    color = { fg = '#a9a1e1', gui = 'bold' },
-}
-
-ins_left {
-    function()
-        return '  kayce\'s work station'
+    function ()
+        return ' ' .. vim.fn.getcwd() .. ' '
     end,
-    color = { fg = colors.blue }
+    color = { fg = colors.blue, gui = 'bold' },
 }
 
 -- Add components to right sections
