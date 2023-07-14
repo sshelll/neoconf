@@ -167,8 +167,9 @@ ins_left {
 }
 
 ins_left {
-    "b:coc_current_function",
-    icon = ' ',
+    function ()
+        return ' ' .. vim.fn.getcwd() .. ' '
+    end,
     color = { fg = colors.blue, gui = 'bold' },
 }
 

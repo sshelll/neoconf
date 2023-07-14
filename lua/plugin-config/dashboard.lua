@@ -33,7 +33,7 @@ db.setup({
             {
                 desc = ' Projects',
                 group = 'Label',
-                action = 'Telescope projects',
+                action = 'SearchProjects',
                 key = 'p',
             },
         },

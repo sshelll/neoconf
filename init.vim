@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'fannheyward/telescope-coc.nvim'
 Plug 'rcarriga/nvim-notify'
 Plug 'nvim-telescope/telescope-dap.nvim'
 Plug 'paopaol/telescope-git-diffs.nvim'

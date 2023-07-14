@@ -21,12 +21,11 @@ require('legendary').setup({
             icon = '',
             keymaps = {
                 { 'gd',         '<Plug>(coc-definition)',                       description = 'go to definition' },
-                { 'gy',         '<Plug>(coc-type-definition)',                  description = 'go to type definition' },
-                { 'gi',         '<Plug>(coc-implementation)',                   description = 'go to implementations' },
-                { 'gr',         '<Plug>(coc-references)',                       description = 'go to references' },
+                { 'gi',         ':Telescope coc implementations<CR>)',          description = 'go to implementations' },
+                { 'gr',         ':CocReferences<CR>',                           description = 'go to references' },
                 { '<leader>rn', '<Plug>(coc-rename)',                           description = 'rename' },
                 { '<leader>f',  ':CocCommand editor.action.formatDocument<CR>', description = 'format file' },
-                { '<leader>dd', ':CocDiagnostics<CR>',                          description = 'show diagnostics' },
+                { '<leader>dd', ':CocDiagnosticsT<CR>',                          description = 'show diagnostics' },
                 { '<leader>gb', ':CocCommand git.showBlameDoc<CR>',             description = 'show git blame doc' },
                 { '<leader>gt', ':CocCommand go.test.toggle<CR>',               description = 'toggle go test file' },
                 { '<F4>',       ':CocOutline<CR>',                              description = 'toggle outline' },
@@ -120,6 +119,38 @@ require('legendary').setup({
                     end,
                     description = 'show doc in preview window'
                 },
+                {
+                    ':CocReferences',
+                    function ()
+                        local ref = require("telescope").extensions.coc.references
+                        local layout = {
+                            layout_config = {
+                                width = 0.4,
+                                height = 0.4,
+                            }, 
+                            previewer = true,
+                        }
+                        local theme = require('telescope.themes').get_cursor(layout)
+                        ref(theme)
+                    end,
+                    description = 'show references'
+                },
+                {
+                    ':CocDiagnosticsT',
+                    function ()
+                        local diag = require("telescope").extensions.coc.workspace_diagnostics
+                        local layout = {
+                            layout_config = {
+                                width = 0.8,
+                                height = 0.4,
+                            }, 
+                            previewer = true,
+                        }
+                        local theme = require('telescope.themes').get_cursor(layout)
+                        diag(theme)
+                    end,
+                    description = 'show diagnostics'
+                },
             }
         },
         {
@@ -164,11 +195,36 @@ require('legendary').setup({
                     description = 'open legendary to search commands'
                 },
                 {
+                    ':SearchFuncs',
+                    function()
+                        local funcs = require('legendary.filters').funcs()
+                        require('legendary').find({ filters = funcs })
+                    end,
+                    description = 'open legendary to search functions'
+                },
+                {
                     ':SearchGitCommits',
                     function ()
                         require('telescope').extensions.git_diffs.diff_commits()
                     end,
                     description = 'search git commits and open it in diffview'
+                },
+                {
+                    ':SearchProjects',
+                    function ()
+                        local projects = require('telescope').extensions.projects.projects
+                        local layout = {
+                            layout_config = {
+                                width = 0.5,
+                                height = 0.4,
+                            },
+                            previewer = false,
+                            display_type = 'full',
+                        }
+                        local theme = require('telescope.themes').get_dropdown(layout)
+                        projects(theme)
+                    end,
+                    description = 'search projects'
                 },
             }
         },
@@ -207,6 +263,30 @@ require('legendary').setup({
                 },
             },
         }
+    },
+    funcs = {
+        {
+            itemgroup = 'funcs',
+            description = 'useful functions',
+            icon = '',
+            funcs = {
+                {
+                    function()
+                        require('nvim-tree').toggle()
+                    end,
+                    description = 'toggle NvimTree'
+                },
+                {
+                    function ()
+                        list = vim.fn.CocAction('references')
+                        for _,v in ipairs(list) do
+                            vim.notify(v.uri)
+                        end
+                    end,
+                    description = 'show references'
+                },
+            },
+        },
     },
     extensions = {
         nvim_tree = true,
