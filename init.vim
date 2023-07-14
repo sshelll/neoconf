@@ -65,8 +65,7 @@ Plug 'projekt0n/github-nvim-theme', { 'branch': '0.0.x' }
 call plug#end()
 
 "very start of init.vim
-let loaded_netrw = 1
-let loaded_netrwPlugin = 1
+source ~/.config/nvim/entry.vim
 
 lua require('plugin-config/devicons')
 lua require('plugin-config/nvim-treesitter')
@@ -94,3 +93,6 @@ lua require('plugin-config/nvim-notify')
 for f in glob('~/.config/nvim/init/*.vim', 0, 1)
     execute 'source' f
 endfor
+
+"very end of init.vim
+source ~/.config/nvim/defer.vim
