@@ -39,8 +39,8 @@ require('legendary').setup({
             keymaps = {
                 { '<C-p>',      ':Telescope live_grep<CR>',                 description = 'search in the current work dir with Telescope' },
                 { '<C-f>',      ':Telescope current_buffer_fuzzy_find<CR>', description = 'search in the current buffer with Telescope' },
-                { '<C-k>',      ':SearchKeymaps<CR>',                       description = 'open keymap search box' },
-                { '<C-l>',      ':SearchCommands<CR>',                      description = 'open command search box' },
+                { '<C-k>',      ':SearchLegendary<CR>',                     description = 'open legendary search box' },
+                { '<C-c>',      ':SearchLegendaryCommands<CR>',             description = 'open legendary command search box' },
                 { '<leader>td', ':TodoTelescope<CR>',                       description = 'search todo items with Telescope' },
                 { '<leader>tf', ':Telescope find_files<CR>',                description = 'search files with Telescope' },
                 { '<leader>e',  '<Plug>(easymotion-overwin-w)',             description = 'easymotion jump words' },
@@ -161,14 +161,14 @@ require('legendary').setup({
                 {
                     ':ExecNormal',
                     function()
-                        require('./util').exec_cmd('')
+                        require('util').exec_cmd('')
                     end,
                     description = 'exec cmd',
                 },
                 {
                     ':ExecVisual',
                     function()
-                        require('./util').exec_cmd('\'<,\'>')
+                        require('util').exec_cmd('\'<,\'>')
                     end,
                     description = 'exec cmd',
                 },
@@ -180,14 +180,14 @@ require('legendary').setup({
             icon = '',
             commands = {
                 {
-                    ':SearchKeymaps',
+                    ':SearchLegendary',
                     function()
                         require('legendary').find()
                     end,
                     description = 'open legendary to search keymaps'
                 },
                 {
-                    ':SearchCommands',
+                    ':SearchLegendaryCommands',
                     function()
                         local commands = require('legendary.filters').commands()
                         require('legendary').find({ filters = commands })
@@ -250,6 +250,34 @@ require('legendary').setup({
             },
         },
         {
+            itemgroup = 'notify',
+            description = 'commands for notify',
+            icon = '',
+            commands = {
+                {
+                    ":NotificationClear",
+                    function()
+                        require('notify').dismiss()
+                    end,
+                    description = 'clear notifications'
+                },
+            },
+        },
+        {
+            itemgroup = 'golang',
+            description = 'commands for golang',
+            icon = '',
+            commands = {
+                {
+                    ':Gott',
+                    function()
+                        require('gott').run_test_under_cursor()
+                    end,
+                    description = 'run go test with gott'
+                },
+            },
+        },
+        {
             itemgroup = 'rust',
             description = 'commands for rust',
             icon = '',
@@ -263,30 +291,6 @@ require('legendary').setup({
                 },
             },
         }
-    },
-    funcs = {
-        {
-            itemgroup = 'funcs',
-            description = 'useful functions',
-            icon = '',
-            funcs = {
-                {
-                    function()
-                        require('nvim-tree').toggle()
-                    end,
-                    description = 'toggle NvimTree'
-                },
-                {
-                    function ()
-                        list = vim.fn.CocAction('references')
-                        for _,v in ipairs(list) do
-                            vim.notify(v.uri)
-                        end
-                    end,
-                    description = 'show references'
-                },
-            },
-        },
     },
     extensions = {
         nvim_tree = true,
