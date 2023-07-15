@@ -9,7 +9,7 @@ function gott.run_test_under_cursor()
     local cmd = string.format("!cd %s && gott --pos %s:%s -v", dir, filename, pos)
     local parsedCmd = vim.api.nvim_parse_cmd(cmd, {})
 
-    local output = vim.api.nvim_cmd(parsedCmd, { output = true})
+    local output = vim.api.nvim_cmd(parsedCmd, { output = true })
     local splited = util.split(output, "\n")
     table.remove(splited, 1)
 
@@ -19,7 +19,7 @@ function gott.run_test_under_cursor()
         {
             title = "gott",
             icon = "",
-            keep = function ()
+            keep = function()
                 return true
             end,
         }
