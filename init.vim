@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'sshelll/gott.nvim'
 Plug 'fannheyward/telescope-coc.nvim'
 Plug 'rcarriga/nvim-notify'
 Plug 'nvim-telescope/telescope-dap.nvim'
@@ -91,6 +92,7 @@ lua require('plugin-config/dashboard')
 lua require('plugin-config/vscode-theme')
 lua require('plugin-config/comment')
 lua require('plugin-config/nvim-notify')
+lua require('plugin-config/gott')
 
 for f in glob('~/.config/nvim/init/*.vim', 0, 1)
     execute 'source' f

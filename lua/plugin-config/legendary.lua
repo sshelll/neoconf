@@ -263,20 +263,20 @@ require('legendary').setup({
                 },
             },
         },
-        {
-            itemgroup = 'golang',
-            description = 'commands for golang',
-            icon = '',
-            commands = {
-                {
-                    ':Gott',
-                    function()
-                        require('gott').run_test_under_cursor()
-                    end,
-                    description = 'run go test with gott'
-                },
-            },
-        },
+        -- {
+        --     itemgroup = 'golang',
+        --     description = 'commands for golang',
+        --     icon = '',
+        --     commands = {
+        --         {
+        --             ':Gott',
+        --             function()
+        --                 require('gott').run_test_under_cursor()
+        --             end,
+        --             description = 'run go test with gott'
+        --         },
+        --     },
+        -- },
         {
             itemgroup = 'rust',
             description = 'commands for rust',
