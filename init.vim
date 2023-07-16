@@ -49,7 +49,7 @@ Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-tree.lua'
-Plug 'mattn/vim-goimpl'
+Plug 'rhysd/vim-go-impl'
 Plug 'sebdah/vim-delve'
 Plug 'preservim/tagbar'
 Plug 'neoclide/coc.nvim', { 'branch': 'release'}

@@ -127,7 +127,7 @@ require('legendary').setup({
                             layout_config = {
                                 width = 0.4,
                                 height = 0.4,
-                            }, 
+                            },
                             previewer = true,
                         }
                         local theme = require('telescope.themes').get_cursor(layout)
@@ -143,7 +143,7 @@ require('legendary').setup({
                             layout_config = {
                                 width = 0.8,
                                 height = 0.4,
-                            }, 
+                            },
                             previewer = true,
                         }
                         local theme = require('telescope.themes').get_cursor(layout)
@@ -263,20 +263,6 @@ require('legendary').setup({
                 },
             },
         },
-        -- {
-        --     itemgroup = 'golang',
-        --     description = 'commands for golang',
-        --     icon = '',
-        --     commands = {
-        --         {
-        --             ':Gott',
-        --             function()
-        --                 require('gott').run_test_under_cursor()
-        --             end,
-        --             description = 'run go test with gott'
-        --         },
-        --     },
-        -- },
         {
             itemgroup = 'rust',
             description = 'commands for rust',
@@ -290,6 +276,31 @@ require('legendary').setup({
                     description = 'build rust project'
                 },
             },
+        }
+    },
+    funcs = {
+        {
+            itemgroup = 'golang',
+            description = 'functions for golang',
+            icon = '',
+            funcs = {
+                {
+                    description = 'go impl',
+                    function ()
+                        vim.ui.input(
+                            { prompt = 'recv(f *Foo)' },
+                            function (recv)
+                                vim.ui.input(
+                                    { prompt = 'interface(io.Writer)' },
+                                    function (interface)
+                                        vim.api.nvim_command('GoImpl ' .. recv .. ' ' .. interface)
+                                    end
+                                )
+                            end
+                        )
+                    end
+                },
+            }
         }
     },
     extensions = {
