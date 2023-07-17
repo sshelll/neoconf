@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'jbyuki/one-small-step-for-vimkind'
 Plug 'sshelll/gott.nvim'
 Plug 'fannheyward/telescope-coc.nvim'
 Plug 'rcarriga/nvim-notify'
