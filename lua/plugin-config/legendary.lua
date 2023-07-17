@@ -285,19 +285,9 @@ require('legendary').setup({
             icon = '',
             funcs = {
                 {
-                    description = 'go impl',
+                    description = 'go impl with ui',
                     function ()
-                        vim.ui.input(
-                            { prompt = 'recv(f *Foo)' },
-                            function (recv)
-                                vim.ui.input(
-                                    { prompt = 'interface(io.Writer)' },
-                                    function (interface)
-                                        vim.api.nvim_command('GoImpl ' .. recv .. ' ' .. interface)
-                                    end
-                                )
-                            end
-                        )
+                        require('golang').ui_impl()
                     end
                 },
             }
