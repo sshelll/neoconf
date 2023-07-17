@@ -62,18 +62,23 @@ require('legendary').setup({
             icon = '',
             keymaps = {
                 { '<leader>da', function() require('dap').toggle_breakpoint() end, description = 'toggle breakpoint' },
-                { '<leader>dc', function() require('dap').continue() end,          description = 'continue' },
                 { '<leader>ds', function() require('dap').step_into() end,         description = 'step into' },
                 { '<leader>dw', function() require('dap').step_over() end,         description = 'step over' },
                 { '<leader>do', function() require('dap').step_out() end,          description = 'step out' },
                 { '<leader>dt', function() require('dap').run_to_cursor() end,     description = 'run to cursor' },
                 { '<leader>dq', function() require('dap').disconnect() end,        description = 'disconnect' },
                 { '<leader>dr', function() require('dap').clear_breakpoints() end, description = 'clean breakpoints' },
-                {
-                    '<leader>de',
-                    function() require('dapui').eval() end,
-                    description = 'eval',
-                    mode = { 'n', 'v' },
+                { '<leader>de', function() require('dapui').eval() end,            description = 'eval', mode = { 'n', 'v' } },
+                { '<leader>dc',
+                    function()
+                        local ext = vim.fn.expand('%:e')
+                        if ext == 'lua' then
+                            require('osv').run_this()
+                        else
+                            require('dap').continue()
+                        end
+                    end,
+                    description = 'continue',
                 },
             },
         },
@@ -161,14 +166,14 @@ require('legendary').setup({
                 {
                     ':ExecNormal',
                     function()
-                        require('util').exec_cmd('')
+                        require('util').exec_cmd('', true)
                     end,
                     description = 'exec cmd',
                 },
                 {
                     ':ExecVisual',
                     function()
-                        require('util').exec_cmd('\'<,\'>')
+                        require('util').exec_cmd('\'<,\'>', true)
                     end,
                     description = 'exec cmd',
                 },
