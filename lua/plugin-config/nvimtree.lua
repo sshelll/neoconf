@@ -1,5 +1,5 @@
 require("nvim-tree").setup({
-    sync_root_with_cwd = true,
+    sync_root_with_cwd = false,
     diagnostics = {
         enable = true,
         show_on_dirs = true,
