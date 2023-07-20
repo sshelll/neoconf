@@ -47,6 +47,28 @@ require('legendary').setup({
             },
         },
         {
+            itemgroup = 'golang',
+            description = 'keymaps for golang',
+            icon = '',
+            keymaps = {
+                {
+                    '<F1>',
+                    function ()
+                       local filename = vim.fn.expand('%:t')
+                       if string.find(filename, '_test.go') then
+                           vim.cmd(':Gott -v')
+                       end
+                    end,
+                    description = 'run go test under the cursor with -v flag',
+                },
+                {
+                    '<F2>',
+                    ':GottClear<CR>',
+                    description = 'clear go test notification',
+                },
+            },
+        },
+        {
             itemgroup = 'git',
             description = 'keymaps for git',
             icon = '',
