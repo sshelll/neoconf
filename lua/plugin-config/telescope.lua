@@ -37,9 +37,10 @@ require('telescope').setup {
             order_by = "recent",
             search_by = "title",
             sync_with_nvim_tree = true,
-        }
+        },
     }
 }
+
 require('telescope').load_extension('vim_bookmarks')
 require("telescope").load_extension("ui-select")
 require("telescope").load_extension("fzf")
@@ -47,3 +48,5 @@ require('telescope').load_extension('git_diffs')
 require('telescope').load_extension('dap')
 require('telescope').load_extension('notify')
 require('telescope').load_extension('projects')
+require('telescope').load_extension('coc')
+require('telescope').load_extension('gott')

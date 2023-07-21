@@ -53,12 +53,7 @@ require('legendary').setup({
             keymaps = {
                 {
                     '<F1>',
-                    function ()
-                       local filename = vim.fn.expand('%:t')
-                       if string.find(filename, '_test.go') then
-                           vim.cmd(':Gott -v')
-                       end
-                    end,
+                    ':Telescope gott<CR>',
                     description = 'run go test under the cursor with -v flag',
                 },
                 {
