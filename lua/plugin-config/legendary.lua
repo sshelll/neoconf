@@ -66,6 +66,16 @@ require('legendary').setup({
                     ':GottClear<CR>',
                     description = 'clear go test notification',
                 },
+                {
+                    '<F5>',
+                    function ()
+                       local filename = vim.fn.expand('%:t')
+                       if string.find(filename, '_test.go') then
+                           vim.cmd(':GottFile -v')
+                       end
+                    end,
+                    description = 'run all go tests in the current file with -v flag',
+                },
             },
         },
         {
