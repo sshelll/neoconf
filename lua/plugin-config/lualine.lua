@@ -148,7 +148,6 @@ ins_left {
 
 ins_left {
     'diagnostics',
-    --sources = { 'coc', 'nvim_diagnostic' },
     sources = { 'coc' },
     symbols = { error = ' ', warn = ' ', info = ' ' },
     diagnostics_color = {
