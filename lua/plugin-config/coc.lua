@@ -63,7 +63,117 @@ keyset("n", "<leader>r", "<Plug>(coc-codeaction-refactor-selected)", { silent = 
 vim.api.nvim_create_user_command("OR", "call CocActionAsync('runCommand', 'editor.action.organizeImport')", {})
 
 -- Organize imports on save
-vim.cmd('autocmd BufWritePre *.go :silent call CocAction(\'runCommand\', \'editor.action.organizeImport\')')
+vim.api.nvim_create_autocmd("BufWritePre", {
+    group = "CocGroup",
+    pattern = "*.go",
+    command = "silent call CocAction('runCommand', 'editor.action.organizeImport')",
+    desc = "Organize imports on save"
+})
 
 -- Format on save
-vim.cmd('autocmd BufWritePre *.go :silent call CocAction(\'runCommand\', \'editor.action.formatDocument\')')
+vim.api.nvim_create_autocmd("BufWritePre", {
+    group = "CocGroup",
+    pattern = "*.go",
+    command = "silent call CocAction('runCommand', 'editor.action.formatDocument')",
+    desc = "Format on save"
+})
+
+-- Intergration with vim-notify
+
+local coc_status_record = {}
+local coc_diag_record = {}
+
+local function reset_coc_diag_record(window)
+    coc_diag_record = {}
+end
+
+local function reset_coc_status_record(window)
+    coc_status_record = {}
+end
+
+local function coc_status_notify(msg, level)
+    local notify_opts = {
+        title = "LSP Status",
+        timeout = 1000,
+        hide_from_history = true,
+        on_close = reset_coc_status_record
+    }
+    -- if coc_status_record is not {} then add it to notify_opts to key called "replace"
+    if coc_status_record ~= {} then
+        notify_opts["replace"] = coc_status_record.id
+    end
+    coc_status_record = vim.notify(msg, level, notify_opts)
+end
+
+local function coc_diag_notify(msg, level)
+    local notify_opts = { title = "LSP Diagnostics", timeout = 1000, on_close = reset_coc_diag_record }
+    -- if coc_diag_record is not {} then add it to notify_opts to key called "replace"
+    if coc_diag_record ~= {} then
+        notify_opts["replace"] = coc_diag_record.id
+    end
+    coc_diag_record = vim.notify(msg, level, notify_opts)
+end
+
+local function diag_notify()
+    local info = vim.b.coc_diagnostic_info
+    if not info then
+        return
+    end
+    local msgs = {}
+
+    -- cal level
+    local level = "info"
+    if info.warning > 0 then
+        level = "warn"
+    end
+    if info.error > 0 then
+        level = "error"
+    end
+
+    -- extract msgs
+    if info.error > 0 then
+        table.insert(msgs, string.format(" Errors: %d", info.error))
+    end
+    if info.warning > 0 then
+        table.insert(msgs, string.format(" Warnings: %d", info.warning))
+    end
+    if info.information > 0 then
+        table.insert(msgs, string.format(" Infos: %d", info.information))
+    end
+    if info.hint > 0 then
+        table.insert(msgs, string.format(" Hints: %d", info.hint))
+    end
+
+    -- cal diag
+    local diag = table.concat(msgs, "\n")
+    if not diag or diag == "" then
+        diag = ' All OK'
+    end
+
+    coc_diag_notify(diag, level)
+end
+
+local function status_notify()
+    local status = vim.g.coc_status
+    local level = "info"
+    if not status or status == "" then
+        return
+    end
+    coc_status_notify(status, level)
+end
+
+vim.api.nvim_create_augroup("CocVimNotify", {})
+
+vim.api.nvim_create_autocmd({"User CocDiagnosticChange"}, {
+    group = "CocVimNotify",
+    pattern = "*",
+    callback = diag_notify,
+    desc = "Notify diagnostics"
+})
+
+vim.api.nvim_create_autocmd({"User CocStatusChange"}, {
+    group = "CocVimNotify",
+    pattern = "*",
+    callback = status_notify,
+    desc = "Notify status"
+})

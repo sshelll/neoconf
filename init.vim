@@ -29,6 +29,3 @@ lua require('plugin-config/comment')
 lua require('plugin-config/nvim-notify')
 lua require('plugin-config/lazygit')
 lua require('plugin-config/coc')
-
-" vim script
-source ~/.config/nvim/coc.vim
