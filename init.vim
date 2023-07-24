@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'phaazon/hop.nvim'
 Plug 'jbyuki/one-small-step-for-vimkind'
 Plug 'sshelll/gott.nvim'
 Plug 'sshelll/telescope-gott.nvim'
@@ -62,7 +63,6 @@ Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'cormacrelf/vim-colors-github'
 Plug 'voldikss/vim-floaterm'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'easymotion/vim-easymotion'
 Plug 'darrikonn/vim-gofmt', { 'do': ':GoUpdateBinaries' }
 Plug 'projekt0n/github-nvim-theme', { 'branch': '0.0.x' }
 call plug#end()
@@ -93,6 +93,7 @@ lua require('plugin-config/dashboard')
 lua require('plugin-config/comment')
 lua require('plugin-config/nvim-notify')
 lua require('plugin-config/gott')
+lua require('plugin-config/hop')
 
 for f in glob('~/.config/nvim/init/*.vim', 0, 1)
     execute 'source' f
