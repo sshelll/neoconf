@@ -1,5 +1,5 @@
 require('legendary').setup({
-    keymaps = {
+   keymaps = {
         {
             itemgroup = 'basic',
             description = 'basic keymaps',
@@ -43,7 +43,7 @@ require('legendary').setup({
                 { '<C-c>',      ':SearchLegendaryCommands<CR>',             description = 'open legendary command search box' },
                 { '<leader>td', ':TodoTelescope<CR>',                       description = 'search todo items with Telescope' },
                 { '<leader>tf', ':Telescope find_files<CR>',                description = 'search files with Telescope' },
-                { '<leader>e',  '<Plug>(easymotion-overwin-w)',             description = 'easymotion jump words' },
+                { '<leader>e',  ':HopWord<CR>',                                 description = 'hop jump words' },
             },
         },
         {
@@ -323,7 +323,7 @@ require('legendary').setup({
                     end
                 },
             }
-        }
+        },
     },
     extensions = {
         nvim_tree = true,
