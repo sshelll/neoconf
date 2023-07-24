@@ -38,6 +38,14 @@ require('telescope').setup {
             search_by = "title",
             sync_with_nvim_tree = true,
         },
+        gott = {
+            test_args = "-v",
+            keep = function()
+                return true
+            end,
+            render = 'default',
+            theme = 'dropdown',
+        },
     }
 }
 
