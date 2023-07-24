@@ -17,10 +17,22 @@ db.setup({
         },
         shortcut     = {
             {
+                desc = '󰊰 Install',
+                group = '@property',
+                action = 'PackerInstall',
+                key = 'i',
+            },
+            {
                 desc = '󰊳 Update',
                 group = '@property',
-                action = 'PlugUpdate',
+                action = 'PackerUpdate',
                 key = 'u',
+            },
+            {
+                desc = '󰊲 Sync',
+                group = '@property',
+                action = 'PackerSync',
+                key = 's',
             },
             {
                 icon = ' ',

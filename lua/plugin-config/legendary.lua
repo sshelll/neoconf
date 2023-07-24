@@ -16,16 +16,18 @@ require('legendary').setup({
             },
         },
         {
-            itemgroup = 'coc',
+            itemgroup = 'coc', -- more keymaps in coc.lua
             description = 'keymaps for coc.nvim',
             icon = '',
             keymaps = {
-                { 'gd',         '<Plug>(coc-definition)',                       description = 'go to definition' },
-                { 'gi',         ':Telescope coc implementations<CR>)',          description = 'go to implementations' },
-                { 'gr',         ':CocReferences<CR>',                           description = 'go to references' },
-                { '<leader>rn', '<Plug>(coc-rename)',                           description = 'rename' },
+                { 'gd',         '<Plug>(coc-definition)',                       description = 'go to definition',      mode = { 'n' } },
+                { 'gi',         ':Telescope coc implementations<CR>)',          description = 'go to implementations', mode = { 'n' } },
+                { 'gr',         ':CocReferences<CR>',                           description = 'go to references',      mode = { 'n' } },
+                { 'gy',         '<Plug>(coc-type-definition)',                  description = 'go to type definition', mode = { 'n' } },
+                { '<C-space>',  'coc#refresh()',                                description = 'trigger completion',    mode = { 'i' } },
+                { '<leader>rn', '<Plug>(coc-rename)',                           description = 'rename',                mode = { 'n' } },
                 { '<leader>f',  ':CocCommand editor.action.formatDocument<CR>', description = 'format file' },
-                { '<leader>dd', ':CocDiagnosticsT<CR>',                          description = 'show diagnostics' },
+                { '<leader>dd', ':CocDiagnosticsT<CR>',                         description = 'show diagnostics' },
                 { '<leader>gb', ':CocCommand git.showBlameDoc<CR>',             description = 'show git blame doc' },
                 { '<leader>gt', ':CocCommand go.test.toggle<CR>',               description = 'toggle go test file' },
                 { '<F4>',       ':CocOutline<CR>',                              description = 'toggle outline' },
@@ -51,16 +53,8 @@ require('legendary').setup({
             description = 'keymaps for golang',
             icon = '',
             keymaps = {
-                {
-                    '<F1>',
-                    ':Telescope gott<CR>',
-                    description = 'run go test under the cursor with -v flag',
-                },
-                {
-                    '<F2>',
-                    ':GottClear<CR>',
-                    description = 'clear go test notification',
-                },
+                { '<F1>', ':Telescope gott<CR>', description = 'run go test under the cursor with -v flag' },
+                { '<F2>', ':GottClear<CR>',      description = 'clear go test notification' },
                 {
                     '<F5>',
                     function ()
@@ -193,14 +187,14 @@ require('legendary').setup({
                 {
                     ':ExecNormal',
                     function()
-                        require('util').exec_cmd('', true)
+                        require('util/cmd').exec_cmd('', true)
                     end,
                     description = 'exec cmd',
                 },
                 {
                     ':ExecVisual',
                     function()
-                        require('util').exec_cmd('\'<,\'>', true)
+                        require('util/cmd').exec_cmd('\'<,\'>', true)
                     end,
                     description = 'exec cmd',
                 },
@@ -319,7 +313,7 @@ require('legendary').setup({
                 {
                     description = 'go impl with ui',
                     function ()
-                        require('golang').ui_impl()
+                        require('util/golang').ui_impl()
                     end
                 },
             }
