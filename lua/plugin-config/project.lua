@@ -20,7 +20,10 @@ require("project_nvim").setup {
 
     -- Don't calculate root dir on specific directories
     -- Ex: { "~/.cargo/*", ... }
-    exclude_dirs = { "/opt/homebrew" },
+    exclude_dirs = {
+        "/opt/homebrew/*",
+        "~/go/pkg/*"
+    },
 
     -- Show hidden files in telescope
     show_hidden = false,
