@@ -2,6 +2,7 @@ vim.cmd('autocmd User PackerComplete lua require("notify").notify("packer comple
 
 return require('packer').startup({
     function(use)
+        use 'tpope/vim-dispatch'
         use 'wbthomason/packer.nvim'
         use { 'phaazon/hop.nvim', config = function() require('hop').setup() end }
         use 'jbyuki/one-small-step-for-vimkind'
