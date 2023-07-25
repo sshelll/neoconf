@@ -29,3 +29,8 @@ lua require('plugin-config/comment')
 lua require('plugin-config/nvim-notify')
 lua require('plugin-config/lazygit')
 lua require('plugin-config/coc')
+
+" vim script
+for f in glob('~/.config/nvim/vimscript/*.vim', 0, 1)
+    execute 'source' f
+endfor
