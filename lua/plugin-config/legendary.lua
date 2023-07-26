@@ -27,7 +27,7 @@ require('legendary').setup({
                 { '<C-space>',  'coc#refresh()',                                description = 'trigger completion',    mode = { 'i' } },
                 { '<leader>rn', '<Plug>(coc-rename)',                           description = 'rename',                mode = { 'n' } },
                 { '<leader>f',  ':CocCommand editor.action.formatDocument<CR>', description = 'format file' },
-                { '<leader>dd', ':CocDiagnosticsT<CR>',                         description = 'show diagnostics' },
+                { '<leader>dd', ':CocList diagnostics<CR>',                         description = 'show diagnostics' },
                 { '<leader>gb', ':CocCommand git.showBlameDoc<CR>',             description = 'show git blame doc' },
                 { '<leader>gt', ':CocCommand go.test.toggle<CR>',               description = 'toggle go test file' },
                 { '<F4>',       ':CocOutline<CR>',                              description = 'toggle outline' },
