@@ -40,7 +40,9 @@ local config = {
         -- Disable sections and component separators
         component_separators = '',
         section_separators = '',
-        theme = 'auto',
+        theme = 'vscode',
+        icons_enabled = true,
+        globalstatus = true,
     },
     sections = {
         -- these are to remove the defaults
@@ -172,7 +174,7 @@ ins_left {
 }
 
 ins_left {
-    function ()
+    function()
         return ' ' .. vim.fn.getcwd() .. ' '
     end,
     color = { fg = colors.blue, gui = 'bold' },
