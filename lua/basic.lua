@@ -11,7 +11,6 @@ vim.o.relativenumber = true
 vim.o.termguicolors = true
 vim.o.signcolumn = 'yes'
 vim.o.cursorline = true
-vim.o.laststatus = 3
 vim.o.encoding = 'utf-8'
 vim.o.backup = false
 vim.o.writebackup = false
