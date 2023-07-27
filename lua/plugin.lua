@@ -2,6 +2,13 @@ vim.cmd('autocmd User PackerComplete lua require("notify").notify("packer comple
 
 return require('packer').startup({
     function(use)
+        use {
+            'Wansmer/treesj',
+            requires = { 'nvim-treesitter' },
+            config = function()
+                require('treesj').setup({ --[[ your config ]] })
+            end,
+        }
         use { 'ashfinal/qfview.nvim', config = function() require('qfview').setup() end }
         use 'tpope/vim-dispatch'
         use 'wbthomason/packer.nvim'
@@ -20,7 +27,6 @@ return require('packer').startup({
         use 'RRethy/vim-illuminate'
         use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
         use 'lewis6991/gitsigns.nvim'
-        use 'bennypowers/splitjoin.nvim'
         use 'nvim-telescope/telescope-ui-select.nvim'
         use 'stevearc/dressing.nvim'
         use 'mrjones2014/legendary.nvim'
