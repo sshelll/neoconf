@@ -22,7 +22,8 @@ require("project_nvim").setup {
     -- Ex: { "~/.cargo/*", ... }
     exclude_dirs = {
         "/opt/homebrew/*",
-        "~/go/pkg/*"
+        "~/go/pkg/*",
+        "*/vendor/*",
     },
 
     -- Show hidden files in telescope

@@ -6,7 +6,7 @@ require('telescope').setup {
                 ["<C-q>"] = require("telescope.actions").send_to_qflist,
             },
         },
-        file_ignore_patterns = { "vendor", "node_modules" },
+        file_ignore_patterns = { "node_modules" },
     },
     pickers = {
         find_files = {
