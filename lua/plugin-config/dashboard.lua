@@ -17,15 +17,9 @@ db.setup({
         },
         shortcut     = {
             {
-                desc = '󰊰 Install',
-                group = '@property',
-                action = 'PackerInstall',
-                key = 'i',
-            },
-            {
                 desc = '󰊳 Update',
                 group = '@property',
-                action = 'PackerUpdate',
+                action = 'CocUpdate',
                 key = 'u',
             },
             {
