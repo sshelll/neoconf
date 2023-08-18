@@ -41,11 +41,11 @@ require('legendary').setup({
             keymaps = {
                 { '<C-p>',      ':Telescope live_grep<CR>',                 description = 'search in the current work dir with Telescope' },
                 { '<C-f>',      ':Telescope current_buffer_fuzzy_find<CR>', description = 'search in the current buffer with Telescope' },
-                { '<leader>k',      ':SearchLegendary<CR>',                     description = 'open legendary search box' },
-                { '<C-c>',      ':SearchLegendaryCommands<CR>',             description = 'open legendary command search box' },
+                { '<leader>k',  ':SearchLegendary<CR>',                     description = 'open legendary search box' },
                 { '<leader>td', ':TodoTelescope<CR>',                       description = 'search todo items with Telescope' },
                 { '<leader>tf', ':Telescope find_files<CR>',                description = 'search files with Telescope' },
-                { '<leader>e',  ':HopWord<CR>',                                 description = 'hop jump words' },
+                { '<leader>e',  ':HopWord<CR>',                             description = 'hop jump words' },
+                { '<leader>z',  ':NvimTreeFindFile<CR>',                    description = 'nvim tree find file'},
             },
         },
         {
