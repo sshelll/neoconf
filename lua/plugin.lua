@@ -2,6 +2,7 @@ vim.cmd('autocmd User PackerComplete lua require("notify").notify("packer comple
 
 return require('packer').startup({
     function(use)
+        use "chip/telescope-software-licenses.nvim"
         use {
             'Wansmer/treesj',
             requires = { 'nvim-treesitter' },
