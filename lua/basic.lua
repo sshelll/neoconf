@@ -26,5 +26,3 @@ vim.cmd('autocmd FileType go setlocal noexpandtab')
 
 vim.o.ignorecase = true
 vim.o.smartcase = true
-
-vim.cmd[[colorscheme tokyonight]]

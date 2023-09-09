@@ -5,6 +5,7 @@ lua require('plugin')
 lua require('basic')
 
 " other plugs
+lua require('plugin-config/tokyo-night')
 lua require('plugin-config/devicons')
 lua require('plugin-config/nvim-treesitter')
 lua require('plugin-config/nvim-treesitter-ctx')
