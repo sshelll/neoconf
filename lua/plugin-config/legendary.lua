@@ -316,6 +316,12 @@ require('legendary').setup({
                         require('util/golang').ui_impl()
                     end
                 },
+                {
+                    description = 'go run with ui',
+                    function ()
+                        require('util/golang').ui_run()
+                    end
+                }
             }
         },
     },

@@ -20,4 +20,9 @@ golang.ui_impl = function()
     )
 end
 
+golang.ui_run = function ()
+    local wd = vim.fn.expand('%:p:h')
+    require('util/cmd').run_cmd('!cd ' .. wd .. ' && go run .', true)
+end
+
 return golang
