@@ -17,6 +17,10 @@ dap.adapters.codelldb = {
     }
 }
 
+dap.adapters.nlua = function(callback, config)
+    callback({ type = 'server', host = config.host or "127.0.0.1", port = config.port or 8086 })
+end
+
 -- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md
 dap.configurations.go = {
     {
@@ -35,17 +39,30 @@ dap.configurations.go = {
     }
 }
 
-dap.configurations.lua = { 
-  { 
-    type = 'nlua', 
-    request = 'attach',
-    name = "Attach to running Neovim instance",
-  }
+dap.configurations.lua = {
+    {
+        type = 'nlua',
+        request = 'attach',
+        name = "Attach to running Neovim instance",
+    }
 }
 
-dap.adapters.nlua = function(callback, config)
-  callback({ type = 'server', host = config.host or "127.0.0.1", port = config.port or 8086 })
-end
+dap.configurations.javascript = {
+    {
+        type = "pwa-node",
+        request = "launch",
+        name = "Launch file",
+        program = "${file}",
+        cwd = "${workspaceFolder}",
+    },
+    {
+        type = "pwa-node",
+        request = "attach",
+        name = "Attach",
+        processId = require 'dap.utils'.pick_process,
+        cwd = "${workspaceFolder}",
+    }
+}
 
 dap.configurations.cpp = {
     {
@@ -62,3 +79,4 @@ dap.configurations.cpp = {
 
 dap.configurations.c = dap.configurations.cpp
 dap.configurations.rust = dap.configurations.cpp
+dap.configurations.typescript = dap.configurations.javascript
