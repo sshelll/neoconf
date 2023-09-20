@@ -187,14 +187,14 @@ require('legendary').setup({
                 {
                     ':ExecNormal',
                     function()
-                        require('util/cmd').exec_cmd('', true)
+                        require('util/cmd').enter_cmd('', true)
                     end,
                     description = 'exec cmd',
                 },
                 {
                     ':ExecVisual',
                     function()
-                        require('util/cmd').exec_cmd('\'<,\'>', true)
+                        require('util/cmd').enter_cmd('\'<,\'>', true)
                     end,
                     description = 'exec cmd',
                 },
@@ -262,27 +262,6 @@ require('legendary').setup({
             }
         },
         {
-            itemgroup = 'splitjoin',
-            description = 'commands for splitjoin',
-            icon = '',
-            commands = {
-                {
-                    ':SplitLines',
-                    function()
-                        require('splitjoin').split()
-                    end,
-                    description = 'split lines'
-                },
-                {
-                    ':JoinLines',
-                    function()
-                        require('splitjoin').join()
-                    end,
-                    description = 'join lines'
-                },
-            },
-        },
-        {
             itemgroup = 'notify',
             description = 'commands for notify',
             icon = '',
@@ -308,6 +287,22 @@ require('legendary').setup({
                     end,
                     description = 'build rust project'
                 },
+            },
+        },
+        {
+            itemgroup = 'nodejs',
+            description = 'commands for nodejs',
+            icon = '',
+            commands = {
+                {
+                    ':NodeRun',
+                    function ()
+                        local file = vim.fn.expand('%:p')
+                        local cmd = '!node ' .. file
+                        require('util/cmd').run_cmd(cmd, true)
+                    end,
+                    description = 'run nodejs file'
+                }
             },
         }
     },
