@@ -252,6 +252,13 @@ require('legendary').setup({
                     end,
                     description = 'search projects'
                 },
+                {
+                    ':SearchLicenses',
+                    function ()
+                        vim.cmd('Telescope software-licenses find')
+                    end,
+                    description = 'search software licenses'
+                }
             }
         },
         {
