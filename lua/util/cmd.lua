@@ -1,6 +1,6 @@
 local util = {}
 
-function util.exec_cmd(default, keep)
+function util.enter_cmd(default, keep)
     local input_opt = {
         prompt = 'Exec Cmd',
         completion = 'command',
