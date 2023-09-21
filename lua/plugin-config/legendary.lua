@@ -124,6 +124,29 @@ require('legendary').setup({
                 { '<F3>',       ':NvimTreeToggle<CR>', description = 'toggle NvimTree' },
             },
         },
+        {
+            itemgroup = 'ide',
+            description = 'keymaps for ide',
+            icon = '',
+            keymaps = {
+                {
+                    '<leader>rr',
+                    function ()
+                        local fileType = vim.bo.filetype
+                        if fileType == 'go' then
+                            require('util/golang').ui_run()
+                        else if fileType == 'javascript' then
+                            require('util/nodejs').ui_run()
+                        else
+                            local err = fileType .. ' is not supported'
+                            vim.api.nvim_err_writeln(err)
+                        end
+                        end
+                    end,
+                    description = 'run file with ui',
+                }
+            }
+        }
     },
     commands = {
         {
@@ -318,12 +341,6 @@ require('legendary').setup({
                         require('util/golang').ui_impl()
                     end
                 },
-                {
-                    description = 'go run with ui',
-                    function ()
-                        require('util/golang').ui_run()
-                    end
-                }
             }
         },
     },
