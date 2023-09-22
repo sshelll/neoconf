@@ -327,6 +327,24 @@ require('legendary').setup({
                     description = 'run nodejs file'
                 }
             },
+        },
+        {
+            itemgroup = 'software-licenses',
+            description = 'commands for generate software-licenses',
+            icon = '',
+            commands = {
+                {
+                    ':SoftwareLicensesBSD3C',
+                    function ()
+                        local c = require('util/common')
+                        local year = c.inputOrDefault(vim.fn.strftime('%Y'), 'year: ')
+                        local author = c.inputOrDefault('sshelll', 'author: ')
+                        local lines = require('util/license').BSD3Clause(year, author)
+                        vim.api.nvim_buf_set_lines(0, 0, 0, false, lines)
+                    end,
+                    description = 'generate BSD3-Clause software licenses'
+                }
+            },
         }
     },
     funcs = {
