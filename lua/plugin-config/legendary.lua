@@ -334,7 +334,7 @@ require('legendary').setup({
             icon = '',
             commands = {
                 {
-                    ':SoftwareLicensesBSD3C',
+                    ':SoftwareLicensesBSD3Clause',
                     function ()
                         local c = require('util/common')
                         local year = c.inputOrDefault(vim.fn.strftime('%Y'), 'year: ')
@@ -342,7 +342,18 @@ require('legendary').setup({
                         local lines = require('util/license').BSD3Clause(year, author)
                         vim.api.nvim_buf_set_lines(0, 0, 0, false, lines)
                     end,
-                    description = 'generate BSD3-Clause software licenses'
+                    description = 'generate BSD3-Clause software license'
+                },
+                {
+                    ':SoftwareLicensesMIT',
+                    function ()
+                        local c = require('util/common')
+                        local year = c.inputOrDefault(vim.fn.strftime('%Y'), 'year: ')
+                        local author = c.inputOrDefault('sshelll', 'author: ')
+                        local lines = require('util/license').MIT(year, author)
+                        vim.api.nvim_buf_set_lines(0, 0, 0, false, lines)
+                    end,
+                    description = 'generate MIT software license'
                 }
             },
         }
