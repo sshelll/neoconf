@@ -40,7 +40,8 @@
     "memoryMode": "DegradeClosed"
   },
   "Lua.diagnostics.globals": ["vim"],
-  "tsserver.implicitProjectConfig.module": "CommonJS",
+  "tsserver.implicitProjectConfig.module": "NodeNext",
+  "tsserver.npm": "/opt/homebrew/bin/npm",
   "javascript.suggestionActions.enabled": false,
   "javascript.preferences.importModuleSpecifier": "shortest"
 }
