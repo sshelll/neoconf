@@ -42,6 +42,8 @@
   "Lua.diagnostics.globals": ["vim"],
   "tsserver.implicitProjectConfig.module": "NodeNext",
   "tsserver.npm": "/opt/homebrew/bin/npm",
+  "javascript.suggest.autoImports": true,
+  "typescript.suggest.autoImports": true,
   "javascript.suggestionActions.enabled": false,
   "javascript.preferences.importModuleSpecifier": "shortest"
 }
