@@ -41,7 +41,7 @@ require("todo-comments").setup{
   -- list of highlight groups or use the hex color if hl not found as a fallback
   colors = {
     error = { "", "", "#DC2626" },
-    warning = { "", "", "#FBBF24" },
+    warning = { "", "", "#F78902" },
     info = { "", "#7EA1F3" },
     hint = { "", "#10B981" },
     default = { "", "#7C3AED" },
