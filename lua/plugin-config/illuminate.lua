@@ -47,3 +47,6 @@ require('illuminate').configure({
     -- min_count_to_highlight: minimum number of matches required to perform highlighting
     min_count_to_highlight = 1,
 })
+
+-- set highlighting
+vim.cmd('highlight IlluminatedWordRead guibg=under_cursor')
