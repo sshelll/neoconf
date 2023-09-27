@@ -21,6 +21,17 @@ dap.adapters.nlua = function(callback, config)
     callback({ type = 'server', host = config.host or "127.0.0.1", port = config.port or 8086 })
 end
 
+require("dap").adapters["pwa-node"] = {
+    type = "server",
+    host = "localhost",
+    port = "${port}",
+    executable = {
+        command = "node",
+        -- 💀 Make sure to update this path to point to your installation
+        args = { "/Users/kayce/.config/nvim/plugin/js-debug/src/dapDebugServer.js", "${port}" },
+    }
+}
+
 -- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md
 dap.configurations.go = {
     {
@@ -47,7 +58,7 @@ dap.configurations.lua = {
     }
 }
 
-dap.configurations.javascript = {
+require("dap").configurations.javascript = {
     {
         type = "pwa-node",
         request = "launch",
@@ -55,13 +66,6 @@ dap.configurations.javascript = {
         program = "${file}",
         cwd = "${workspaceFolder}",
     },
-    {
-        type = "pwa-node",
-        request = "attach",
-        name = "Attach",
-        processId = require 'dap.utils'.pick_process,
-        cwd = "${workspaceFolder}",
-    }
 }
 
 dap.configurations.cpp = {
