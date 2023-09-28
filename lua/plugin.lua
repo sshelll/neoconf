@@ -18,7 +18,6 @@ return require('packer').startup({
         use 'jbyuki/one-small-step-for-vimkind'
         use { 'sshelll/gott.nvim', config = function() require('gott').setup() end }
         use 'sshelll/telescope-gott.nvim'
-        use 'fannheyward/telescope-coc.nvim'
         use 'rcarriga/nvim-notify'
         use 'nvim-telescope/telescope-dap.nvim'
         use 'paopaol/telescope-git-diffs.nvim'
@@ -67,7 +66,13 @@ return require('packer').startup({
         use 'rhysd/vim-go-impl'
         use 'sebdah/vim-delve'
         use 'preservim/tagbar'
-        use { 'neoclide/coc.nvim', branch = 'release' }
+        use 'neovim/nvim-lspconfig'
+        use "williamboman/mason.nvim"
+        use 'hrsh7th/nvim-cmp'
+        use 'hrsh7th/cmp-nvim-lsp'
+        use 'saadparwaiz1/cmp_luasnip'
+        use 'L3MON4D3/LuaSnip'
+        use 'simrat39/symbols-outline.nvim'
         use 'nvim-tree/nvim-web-devicons'
         use 'kdheepak/lazygit.nvim'
         use 'tpope/vim-fugitive'

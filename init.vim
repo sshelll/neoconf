@@ -29,7 +29,9 @@ lua require('plugin-config/vscode-theme')
 lua require('plugin-config/comment')
 lua require('plugin-config/nvim-notify')
 lua require('plugin-config/lazygit')
-lua require('plugin-config/coc')
+lua require('plugin-config/mason')
+lua require('plugin-config/lspconfig')
+lua require('plugin-config/symbols-outline')
 lua require('plugin-config/neovide')
 
 " vim script

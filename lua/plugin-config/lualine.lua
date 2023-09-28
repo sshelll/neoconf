@@ -130,6 +130,12 @@ ins_left {
     color = { fg = colors.magenta, gui = 'bold' },
 }
 
+-- ins_left {
+--     "b:coc_current_function",
+--     icon = ' ',
+--     color = { fg = colors.blue, gui = 'bold' },
+-- }
+
 ins_left {
     'branch',
     icon = '',
@@ -160,7 +166,7 @@ ins_left {
 
 ins_left {
     'diagnostics',
-    sources = { 'coc' },
+    sources = { 'nvim_diagnostic' },
     symbols = { error = ' ', warn = ' ', info = ' ' },
     diagnostics_color = {
         color_error = { fg = colors.red },
