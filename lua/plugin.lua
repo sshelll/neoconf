@@ -2,6 +2,7 @@ vim.cmd('autocmd User PackerComplete lua require("notify").notify("packer comple
 
 return require('packer').startup({
     function(use)
+        use 'gbprod/yanky.nvim'
         use { "ellisonleao/glow.nvim", config = function() require("glow").setup() end }
         use "chip/telescope-software-licenses.nvim"
         use {
@@ -73,6 +74,7 @@ return require('packer').startup({
         use 'saadparwaiz1/cmp_luasnip'
         use 'L3MON4D3/LuaSnip'
         use 'simrat39/symbols-outline.nvim'
+        use 'folke/trouble.nvim'
         use 'nvim-tree/nvim-web-devicons'
         use 'kdheepak/lazygit.nvim'
         use 'tpope/vim-fugitive'
