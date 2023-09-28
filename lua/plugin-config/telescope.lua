@@ -19,6 +19,25 @@ require('telescope').setup {
                 preview_height = 0.7,
             },
         },
+        lsp_references = {
+            show_line = false,
+            include_declaration = false,
+            include_current_line = false,
+            layout_strategy = "cursor",
+            layout_config = {
+                height = 0.3
+            },
+        },
+        lsp_implementations = {
+            show_line = true,
+            layout_strategy = "cursor",
+            layout_config = {
+                height = 0.3
+            },
+        },
+        lsp_document_symbols = {
+            layout_strategy = "vertical"
+        }
     },
     extensions = {
         fzf = {
@@ -56,7 +75,6 @@ require('telescope').load_extension('git_diffs')
 require('telescope').load_extension('dap')
 require('telescope').load_extension('notify')
 require('telescope').load_extension('projects')
-require('telescope').load_extension('coc')
 require('telescope').load_extension('gott')
 require("telescope").load_extension("software-licenses")
 

@@ -16,25 +16,6 @@ require('legendary').setup({
             },
         },
         {
-            itemgroup = 'coc', -- more keymaps in coc.lua
-            description = 'keymaps for coc.nvim',
-            icon = '',
-            keymaps = {
-                { 'gd',         '<Plug>(coc-definition)',                       description = 'go to definition',      mode = { 'n' } },
-                { 'gi',         ':Telescope coc implementations<CR>)',          description = 'go to implementations', mode = { 'n' } },
-                { 'gr',         ':CocReferences<CR>',                           description = 'go to references',      mode = { 'n' } },
-                { 'gy',         '<Plug>(coc-type-definition)',                  description = 'go to type definition', mode = { 'n' } },
-                { '<C-space>',  'coc#refresh()',                                description = 'trigger completion',    mode = { 'i' } },
-                { '<leader>rn', '<Plug>(coc-rename)',                           description = 'rename',                mode = { 'n' } },
-                { '<leader>f',  ':CocCommand editor.action.formatDocument<CR>', description = 'format file' },
-                { '<leader>dd', ':CocList diagnostics<CR>',                         description = 'show diagnostics' },
-                { '<leader>gb', ':CocCommand git.showBlameDoc<CR>',             description = 'show git blame doc' },
-                { '<leader>gt', ':CocCommand go.test.toggle<CR>',               description = 'toggle go test file' },
-                { '<F4>',       ':CocOutline<CR>',                              description = 'toggle outline' },
-                { 'K',          ':CocShowDocumentation<CR>',                    description = 'show doc in preview window', mode = { 'n' } },
-            },
-        },
-        {
             itemgroup = 'search',
             description = 'keymaps for search',
             icon = '',
@@ -129,6 +110,7 @@ require('legendary').setup({
             description = 'keymaps for ide',
             icon = '',
             keymaps = {
+                { '<F4>', ':SymbolsOutline<CR>', description = 'toggle symbol outline' },
                 {
                     '<leader>rr',
                     function ()
@@ -144,64 +126,11 @@ require('legendary').setup({
                         end
                     end,
                     description = 'run file with ui',
-                }
+                },
             }
         }
     },
     commands = {
-        {
-            itemgroup = 'coc',
-            description = 'coc commands',
-            icon = '',
-            commands = {
-                {
-                    ':CocShowDocumentation',
-                    function ()
-                        local cw = vim.fn.expand('<cword>')
-                        if vim.fn.index({'vim', 'help'}, vim.bo.filetype) >= 0 then
-                            vim.api.nvim_command('h ' .. cw)
-                        elseif vim.api.nvim_eval('coc#rpc#ready()') then
-                            vim.fn.CocActionAsync('doHover')
-                        else
-                            vim.api.nvim_command('!' .. vim.o.keywordprg .. ' ' .. cw)
-                        end
-                    end,
-                    description = 'show doc in preview window'
-                },
-                {
-                    ':CocReferences',
-                    function ()
-                        local ref = require("telescope").extensions.coc.references
-                        local layout = {
-                            layout_config = {
-                                width = 0.4,
-                                height = 0.4,
-                            },
-                            previewer = true,
-                        }
-                        local theme = require('telescope.themes').get_cursor(layout)
-                        ref(theme)
-                    end,
-                    description = 'show references'
-                },
-                {
-                    ':CocDiagnosticsT',
-                    function ()
-                        local diag = require("telescope").extensions.coc.workspace_diagnostics
-                        local layout = {
-                            layout_config = {
-                                width = 0.8,
-                                height = 0.4,
-                            },
-                            previewer = true,
-                        }
-                        local theme = require('telescope.themes').get_cursor(layout)
-                        diag(theme)
-                    end,
-                    description = 'show diagnostics'
-                },
-            }
-        },
         {
             itemgroup = 'cmd',
             description = 'exec cmd in pop up input box',

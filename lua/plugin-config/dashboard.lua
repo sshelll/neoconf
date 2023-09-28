@@ -19,7 +19,7 @@ db.setup({
             {
                 desc = '󰊳 Update',
                 group = '@property',
-                action = 'CocUpdate',
+                action = 'MasonUpdate',
                 key = 'u',
             },
             {
