@@ -34,9 +34,14 @@ lua require('plugin-config/lspconfig')
 lua require('plugin-config/symbols-outline')
 lua require('plugin-config/trouble')
 lua require('plugin-config/yanky')
+lua require('plugin-config/autopairs')
 lua require('plugin-config/neovide')
 
 " vim script
 for f in glob('~/.config/nvim/vimscript/*.vim', 0, 1)
     execute 'source' f
 endfor
+
+" copilot keymap
+imap <silent><script><expr> <C-c> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true

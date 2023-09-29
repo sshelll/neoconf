@@ -17,16 +17,22 @@ db.setup({
         },
         shortcut     = {
             {
-                desc = '󰊳 Update',
+                desc = '󰊳 Update LSP',
                 group = '@property',
                 action = 'MasonUpdate',
                 key = 'u',
             },
             {
-                desc = '󰊲 Sync',
+                desc = '󰊲 Sync Plug',
                 group = '@property',
                 action = 'PackerSync',
                 key = 's',
+            },
+            {
+                desc = ' Install Plug',
+                group = '@property',
+                action = 'PackerInstall',
+                key = 'i',
             },
             {
                 icon = ' ',

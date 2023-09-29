@@ -70,16 +70,24 @@ return require('packer').startup({
         use 'neovim/nvim-lspconfig'
         use "williamboman/mason.nvim"
         use 'hrsh7th/nvim-cmp'
+        use 'hrsh7th/cmp-path'
+        use 'hrsh7th/cmp-cmdline'
+        use 'hrsh7th/cmp-buffer'
         use 'hrsh7th/cmp-nvim-lsp'
+        use 'hrsh7th/cmp-nvim-lua'
         use 'saadparwaiz1/cmp_luasnip'
-        use 'L3MON4D3/LuaSnip'
         use 'simrat39/symbols-outline.nvim'
         use 'folke/trouble.nvim'
+        use 'windwp/nvim-autopairs'
+        use({
+            "L3MON4D3/LuaSnip",
+            tag = "v2.*",
+            run = "make install_jsregexp"
+        })
         use 'nvim-tree/nvim-web-devicons'
         use 'kdheepak/lazygit.nvim'
         use 'tpope/vim-fugitive'
         use 'voldikss/vim-floaterm'
         use { 'mg979/vim-visual-multi', branch = 'master' }
-        use 'projekt0n/github-nvim-theme'
     end,
 })

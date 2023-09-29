@@ -1,8 +1,8 @@
--- Setup language servers.
 local lspconfig = require('lspconfig')
-
--- Add additional capabilities supported by nvim-cmp
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+local luasnip = require 'luasnip'
+local cmp = require 'cmp'
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 local servers = {
@@ -12,7 +12,11 @@ local servers = {
     'tsserver',
     'gopls',
     'jsonls',
+    'yamlls',
+    'taplo', -- toml
     'vimls',
+    'bashls',
+    'sqlls',
 }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
@@ -20,7 +24,7 @@ for _, lsp in ipairs(servers) do
     }
 end
 
--- Customized setup
+-- Customized setup for some special lsp
 lspconfig.lua_ls.setup {
     settings = {
         Lua = {
@@ -32,11 +36,7 @@ lspconfig.lua_ls.setup {
     },
 }
 
--- luasnip setup
-local luasnip = require 'luasnip'
-
--- nvim-cmp setup
-local cmp = require 'cmp'
+-- Setup nvim-cmp
 cmp.setup {
     snippet = {
         expand = function(args)
@@ -74,8 +74,39 @@ cmp.setup {
     sources = {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
+        { name = 'path' },
+        { name = 'buffer' },
+        { name = 'nvim_lua' },
     },
 }
+
+-- `/` cmdline setup.
+cmp.setup.cmdline('/', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+        { name = 'buffer' }
+    }
+})
+
+-- `:` cmdline setup.
+cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+        { name = 'path' }
+    }, {
+        {
+            name = 'cmdline',
+            option = {
+                ignore_cmds = { 'Man', '!' }
+            }
+        }
+    })
+})
+
+cmp.event:on(
+    'confirm_done',
+    cmp_autopairs.on_confirm_done()
+)
 
 -- Global mappings.
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
@@ -138,10 +169,10 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 -- diagnostic symbols
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
 -- show diagnostic info in float window
