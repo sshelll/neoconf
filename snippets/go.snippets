@@ -1,8 +1,17 @@
-snippet fpt "fmt.Println"
+snippet fprint "fmt.Println"
 	fmt.Println(${1:any})
+
+snippet fprintf "fmt.Printf"
+	fmt.Printf(${1:any})
+
+snippet ffprint "fmt.Fprintf"
+	fmt.Fprintf(${1:any})
 
 snippet log "log.Println"
 	log.Println(${1:any})
+
+snippet logf "log.Printf"
+	log.Printf(${1:any})
 
 snippet gofunc "go func"
 	go func() {
@@ -26,3 +35,8 @@ snippet consts "const ()"
 
 snippet interface "interface{}"
 	interface{}
+
+snippet main "func main"
+	func main() {
+		${1:any}
+	}
