@@ -128,6 +128,16 @@ require('legendary').setup({
                     end,
                     description = 'run file with ui',
                 },
+                {
+                    '<leader>gt',
+                    function ()
+                        local fileType = vim.bo.filetype
+                        if fileType == 'go' then
+                            vim.cmd('GoTestAdd')
+                        end
+                    end,
+                    description = 'generate test for the current function',
+                }
             }
         }
     },

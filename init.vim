@@ -35,6 +35,7 @@ lua require('plugin-config/symbols-outline')
 lua require('plugin-config/trouble')
 lua require('plugin-config/yanky')
 lua require('plugin-config/autopairs')
+lua require('plugin-config/gopher')
 lua require('plugin-config/neovide')
 
 " vim script

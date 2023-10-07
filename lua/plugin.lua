@@ -3,6 +3,13 @@ vim.cmd('autocmd User PackerComplete lua require("notify").notify("packer comple
 return require('packer').startup({
     function(use)
         use {
+            "olexsmir/gopher.nvim",
+            requires = { -- dependencies
+                "nvim-lua/plenary.nvim",
+                "nvim-treesitter/nvim-treesitter",
+            },
+        }
+        use {
             'linrongbin16/lsp-progress.nvim',
             requires = { 'nvim-tree/nvim-web-devicons' },
             config = function()
