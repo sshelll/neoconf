@@ -2,6 +2,13 @@ vim.cmd('autocmd User PackerComplete lua require("notify").notify("packer comple
 
 return require('packer').startup({
     function(use)
+        use {
+            'linrongbin16/lsp-progress.nvim',
+            requires = { 'nvim-tree/nvim-web-devicons' },
+            config = function()
+                require('lsp-progress').setup()
+            end
+        }
         use 'gbprod/yanky.nvim'
         use { "ellisonleao/glow.nvim", config = function() require("glow").setup() end }
         use "chip/telescope-software-licenses.nvim"

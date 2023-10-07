@@ -65,6 +65,14 @@ local config = {
     },
 }
 
+-- listen lsp-progress event and refresh lualine
+vim.api.nvim_create_augroup("lualine_augroup", { clear = true })
+vim.api.nvim_create_autocmd("User", {
+    group = "lualine_augroup",
+    pattern = "LspProgressStatusUpdated",
+    callback = require("lualine").refresh,
+})
+
 -- Inserts a component in lualine_c at left section
 local function ins_left(component)
     table.insert(config.sections.lualine_c, component)
@@ -181,6 +189,10 @@ ins_left {
     function()
         return '%='
     end,
+}
+
+ins_left {
+    require('lsp-progress').progress,
 }
 
 ins_left {
