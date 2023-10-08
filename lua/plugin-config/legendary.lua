@@ -1,3 +1,5 @@
+local dap, dapui = require("dap"), require("dapui")
+
 require('legendary').setup({
    keymaps = {
         {
@@ -63,21 +65,21 @@ require('legendary').setup({
             description = 'keymaps for dap',
             icon = '',
             keymaps = {
-                { '<leader>da', function() require('dap').toggle_breakpoint() end, description = 'toggle breakpoint' },
-                { '<leader>ds', function() require('dap').step_into() end,         description = 'step into' },
-                { '<leader>dw', function() require('dap').step_over() end,         description = 'step over' },
-                { '<leader>do', function() require('dap').step_out() end,          description = 'step out' },
-                { '<leader>dt', function() require('dap').run_to_cursor() end,     description = 'run to cursor' },
-                { '<leader>dq', function() require('dap').disconnect() end,        description = 'disconnect' },
-                { '<leader>dr', function() require('dap').clear_breakpoints() end, description = 'clean breakpoints' },
-                { '<leader>de', function() require('dapui').eval() end,            description = 'eval', mode = { 'n', 'v' } },
+                { '<leader>da', function() dap.toggle_breakpoint() end, description = 'toggle breakpoint' },
+                { '<leader>ds', function() dap.step_into() end,         description = 'step into' },
+                { '<leader>dw', function() dap.step_over() end,         description = 'step over' },
+                { '<leader>do', function() dap.step_out() end,          description = 'step out' },
+                { '<leader>dt', function() dap.run_to_cursor() end,     description = 'run to cursor' },
+                { '<leader>dq', function() dap.disconnect() end,        description = 'disconnect' },
+                { '<leader>dr', function() dap.clear_breakpoints() end, description = 'clean breakpoints' },
+                { '<leader>de', function() dapui.eval() end,            description = 'eval', mode = { 'n', 'v' } },
                 { '<leader>dc',
                     function()
                         local ext = vim.fn.expand('%:e')
                         if ext == 'lua' then
                             require('osv').run_this()
                         else
-                            require('dap').continue()
+                            dap.continue()
                         end
                     end,
                     description = 'continue',

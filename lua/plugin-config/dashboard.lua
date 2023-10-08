@@ -25,13 +25,13 @@ db.setup({
             {
                 desc = '󰊲 Sync Plug',
                 group = '@property',
-                action = 'PackerSync',
+                action = 'Lazy sync',
                 key = 's',
             },
             {
                 desc = ' Install Plug',
                 group = '@property',
-                action = 'PackerInstall',
+                action = 'Lazy install',
                 key = 'i',
             },
             {
