@@ -42,8 +42,6 @@ return require('packer').startup({
         use 'github/copilot.vim'
         use 'aklt/plantuml-syntax'
         use 'weirongxu/plantuml-previewer.vim'
-        use 'junegunn/fzf.vim'
-        use { 'junegunn/fzf', run = './install --all' }
         use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' }
         use 'cocopon/iceberg.vim'
         use 'rhysd/clever-f.vim'
