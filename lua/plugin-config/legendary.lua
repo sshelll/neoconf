@@ -25,7 +25,7 @@ require('legendary').setup({
             keymaps = {
                 { '<C-p>',      ':Telescope live_grep<CR>',                 description = 'search in the current work dir with Telescope' },
                 { '<C-f>',      ':Telescope current_buffer_fuzzy_find<CR>', description = 'search in the current buffer with Telescope' },
-                { '<leader>k',  ':SearchLegendary<CR>',                     description = 'open legendary search box' },
+                { '<leader>k',  ':Legendary<CR>',                           description = 'open legendary search box' },
                 { '<leader>td', ':TodoTelescope<CR>',                       description = 'search todo items with Telescope' },
                 { '<leader>tf', ':Telescope find_files<CR>',                description = 'search files with Telescope' },
                 { '<leader>e',  ':HopWord<CR>',                             description = 'hop jump words' },
@@ -161,13 +161,6 @@ require('legendary').setup({
             description = 'commands for search',
             icon = '',
             commands = {
-                {
-                    ':SearchLegendary',
-                    function()
-                        require('legendary').find()
-                    end,
-                    description = 'open legendary to search keymaps'
-                },
                 {
                     ':SearchLegendaryCommands',
                     function()
