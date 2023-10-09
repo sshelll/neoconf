@@ -76,6 +76,5 @@ require('telescope').load_extension('dap')
 require('telescope').load_extension('notify')
 require('telescope').load_extension('projects')
 require('telescope').load_extension('gott')
-require("telescope").load_extension("software-licenses")
 
 vim.g.ackhighlight = 1
