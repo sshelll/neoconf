@@ -15,6 +15,7 @@ require('legendary').setup({
                 { '…',         ':ExecNormal<CR>',           description = 'enter cmd mode',             mode = { 'n' } },
                 { '…',         ':ExecVisual<CR>',           description = 'enter cmd mode',             mode = { 'v' } },
                 { '<leader>l', ':noh<CR>',                  description = 'no highlight',               mode = { 'n' } },
+                { '<C-w>N',    '<C-\\><C-n>',               description = 'change terminal mode',       mode = { 't' } },
             },
         },
         {
@@ -103,7 +104,7 @@ require('legendary').setup({
             description = 'other keymaps',
             icon = '',
             keymaps = {
-                { '<leader>tt', ':FloatermNew<CR>',    description = 'open a floating terminal' },
+                { '<leader>tt', ':ToggleTerm size=15 direction=horizontal<CR>',    description = 'toggle a terminal emulator at bottom' },
                 { '<F3>',       ':NvimTreeToggle<CR>', description = 'toggle NvimTree' },
             },
         },
