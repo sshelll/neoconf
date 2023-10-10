@@ -1,5 +1,15 @@
 local pluglist = {
     {
+        'nvim-orgmode/orgmode',
+        dependencies = {
+            { 'nvim-treesitter/nvim-treesitter', lazy = true },
+        },
+        event = 'VeryLazy',
+        config = function()
+            require('plugin-config/orgmode')
+        end,
+    },
+    {
         'akinsho/toggleterm.nvim',
         version = "*",
         config = true,
