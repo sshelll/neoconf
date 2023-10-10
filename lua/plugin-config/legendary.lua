@@ -9,6 +9,8 @@ require('legendary').setup({
             keymaps = {
                 { '<F12>',     ':vertical res+3<CR>',       description = 'incr vertical window width' },
                 { '<F11>',     ':vertical res-1<CR>',       description = 'decr vertical window width' },
+                { '<F10>',     ':res+3<CR>',                description = 'incr horizontal window width' },
+                { '<F9>',      ':res-1<CR>',                description = 'decr horizontal window width' },
                 { 'p',         '"0p',                       description = 'paste from the first nvim buffer' },
                 { '<leader>p', 'p',                         description = 'paste last',                 mode = { 'n', 'v' } },
                 { '<leader>y', '"+y',                       description = 'copy to os',                 mode = { 'n', 'v' } },
