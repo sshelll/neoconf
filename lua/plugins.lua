@@ -301,6 +301,7 @@ local pluglist = {
     },
     {
         "nvim-treesitter/nvim-treesitter",
+        event = 'VeryLazy',
         build = ":TSUpdate",
         config = function()
             require('plugin-config/nvim-treesitter')
