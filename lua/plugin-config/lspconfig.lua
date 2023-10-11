@@ -17,6 +17,7 @@ local servers = {
     'vimls',
     'bashls',
     'sqlls',
+    'marksman',
 }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
