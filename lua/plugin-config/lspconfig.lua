@@ -177,7 +177,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set('n', '<space>wl', function()
             print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
         end, opts)
-        vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
+        vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, opts)
         vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
         vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
         vim.keymap.set('n', 'gr', ':Telescope lsp_references<CR>', opts)
