@@ -165,6 +165,15 @@ local pluglist = {
         lazy = false,
     },
     {
+        'mfussenegger/nvim-dap-python',
+        dependencies = { 'mfussenegger/nvim-dap' },
+        lazy = true,
+        event = 'VeryLazy',
+        config = function ()
+            require('dap-python').setup('~/python/.virtualenvs/debugpy/bin/python3')
+        end
+    },
+    {
         'theHamsta/nvim-dap-virtual-text',
         dependencies = { 'mfussenegger/nvim-dap' },
         lazy = true,
