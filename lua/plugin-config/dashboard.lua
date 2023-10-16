@@ -19,7 +19,10 @@ db.setup({
             {
                 desc = '󰊳 Update LSP',
                 group = '@property',
-                action = 'MasonUpdate',
+                action = function ()
+                    vim.cmd('MasonUpdate')
+                    vim.cmd('TSUpdate')
+                end,
                 key = 'u',
             },
             {
