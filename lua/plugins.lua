@@ -169,7 +169,7 @@ local pluglist = {
         dependencies = { 'mfussenegger/nvim-dap' },
         lazy = true,
         event = 'VeryLazy',
-        config = function ()
+        config = function()
             require('dap-python').setup('~/python/.virtualenvs/debugpy/bin/python3')
         end
     },
@@ -352,7 +352,7 @@ local pluglist = {
         'neovim/nvim-lspconfig',
         event = 'VeryLazy',
         config = function()
-            require('plugin-config/lspconfig')
+            require('plugin-config/nvim-lspconfig')
         end
     },
     {
@@ -360,6 +360,17 @@ local pluglist = {
         lazy = false,
         config = function()
             require('plugin-config/mason')
+        end
+    },
+    {
+        "williamboman/mason-lspconfig.nvim",
+        event = 'VeryLazy',
+        dependencies = {
+            'neovim/nvim-lspconfig',
+            'williamboman/mason.nvim',
+        },
+        config = function()
+            require('plugin-config/mason-lspconfig')
         end
     },
     {

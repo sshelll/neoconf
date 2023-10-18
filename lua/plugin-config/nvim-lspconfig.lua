@@ -1,41 +1,6 @@
-local lspconfig = require('lspconfig')
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local luasnip = require 'luasnip'
 local cmp = require 'cmp'
-
--- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = {
-    'clangd',
-    'rust_analyzer',
-    'pyright',
-    'tsserver',
-    'gopls',
-    'jsonls',
-    'yamlls',
-    'taplo', -- toml
-    'vimls',
-    'bashls',
-    'sqlls',
-    'marksman',
-}
-for _, lsp in ipairs(servers) do
-    lspconfig[lsp].setup {
-        capabilities = capabilities,
-    }
-end
-
--- Customized setup for some special lsp
-lspconfig.lua_ls.setup {
-    settings = {
-        Lua = {
-            diagnostics = {
-                -- Get the language server to recognize the `vim` global
-                globals = { 'vim' },
-            },
-        },
-    },
-}
 
 local kind_icons = {
     Text = "",
@@ -193,11 +158,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     callback = function()
         local params = vim.lsp.util.make_range_params()
         params.context = { only = { "source.organizeImports" } }
-        -- buf_request_sync defaults to a 1000ms timeout. Depending on your
-        -- machine and codebase, you may want longer. Add an additional
-        -- argument after params if you find that you have to write the file
-        -- twice for changes to be saved.
-        -- E.g., vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, 3000)
         local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params)
         for cid, res in pairs(result or {}) do
             for _, r in pairs(res.result or {}) do
@@ -222,4 +182,5 @@ end
 -- vim.o.updatetime = 250
 -- vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
 
+-- Snippets
 require("luasnip.loaders.from_snipmate").lazy_load { paths = vim.fn.stdpath "config" .. "/snippets" }
