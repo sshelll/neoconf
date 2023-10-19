@@ -81,6 +81,8 @@ require('legendary').setup({
                         local ext = vim.fn.expand('%:e')
                         if ext == 'lua' then
                             require('osv').run_this()
+                        elseif ext == 'rs' then
+                            vim.cmd("RustDebuggables")
                         else
                             dap.continue()
                         end
