@@ -1,11 +1,7 @@
 local pluglist = {
     {
         'simrat39/rust-tools.nvim',
-        dependencies = {
-            'nvim-lua/plenary.nvim',
-            'mfussenegger/nvim-dap',
-            'neovim/nvim-lspconfig',
-        },
+        dependencies = { 'nvim-lua/plenary.nvim', 'mfussenegger/nvim-dap' },
         event = 'VeryLazy',
         config = function()
             require('plugin-config/rust-tools')

@@ -243,13 +243,13 @@ require('legendary').setup({
             description = 'commands for rust',
             icon = '',
             commands = {
-                {
-                    ':RustBuild',
-                    function()
-                        vim.cmd('silent !cargo build')
-                    end,
-                    description = 'build rust project'
-                },
+                -- {
+                --     ':RustBuild',
+                --     function()
+                --         vim.cmd('silent !cargo build')
+                --     end,
+                --     description = 'build rust project'
+                -- },
             },
         },
         {
