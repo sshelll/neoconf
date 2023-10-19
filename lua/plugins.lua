@@ -1,5 +1,17 @@
 local pluglist = {
     {
+        'simrat39/rust-tools.nvim',
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'mfussenegger/nvim-dap',
+            'neovim/nvim-lspconfig',
+        },
+        event = 'VeryLazy',
+        config = function()
+            require('plugin-config/rust-tools')
+        end
+    },
+    {
         'nvim-orgmode/orgmode',
         dependencies = {
             { 'nvim-treesitter/nvim-treesitter', lazy = true },
