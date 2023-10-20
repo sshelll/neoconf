@@ -83,6 +83,20 @@ dap.configurations.cpp = {
     },
 }
 
+dap.configurations.rust = {
+    {
+        name = "Debug project",
+        type = "codelldb",
+        request = "launch",
+        program = function()
+            vim.cmd('RustBuild')
+            local project = vim.fn.getcwd():match("([^/\\]+)$")
+            return vim.fn.getcwd() .. '/target/debug/' .. project
+        end,
+        cwd = '${workspaceFolder}',
+        stopOnEntry = false,
+    },
+}
+
 dap.configurations.c = dap.configurations.cpp
--- dap.configurations.rust = dap.configurations.cpp
 dap.configurations.typescript = dap.configurations.javascript

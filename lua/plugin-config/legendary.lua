@@ -81,11 +81,9 @@ require('legendary').setup({
                         local ext = vim.fn.expand('%:e')
                         if ext == 'lua' then
                             require('osv').run_this()
-                        elseif ext == 'rs' then
-                            vim.cmd("RustDebuggables")
-                        else
-                            dap.continue()
+                            return
                         end
+                        dap.continue()
                     end,
                     description = 'continue',
                 },
@@ -128,7 +126,7 @@ require('legendary').setup({
                         elseif fileType == 'javascript' then
                             require('util/nodejs').ui_run()
                         elseif fileType == 'rust' then
-                            require('util/cmd').run_cmd(':RustRun', true)
+                            vim.cmd('!cargo run')
                         else
                             local err = fileType .. ' is not supported'
                             vim.api.nvim_err_writeln(err)
@@ -244,13 +242,20 @@ require('legendary').setup({
             description = 'commands for rust',
             icon = '',
             commands = {
-                -- {
-                --     ':RustBuild',
-                --     function()
-                --         vim.cmd('silent !cargo build')
-                --     end,
-                --     description = 'build rust project'
-                -- },
+                {
+                    ':RustBuild',
+                    function()
+                        vim.cmd('!cargo build')
+                    end,
+                    description = 'build rust project'
+                },
+                {
+                    ':RustBuildRelease',
+                    function()
+                        vim.cmd('!cargo build --release')
+                    end,
+                    description = 'build rust project with release flag'
+                }
             },
         },
         {
