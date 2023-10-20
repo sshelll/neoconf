@@ -125,12 +125,13 @@ require('legendary').setup({
                         local fileType = vim.bo.filetype
                         if fileType == 'go' then
                             require('util/golang').ui_run()
-                        else if fileType == 'javascript' then
+                        elseif fileType == 'javascript' then
                             require('util/nodejs').ui_run()
+                        elseif fileType == 'rust' then
+                            require('util/cmd').run_cmd(':RustRun', true)
                         else
                             local err = fileType .. ' is not supported'
                             vim.api.nvim_err_writeln(err)
-                        end
                         end
                     end,
                     description = 'run file with ui',
