@@ -171,6 +171,14 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     end
 })
 
+-- Rust auto-formatting
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*.rs",
+    callback = function()
+        vim.lsp.buf.format({ async = false })
+    end
+})
+
 -- diagnostic symbols
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do

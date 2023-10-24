@@ -159,6 +159,9 @@ local pluglist = {
     {
         'stevearc/dressing.nvim',
         event = 'VeryLazy',
+        config = function ()
+            require('plugin-config/dressing')
+        end
     },
     {
         'mrjones2014/legendary.nvim',
