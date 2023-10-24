@@ -37,7 +37,7 @@ require('telescope').setup {
         },
         lsp_document_symbols = {
             layout_strategy = "vertical"
-        }
+        },
     },
     extensions = {
         fzf = {
