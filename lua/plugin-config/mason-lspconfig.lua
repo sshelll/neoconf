@@ -6,7 +6,6 @@ require("mason-lspconfig").setup {
         "lua_ls",
         "gopls",
         "bashls",
-        "shfmt",
         "rust_analyzer",
     },
     automatic_installation = false,
