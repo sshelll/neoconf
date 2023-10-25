@@ -147,6 +147,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
         vim.keymap.set('n', 'gr', ':Telescope lsp_references<CR>', opts)
         vim.keymap.set('n', '<leader>f', function()
+            local fileType = vim.bo.filetype
+            if fileType == 'sh' then
+                local file = vim.fn.expand('%:p')
+                vim.cmd("silent !shfmt -l -w " .. file)
+                vim.cmd("edit")
+                return
+            end
             vim.lsp.buf.format { async = true }
         end, opts)
     end,
@@ -176,6 +183,16 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = "*.rs",
     callback = function()
         vim.lsp.buf.format({ async = false })
+    end
+})
+
+-- Bash auto-formatting
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*.sh",
+    callback = function()
+        local file = vim.fn.expand('%:p')
+        vim.cmd("silent !shfmt -l -w " .. file)
+        vim.cmd("edit")
     end
 })
 
