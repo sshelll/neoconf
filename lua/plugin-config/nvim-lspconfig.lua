@@ -187,7 +187,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 -- Bash auto-formatting
-vim.api.nvim_create_autocmd("BufWritePre", {
+vim.api.nvim_create_autocmd("BufWritePost", {
     pattern = "*.sh",
     callback = function()
         local file = vim.fn.expand('%:p')
