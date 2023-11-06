@@ -20,6 +20,11 @@ require('orgmode').setup({
             description = 'Todo',
             template = '* TODO %?\n  SCHEDULED: %t',
             target = '~/orgfiles/todo.org',
+        },
+        d = {
+            description = 'Deadline',
+            template = '* TODO %?\n  DEADLINE: %t',
+            target = '~/orgfiles/todo.org',
         }
     },
 })

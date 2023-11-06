@@ -126,13 +126,36 @@ require('legendary').setup({
                         elseif fileType == 'javascript' then
                             require('util/nodejs').ui_run()
                         elseif fileType == 'rust' then
-                            vim.cmd('!cargo run')
+                            local common = require('util/common')
+                            local envs = common.readInput('envs: ')
+                            if envs.canceled then
+                                return
+                            end
+                            local args = common.readInput('args: ')
+                            if args.canceled then
+                                return
+                            end
+                            vim.cmd('!' .. envs.input .. ' cargo run -- ' .. args.input)
                         else
                             local err = fileType .. ' is not supported'
                             vim.api.nvim_err_writeln(err)
                         end
                     end,
                     description = 'run file with ui',
+                },
+                {
+                    '<leader>rt',
+                    function ()
+                        local fileType = vim.bo.filetype
+                        if fileType == 'rust' then
+                            local args = require('util/common').readInput('args: ')
+                            if args.canceled then
+                                return
+                            end
+                            vim.cmd('!cargo test -- ' .. args.input)
+                        end
+                    end,
+                    description = 'run test',
                 },
                 {
                     '<leader>gt',

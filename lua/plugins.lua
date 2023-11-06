@@ -49,7 +49,7 @@ local pluglist = {
     },
     {
         "ellisonleao/glow.nvim",
-        lazy = true,
+        event = 'VeryLazy',
         config = function()
             require("glow").setup()
         end,
@@ -165,7 +165,7 @@ local pluglist = {
     },
     {
         'mrjones2014/legendary.nvim',
-        lazy = false,
+        event = 'VeryLazy',
         priority = 1000,
         config = function()
             require('plugin-config/legendary')
