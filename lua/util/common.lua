@@ -8,4 +8,18 @@ function common.inputOrDefault(default, prompt)
     return input
 end
 
+function common.readInput(prompt)
+    local cancelreturn = 'NEOVIM_COMMON_READ_INPUT_CANCEL'
+    local canceled = false
+    local input = vim.fn.input({
+        prompt = prompt,
+        cancelreturn = cancelreturn,
+    })
+    if input == cancelreturn then
+        canceled = true
+        input = nil
+    end
+    return { canceled = canceled, input = input }
+end
+
 return common

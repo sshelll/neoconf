@@ -1,6 +1,25 @@
 snippet fa "<'a>"
 	<'a>
 
+snippet pfn "pub fn"
+	pub fn ${1:fn_name}(${2:args}) -> ${3:ret} {
+		${4}
+	}
+
+snippet mtest "#[cfg(test)]"
+	#[cfg(test)]
+	mod tests {
+		use super::*;
+
+		$0
+	}
+
+snippet test "#[test]"
+	#[test]
+	fn ${1:test_name}() {
+		${0}
+	}
+
 snippet main "fn main() { ... }"
 	fn main() {
 		${1:any}
