@@ -117,7 +117,10 @@ local pluglist = {
     },
     {
         'Mofiqul/vscode.nvim',
-        lazy = true,
+        lazy = false,
+        config = function()
+            require('plugin-config/vscode-theme')
+        end
     },
     {
         'nvimdev/dashboard-nvim',
@@ -214,7 +217,7 @@ local pluglist = {
         branch = 'main',
         priority = 1000,
         config = function()
-            require('plugin-config/tokyo-night')
+            -- require('plugin-config/tokyo-night')
         end
     },
     {
