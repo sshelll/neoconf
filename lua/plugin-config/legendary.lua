@@ -39,7 +39,6 @@ require('legendary').setup({
             description = 'keymaps for golang',
             icon = '',
             keymaps = {
-                { '<F1>', ':Telescope gott<CR>', description = 'run go test under the cursor with -v flag' },
                 { '<F2>', ':GottClear<CR>',      description = 'clear go test notification' },
                 {
                     '<F5>',
@@ -147,12 +146,22 @@ require('legendary').setup({
                     '<leader>rt',
                     function ()
                         local fileType = vim.bo.filetype
-                        if fileType == 'rust' then
+                        if fileType == 'go' then
+                            vim.cmd('Telescope gott')
+                        elseif fileType == 'rust' then
                             local args = require('util/common').readInput('args: ')
                             if args.canceled then
                                 return
                             end
                             vim.cmd('!cargo test -- ' .. args.input)
+                        elseif fileType == 'java' then
+                            local args = require('util/common').readInput('test class (y/N): ')
+                            if not args.canceled and args == 'y' then
+                                require('jdtls').test_class()
+                            else
+                                require('jdtls').test_nearest_method()
+                            end
+                            require('dap').repl.open()
                         end
                     end,
                     description = 'run test',
