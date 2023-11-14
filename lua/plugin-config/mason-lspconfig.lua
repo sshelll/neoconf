@@ -7,6 +7,7 @@ require("mason-lspconfig").setup {
         "gopls",
         "bashls",
         "rust_analyzer",
+        "jdtls",
     },
     automatic_installation = false,
     handlers = {

@@ -162,7 +162,7 @@ local pluglist = {
     {
         'stevearc/dressing.nvim',
         event = 'VeryLazy',
-        config = function ()
+        config = function()
             require('plugin-config/dressing')
         end
     },
@@ -210,6 +210,11 @@ local pluglist = {
         config = function()
             require('plugin-config/dap')
         end
+    },
+    {
+        'mfussenegger/nvim-jdtls',
+        dependencies = { 'mfussenegger/nvim-dap' },
+        lazy = true,
     },
     {
         'folke/tokyonight.nvim',
