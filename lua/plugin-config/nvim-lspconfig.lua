@@ -178,9 +178,17 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     end
 })
 
--- Rust auto-formatting
+-- Java Auto-Import
 vim.api.nvim_create_autocmd("BufWritePre", {
-    pattern = "*.rs",
+    pattern = "*.java",
+    callback = function()
+        require'jdtls'.organize_imports()
+    end
+})
+
+-- Rust / Java auto-formatting
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*.rs,*.java",
     callback = function()
         vim.lsp.buf.format({ async = false })
     end
