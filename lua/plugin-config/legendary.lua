@@ -77,8 +77,8 @@ require('legendary').setup({
                 { '<leader>de', function() dapui.eval() end,            description = 'eval', mode = { 'n', 'v' } },
                 { '<leader>dc',
                     function()
-                        local ext = vim.fn.expand('%:e')
-                        if ext == 'lua' then
+                        local filetype = vim.bo.filetype
+                        if filetype == 'lua' then
                             require('osv').run_this()
                             return
                         end
