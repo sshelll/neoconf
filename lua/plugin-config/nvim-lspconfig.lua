@@ -1,7 +1,6 @@
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local luasnip = require 'luasnip'
 local cmp = require 'cmp'
-local fmta = require("luasnip.extras.fmt").fmta
 
 local kind_icons = {
     Text = "",
@@ -48,7 +47,10 @@ cmp.setup {
     },
     snippet = {
         expand = function(args)
-            luasnip.lsp_expand(args.body)
+            local fn = function()
+                luasnip.lsp_expand(args.body)
+            end
+            pcall(fn)
         end,
     },
     mapping = cmp.mapping.preset.insert({
@@ -90,7 +92,7 @@ cmp.setup {
 }
 
 -- `/` cmdline setup.
-cmp.setup.cmdline('/', {
+cmp.setup.cmdline({ '/', '?' }, {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
         { name = 'buffer' }

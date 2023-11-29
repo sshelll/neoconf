@@ -1,39 +1,39 @@
 snippet fmtp "fmt.Println"
-	fmt.Println(${1:any})
+	fmt.Println("${1}")
 
 snippet fmtpf "fmt.Printf"
-	fmt.Printf(${1:any})
+	fmt.Printf("${1:format}", ${2})
 
 snippet fmtf "fmt.Fprintf"
-	fmt.Fprintf(${1:any})
+	fmt.Fprintf(${1:io.Writer}, "${2:format}", ${3})
 
 snippet fmts "fmt.Sprintf"
-	fmt.Sprintf(${1:any})
+	fmt.Sprintf("${1:format}", ${2})
 
 snippet log "log.Println"
-	log.Println(${1:any})
+	log.Println("${1}")
 
 snippet logf "log.Printf"
-	log.Printf(${1:any})
+	log.Printf("${1:format}", ${2})
 
 snippet gofunc "go func"
 	go func() {
-		${1:any}
+		${1}
 	}()
 
 snippet deferfunc "defer func"
 	defer func() {
-		${1:any}
+		${1}
 	}()
 
 snippet vars "var ()"
 	var (
-		${1:any}
+		${1}
 	)
 
 snippet consts "const ()"
 	const (
-		${1:any}
+		${1}
 	)
 
 snippet inter "interface{}"
@@ -41,5 +41,5 @@ snippet inter "interface{}"
 
 snippet main "func main"
 	func main() {
-		${1:any}
+		${1}
 	}
