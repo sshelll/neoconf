@@ -1,6 +1,7 @@
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local luasnip = require 'luasnip'
 local cmp = require 'cmp'
+local fmta = require("luasnip.extras.fmt").fmta
 
 local kind_icons = {
     Text = "",
@@ -79,9 +80,9 @@ cmp.setup {
         end, { 'i', 's' }),
     }),
     sources = {
-        { name = 'nvim_lsp', priority = 1000 },
-        { name = 'luasnip',  priority = 900 },
-        { name = 'orgmode',  priority = 900 },
+        { name = 'luasnip',  priority = 1000 },
+        { name = 'nvim_lsp', priority = 900 },
+        { name = 'orgmode',  priority = 850 },
         { name = 'nvim_lua', priority = 800 },
         { name = 'path',     priority = 800 },
         { name = 'buffer',   priority = 500 },
@@ -182,7 +183,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = "*.java",
     callback = function()
-        require'jdtls'.organize_imports()
+        require 'jdtls'.organize_imports()
     end
 })
 
