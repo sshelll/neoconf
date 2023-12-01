@@ -47,10 +47,7 @@ cmp.setup {
     },
     snippet = {
         expand = function(args)
-            local fn = function()
-                luasnip.lsp_expand(args.body)
-            end
-            pcall(fn)
+            require 'luasnip'.lsp_expand(args.body)
         end,
     },
     mapping = cmp.mapping.preset.insert({
@@ -82,8 +79,8 @@ cmp.setup {
         end, { 'i', 's' }),
     }),
     sources = {
-        { name = 'luasnip',  priority = 1000 },
-        { name = 'nvim_lsp', priority = 900 },
+        { name = 'nvim_lsp', priority = 1000 },
+        { name = 'luasnip',  priority = 900 },
         { name = 'orgmode',  priority = 850 },
         { name = 'nvim_lua', priority = 800 },
         { name = 'path',     priority = 800 },

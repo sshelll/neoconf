@@ -288,7 +288,7 @@ local pluglist = {
             'MattesGroeger/vim-bookmarks',
         },
     },
-        event = 'VeryLazy',
+    event = 'VeryLazy',
     {
         'MattesGroeger/vim-bookmarks',
         event = 'VeryLazy',
@@ -399,6 +399,7 @@ local pluglist = {
         dependencies = {
             'saadparwaiz1/cmp_luasnip',
             'neovim/nvim-lspconfig',
+            'hrsh7th/nvim-cmp',
             'williamboman/mason.nvim',
         },
         config = function()
@@ -407,7 +408,7 @@ local pluglist = {
     },
     {
         'hrsh7th/nvim-cmp',
-        event = 'VeryLazy',
+        event = { "InsertEnter", "CmdlineEnter" },
     },
     {
         'hrsh7th/cmp-path',
@@ -437,7 +438,7 @@ local pluglist = {
     {
         'saadparwaiz1/cmp_luasnip',
         dependencies = { 'hrsh7th/nvim-cmp' },
-        event = 'VeryLazy'
+        lazy = 'VeryLazy',
     },
     {
         'simrat39/symbols-outline.nvim',
@@ -463,6 +464,7 @@ local pluglist = {
     },
     {
         "L3MON4D3/LuaSnip",
+        dependencies = { 'saadparwaiz1/cmp_luasnip' },
         version = "v2.*",
         build = "make install_jsregexp",
     },
