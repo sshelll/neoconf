@@ -172,7 +172,6 @@ local pluglist = {
     },
     {
         'stevearc/dressing.nvim',
-        lazy = true,
         config = function()
             require('plugin-config/dressing')
         end
@@ -374,11 +373,6 @@ local pluglist = {
     {
         'neovim/nvim-lspconfig',
         lazy = false,
-        dependencies = {
-            'saadparwaiz1/cmp_luasnip',
-            'hrsh7th/nvim-cmp',
-            'L3MON4D3/LuaSnip',
-        },
         config = function()
             require('plugin-config/nvim-lspconfig')
         end
@@ -406,6 +400,7 @@ local pluglist = {
     {
         'hrsh7th/nvim-cmp',
         event = { "InsertEnter", "CmdlineEnter" },
+        dependencies = { 'neovim/nvim-lspconfig' }
     },
     {
         'hrsh7th/cmp-path',
@@ -461,9 +456,8 @@ local pluglist = {
     },
     {
         "L3MON4D3/LuaSnip",
-        dependencies = { 'saadparwaiz1/cmp_luasnip' },
         version = "v2.*",
-        build = "make install_jsregexp",
+        build = "make install_jsregexp"
     },
     {
         'nvim-tree/nvim-web-devicons',
