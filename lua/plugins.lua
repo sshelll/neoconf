@@ -455,9 +455,19 @@ local pluglist = {
         end
     },
     {
-        "L3MON4D3/LuaSnip",
-        version = "v2.*",
-        build = "make install_jsregexp"
+        'hrsh7th/vim-vsnip',
+        lazy = false,
+        dependencies = { 'hrsh7th/nvim-cmp' },
+    },
+    {
+        'hrsh7th/vim-vsnip-integ',
+        lazy = false,
+        dependencies = { 'hrsh7th/nvim-cmp' },
+    },
+    {
+        'hrsh7th/cmp-vsnip',
+        lazy = false,
+        dependencies = { 'hrsh7th/nvim-cmp' },
     },
     {
         'nvim-tree/nvim-web-devicons',
