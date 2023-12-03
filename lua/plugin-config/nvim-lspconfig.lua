@@ -1,5 +1,4 @@
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-local luasnip = require 'luasnip'
 local cmp = require 'cmp'
 
 local kind_icons = {
@@ -40,6 +39,7 @@ cmp.setup {
                 buffer = "[Buffer]",
                 nvim_lsp = "[LSP]",
                 luasnip = "[LuaSnip]",
+                vsnip = "[VSnip]",
                 nvim_lua = "[Lua]",
             })[entry.source.name]
             return vim_item
@@ -47,7 +47,7 @@ cmp.setup {
     },
     snippet = {
         expand = function(args)
-            require 'luasnip'.lsp_expand(args.body)
+            vim.fn["vsnip#anonymous"](args.body)
         end,
     },
     mapping = cmp.mapping.preset.insert({
@@ -80,7 +80,7 @@ cmp.setup {
     }),
     sources = {
         { name = 'nvim_lsp', priority = 1000 },
-        { name = 'luasnip',  priority = 900 },
+        { name = 'vsnip',    priority = 900 },
         { name = 'orgmode',  priority = 850 },
         { name = 'nvim_lua', priority = 800 },
         { name = 'path',     priority = 800 },
@@ -215,5 +215,5 @@ end
 -- vim.o.updatetime = 250
 -- vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
 
--- Snippets
-require("luasnip.loaders.from_snipmate").lazy_load { paths = vim.fn.stdpath "config" .. "/snippets" }
+-- Snippet
+vim.g.vsnip_snippet_dir = vim.fn.stdpath('config') .. '/snippets'
