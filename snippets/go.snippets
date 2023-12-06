@@ -43,3 +43,23 @@ snippet main "func main"
 	func main() {
 		${1}
 	}
+
+snippet test "func Test"
+	func Test${1}(t *testing.T) {
+		${2}
+	}
+
+snippet iferr "if err != nil"
+	if err != nil {
+		${1}
+	}
+
+snippet ifok "if _, ok := ${1}; ok"
+	if _, ok := ${1}; ok {
+		${2}
+	}
+
+snippet ifnotok "if _, ok := ${1}; !ok"
+	if _, ok := ${1}; !ok {
+		${2}
+	}
