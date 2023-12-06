@@ -1,10 +1,5 @@
 local pluglist = {
     {
-        "m4xshen/hardtime.nvim",
-        dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-        opts = {}
-    },
-    {
         "b0o/incline.nvim",
         lazy = false,
         config = function()
