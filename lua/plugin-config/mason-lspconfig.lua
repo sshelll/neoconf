@@ -17,6 +17,16 @@ require("mason-lspconfig").setup {
                 capabilities = capabilities
             }
         end,
+        ["gopls"] = function()
+            lspconfig.gopls.setup {
+                cmd = { "gopls", "serve" },
+                settings = {
+                    gopls = {
+                        directoryFilters = { "-vendor" },
+                    },
+                },
+            }
+        end,
         ["lua_ls"] = function()
             lspconfig.lua_ls.setup {
                 settings = {
@@ -28,6 +38,6 @@ require("mason-lspconfig").setup {
                 },
             }
         end,
-        ["jdtls"] = function () end
+        ["jdtls"] = function() end
     }
 }
