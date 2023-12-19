@@ -7,7 +7,7 @@ end
 db.setup({
     theme = 'hyper',
     config = {
-        disable_move = true,
+        disable_move = false,
         week_header  = { enable = false },
         packages     = { enable = false },
         project      = { enable = false },
@@ -19,7 +19,7 @@ db.setup({
             {
                 desc = '󰊳 Update LSP',
                 group = '@property',
-                action = function ()
+                action = function()
                     vim.cmd('MasonUpdate')
                     vim.cmd('TSUpdate')
                 end,
