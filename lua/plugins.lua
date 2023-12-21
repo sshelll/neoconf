@@ -1,5 +1,19 @@
 local pluglist = {
     {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opts = {
+            -- add any options here
+        },
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify",
+        },
+        config = function()
+            require('plugin-config/noice')
+        end
+    },
+    {
         "rgroli/other.nvim",
         lazy = false,
         event = "VeryLazy",
@@ -21,12 +35,6 @@ local pluglist = {
         config = function()
             require('plugin-config/incline')
         end
-    },
-    {
-        "ray-x/lsp_signature.nvim",
-        event = "VeryLazy",
-        opts = {},
-        config = function(_, opts) require 'lsp_signature'.setup(opts) end
     },
     {
         'simrat39/rust-tools.nvim',
@@ -59,14 +67,6 @@ local pluglist = {
         },
         config = function()
             require('plugin-config/gopher')
-        end
-    },
-    {
-        'linrongbin16/lsp-progress.nvim',
-        lazy = false,
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
-        config = function()
-            require('lsp-progress').setup()
         end
     },
     {
@@ -373,9 +373,19 @@ local pluglist = {
     {
         'nvim-lualine/lualine.nvim',
         lazy = false,
-        dependencies = { 'linrongbin16/lsp-progress.nvim' },
+        dependencies = {
+            'nvim-tree/nvim-web-devicons',
+            'linrongbin16/lsp-progress.nvim',
+        },
         config = function()
             require('plugin-config/lualine')
+        end
+    },
+    {
+        'linrongbin16/lsp-progress.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        config = function()
+            require('lsp-progress').setup()
         end
     },
     {

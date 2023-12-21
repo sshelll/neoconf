@@ -31,7 +31,14 @@ require('legendary').setup({
                 { '<leader>td', ':TodoTelescope<CR>',                       description = 'search todo items with Telescope' },
                 { '<leader>tf', ':Telescope find_files<CR>',                description = 'search files with Telescope' },
                 { '<leader>e',  ':HopWord<CR>',                             description = 'hop jump words' },
-                { '<leader>z',  ':NvimTreeFindFile<CR>',                    description = 'nvim tree find file'},
+                {
+                    '<leader>z',
+                    function ()
+                        local api = require("nvim-tree.api")
+                        api.tree.find_file({ open = true, focus = true })
+                    end,
+                    description = 'nvim tree find file',
+                },
             },
         },
         {
@@ -106,7 +113,14 @@ require('legendary').setup({
             icon = '',
             keymaps = {
                 { '<leader>tt', ':ToggleTerm size=15 direction=horizontal<CR>',    description = 'toggle a terminal emulator at bottom' },
-                { '<F3>',       ':NvimTreeToggle<CR>', description = 'toggle NvimTree' },
+                {
+                    '<F3>',
+                    function ()
+                        local api = require("nvim-tree.api")
+                        api.tree.toggle()
+                    end,
+                    description = 'toggle NvimTree',
+                },
             },
         },
         {
