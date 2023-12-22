@@ -1,23 +1,23 @@
 local dap, dapui = require("dap"), require("dapui")
 
 require('legendary').setup({
-   keymaps = {
+    keymaps = {
         {
             itemgroup = 'basic',
             description = 'basic keymaps',
             icon = '',
             keymaps = {
-                { '<F12>',     ':vertical res+3<CR>',       description = 'incr vertical window width' },
-                { '<F11>',     ':vertical res-1<CR>',       description = 'decr vertical window width' },
-                { '<F10>',     ':res+3<CR>',                description = 'incr horizontal window width' },
-                { '<F9>',      ':res-1<CR>',                description = 'decr horizontal window width' },
-                { 'p',         '"0p',                       description = 'paste from the first nvim buffer' },
-                { '<leader>p', 'p',                         description = 'paste last',                 mode = { 'n', 'v' } },
-                { '<leader>y', '"+y',                       description = 'copy to os',                 mode = { 'n', 'v' } },
-                { '…',         ':ExecNormal<CR>',           description = 'enter cmd mode',             mode = { 'n' } },
-                { '…',         ':ExecVisual<CR>',           description = 'enter cmd mode',             mode = { 'v' } },
-                { '<leader>l', ':noh<CR>',                  description = 'no highlight',               mode = { 'n' } },
-                { '<C-w>N',    '<C-\\><C-n>',               description = 'change terminal mode',       mode = { 't' } },
+                { '<F12>', ':vertical res+3<CR>', description = 'incr vertical window width' },
+                { '<F11>', ':vertical res-1<CR>', description = 'decr vertical window width' },
+                { '<F10>', ':res+3<CR>', description = 'incr horizontal window width' },
+                { '<F9>', ':res-1<CR>', description = 'decr horizontal window width' },
+                { 'p', '"0p', description = 'paste from the first nvim buffer' },
+                { '<leader>p', 'p', description = 'paste last', mode = { 'n', 'v' } },
+                { '<leader>y', '"+y', description = 'copy to os', mode = { 'n', 'v' } },
+                { '…', ':ExecNormal<CR>', description = 'enter cmd mode', mode = { 'n' } },
+                { '…', ':ExecVisual<CR>', description = 'enter cmd mode', mode = { 'v' } },
+                { '<leader>l', ':noh<CR>', description = 'no highlight', mode = { 'n' } },
+                { '<C-w>N', '<C-\\><C-n>', description = 'change terminal mode', mode = { 't' } },
             },
         },
         {
@@ -33,7 +33,7 @@ require('legendary').setup({
                 { '<leader>e',  ':HopWord<CR>',                             description = 'hop jump words' },
                 {
                     '<leader>z',
-                    function ()
+                    function()
                         local api = require("nvim-tree.api")
                         api.tree.find_file({ open = true, focus = true })
                     end,
@@ -46,14 +46,20 @@ require('legendary').setup({
             description = 'keymaps for golang',
             icon = '',
             keymaps = {
-                { '<F2>', ':GottClear<CR>',      description = 'clear go test notification' },
+                {
+                    '<F2>',
+                    function()
+                        require('notify').dismiss()
+                    end,
+                    description = 'clear go test notification',
+                },
                 {
                     '<F5>',
-                    function ()
-                       local filename = vim.fn.expand('%:t')
-                       if string.find(filename, '_test.go') then
-                           vim.cmd(':GottFile -v')
-                       end
+                    function()
+                        local filename = vim.fn.expand('%:t')
+                        if string.find(filename, '_test.go') then
+                            vim.cmd(':GottFile -v')
+                        end
                     end,
                     description = 'run all go tests in the current file with -v flag',
                 },
@@ -81,8 +87,9 @@ require('legendary').setup({
                 { '<leader>dt', function() dap.run_to_cursor() end,     description = 'run to cursor' },
                 { '<leader>dq', function() dap.disconnect() end,        description = 'disconnect' },
                 { '<leader>dr', function() dap.clear_breakpoints() end, description = 'clean breakpoints' },
-                { '<leader>de', function() dapui.eval() end,            description = 'eval', mode = { 'n', 'v' } },
-                { '<leader>dc',
+                { '<leader>de', function() dapui.eval() end,            description = 'eval',             mode = { 'n', 'v' } },
+                {
+                    '<leader>dc',
                     function()
                         local filetype = vim.bo.filetype
                         if filetype == 'lua' then
@@ -100,11 +107,11 @@ require('legendary').setup({
             description = 'keymaps for barbar',
             icon = '',
             keymaps = {
-                { '≤', ':BufferPrevious<CR>',                   description = 'previous buffer' },
-                { '≥', ':BufferNext<CR>',                       description = 'next buffer' },
-                { 'œ',  ':BufferClose<CR>',                      description = 'close buffer' },
-                { 'π',  ':BufferPin<CR>',                        description = 'pin buffer' },
-                { 'ç',  ':BufferCloseAllButCurrentOrPinned<CR>', description = 'close all buffers but pinned' },
+                { '≤', ':BufferPrevious<CR>', description = 'previous buffer' },
+                { '≥', ':BufferNext<CR>', description = 'next buffer' },
+                { 'œ', ':BufferClose<CR>', description = 'close buffer' },
+                { 'π', ':BufferPin<CR>', description = 'pin buffer' },
+                { 'ç', ':BufferCloseAllButCurrentOrPinned<CR>', description = 'close all buffers but pinned' },
             },
         },
         {
@@ -112,10 +119,10 @@ require('legendary').setup({
             description = 'other keymaps',
             icon = '',
             keymaps = {
-                { '<leader>tt', ':ToggleTerm size=15 direction=horizontal<CR>',    description = 'toggle a terminal emulator at bottom' },
+                { '<leader>tt', ':ToggleTerm size=15 direction=horizontal<CR>', description = 'toggle a terminal emulator at bottom' },
                 {
                     '<F3>',
-                    function ()
+                    function()
                         local api = require("nvim-tree.api")
                         api.tree.toggle()
                     end,
@@ -133,7 +140,7 @@ require('legendary').setup({
                 { '<leader>dd', ':TroubleToggle<CR>',  description = 'toggle trouble' },
                 {
                     '<leader>rr',
-                    function ()
+                    function()
                         local fileType = vim.bo.filetype
                         if fileType == 'go' then
                             require('util/golang').ui_run()
@@ -159,7 +166,7 @@ require('legendary').setup({
                 },
                 {
                     '<leader>rt',
-                    function ()
+                    function()
                         local fileType = vim.bo.filetype
                         if fileType == 'go' then
                             vim.cmd('Telescope gott')
@@ -183,7 +190,7 @@ require('legendary').setup({
                 },
                 {
                     '<leader>gt',
-                    function ()
+                    function()
                         local fileType = vim.bo.filetype
                         if fileType == 'go' then
                             vim.cmd('GoTestAdd')
@@ -239,14 +246,14 @@ require('legendary').setup({
                 },
                 {
                     ':SearchGitCommits',
-                    function ()
+                    function()
                         require('telescope').extensions.git_diffs.diff_commits()
                     end,
                     description = 'search git commits and open it in diffview'
                 },
                 {
                     ':SearchProjects',
-                    function ()
+                    function()
                         local projects = require('telescope').extensions.projects.projects
                         local layout = {
                             layout_config = {
@@ -305,7 +312,7 @@ require('legendary').setup({
             commands = {
                 {
                     ':NodeRun',
-                    function ()
+                    function()
                         local file = vim.fn.expand('%:p')
                         local cmd = '!node ' .. file
                         require('util/cmd').run_cmd(cmd, true)
@@ -321,7 +328,7 @@ require('legendary').setup({
             commands = {
                 {
                     ':SoftwareLicensesBSD3Clause',
-                    function ()
+                    function()
                         local c = require('util/common')
                         local year = c.inputOrDefault(vim.fn.strftime('%Y'), 'year: ')
                         local author = c.inputOrDefault('sshelll', 'author: ')
@@ -332,7 +339,7 @@ require('legendary').setup({
                 },
                 {
                     ':SoftwareLicensesMIT',
-                    function ()
+                    function()
                         local c = require('util/common')
                         local year = c.inputOrDefault(vim.fn.strftime('%Y'), 'year: ')
                         local author = c.inputOrDefault('sshelll', 'author: ')
@@ -352,7 +359,7 @@ require('legendary').setup({
             funcs = {
                 {
                     description = 'go impl with ui',
-                    function ()
+                    function()
                         require('util/golang').ui_impl()
                     end
                 },
@@ -365,7 +372,7 @@ require('legendary').setup({
             funcs = {
                 {
                     description = 'milli timestamp to date',
-                    function ()
+                    function()
                         local c = require('util/common')
                         local input = c.inputOrDefault(vim.fn.strftime('%s'), 'timestamp: ')
                         local timestamp = tonumber(input)
@@ -375,10 +382,11 @@ require('legendary').setup({
                 },
                 {
                     description = 'date to milli timestamp',
-                    function ()
+                    function()
                         local c = require('util/common')
                         local fmt = '%Y-%m-%d %H:%M:%S'
-                        local input = c.inputOrDefault(vim.fn.strftime(fmt), string.format('date(%s, default now): ', fmt))
+                        local input = c.inputOrDefault(vim.fn.strftime(fmt),
+                            string.format('date(%s, default now): ', fmt))
                         local date = input
                         local timestamp = os.time({
                             year = date:sub(1, 4),

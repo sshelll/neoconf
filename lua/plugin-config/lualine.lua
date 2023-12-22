@@ -130,12 +130,6 @@ ins_left {
     color = { fg = colors.magenta, gui = 'bold' },
 }
 
--- ins_left {
---     "b:coc_current_function",
---     icon = ' ',
---     color = { fg = colors.blue, gui = 'bold' },
--- }
-
 ins_left {
     'branch',
     icon = '',
@@ -181,6 +175,12 @@ ins_left {
     function()
         return '%='
     end,
+}
+
+ins_left {
+    require("noice").api.statusline.mode.get,
+    cond = require("noice").api.statusline.mode.has,
+    color = { fg = "#ff9e64" },
 }
 
 ins_left {
