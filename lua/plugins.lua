@@ -372,17 +372,9 @@ local pluglist = {
         lazy = false,
         dependencies = {
             'nvim-tree/nvim-web-devicons',
-            'linrongbin16/lsp-progress.nvim',
         },
         config = function()
             require('plugin-config/lualine')
-        end
-    },
-    {
-        'linrongbin16/lsp-progress.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
-        config = function()
-            require('lsp-progress').setup()
         end
     },
     {
