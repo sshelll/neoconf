@@ -211,8 +211,6 @@ ins_right { 'location' }
 
 ins_right { 'progress', color = { fg = colors.fg, gui = 'bold' } }
 
-ins_right { 'filesize' }
-
 ins_right {
     'o:encoding',       -- option component same as &encoding in viml
     fmt = string.upper, -- I'm not sure why it's upper case either ;)
