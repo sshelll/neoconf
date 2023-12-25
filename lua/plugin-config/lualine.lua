@@ -192,6 +192,21 @@ ins_left {
 
 -- Add components to right sections
 
+ins_right {
+    function()
+        local m = vim.fn.mode()
+        if m == 'v' then
+            if vim.fn.line('.') ~= vim.fn.line('v') then
+                return '¶: -'
+            end
+            local w = math.abs(vim.fn.virtcol('.') - vim.fn.virtcol('v')) + 1
+            return '¶: ' .. w
+        end
+        return ''
+    end,
+    color = { fg = colors.blue, gui = 'bold' },
+}
+
 ins_right { 'location' }
 
 ins_right { 'progress', color = { fg = colors.fg, gui = 'bold' } }
