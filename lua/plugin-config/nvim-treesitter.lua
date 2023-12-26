@@ -1,7 +1,7 @@
 require 'nvim-treesitter.configs'.setup {
     -- 安装 language parser
     -- :TSInstallInfo 命令查看支持的语言
-    ensure_installed = { "json", "html", "css", "vim", "lua", "javascript", "typescript", "tsx", "go", "regex", "markdown_inline" },
+    ensure_installed = { "json", "yaml", "toml", "html", "css", "vim", "lua", "javascript", "typescript", "tsx", "go", "regex", "markdown_inline" },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
