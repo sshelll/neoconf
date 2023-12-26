@@ -1,5 +1,5 @@
 local dap = require('dap')
-local home = os.getenv('HOME')
+local datapath = vim.fn.stdpath('data')
 
 dap.adapters.delve = {
     type = 'server',
@@ -30,7 +30,7 @@ dap.adapters["pwa-node"] = {
     executable = {
         command = "node",
         -- 💀 Make sure to update this path to point to your installation
-        args = { home .. "/.local/share/nvim/vscode_js_debug/js-debug/src/dapDebugServer.js", "${port}" },
+        args = { datapath .. "/vscode_js_debug/js-debug/src/dapDebugServer.js", "${port}" },
     }
 }
 
