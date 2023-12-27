@@ -38,6 +38,6 @@ require("mason-lspconfig").setup {
                 },
             }
         end,
-        ["jdtls"] = function() end
+        ["jdtls"] = function() end,
     }
 }

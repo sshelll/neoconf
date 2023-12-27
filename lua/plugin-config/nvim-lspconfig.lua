@@ -228,3 +228,7 @@ end
 
 -- Snippet
 vim.g.vsnip_snippet_dir = vim.fn.stdpath('config') .. '/snippets'
+
+require 'lspconfig'.millet.setup {
+    cmd = { "millet" },
+}
