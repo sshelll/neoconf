@@ -145,13 +145,6 @@ local pluglist = {
         end
     },
     {
-        'Mofiqul/vscode.nvim',
-        lazy = false,
-        config = function()
-            require('plugin-config/vscode-theme')
-        end
-    },
-    {
         'nvimdev/dashboard-nvim',
         lazy = false,
         dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -513,11 +506,20 @@ local pluglist = {
         branch = 'master',
         event = 'VeryLazy',
     },
+    {
+        'projekt0n/github-nvim-theme',
+        lazy = false,
+        config = function()
+            -- require('plugin-config/github-nvim-theme')
+            require('github-theme').setup({})
+            vim.cmd('colorscheme github_light_default')
+        end
+    },
 }
 
 local opts = {
     install = {
-        colorscheme = { "vscode" }
+        colorscheme = { "github_light_default" }
     },
     ui = {
         border = 'rounded',

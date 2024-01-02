@@ -40,7 +40,7 @@ local config = {
         -- Disable sections and component separators
         component_separators = '',
         section_separators = '',
-        theme = 'vscode',
+        theme = 'auto',
         icons_enabled = true,
         globalstatus = true,
     },
