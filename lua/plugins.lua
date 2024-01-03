@@ -243,13 +243,14 @@ local pluglist = {
             -- require('plugin-config/tokyo-night')
         end
     },
-    {
-        'kevinhwang91/nvim-hlslens',
-        event = 'VeryLazy',
-        config = function()
-            require('plugin-config/hlslens')
-        end
-    },
+    -- no need to use this plug since I decided to use noice.nvim
+    -- {
+    --     'kevinhwang91/nvim-hlslens',
+    --     event = 'VeryLazy',
+    --     config = function()
+    --         require('plugin-config/hlslens')
+    --     end
+    -- },
     {
         'lukas-reineke/indent-blankline.nvim',
         event = 'VeryLazy',

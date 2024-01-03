@@ -21,7 +21,8 @@ require("noice").setup({
         },
     },
     notify = {
-        enabled = false,
+        enabled = true,
+        view = 'notify',
     },
     lsp = {
         -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
