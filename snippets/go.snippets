@@ -28,6 +28,18 @@ snippet deferfunc "defer func"
 		${1}
 	}()
 
+snippet deferrecover "defer func() { recover() }"
+	defer func() {
+		if r := recover(); r != nil {
+			${1}
+		}
+	}()
+
+snippet recover "recover()"
+	if r := recover(); r != nil {
+		${1}
+	}
+
 snippet vars "var ()"
 	var (
 		${1}
@@ -64,4 +76,9 @@ snippet ifok "if _, ok := ${1}; ok"
 snippet ifnotok "if _, ok := ${1}; !ok"
 	if _, ok := ${1}; !ok {
 		${2}
+	}
+
+snippet ifreturn "if err != nil { return }"
+	if err != nil {
+		return
 	}
