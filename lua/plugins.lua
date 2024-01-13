@@ -291,15 +291,11 @@ local pluglist = {
         event = 'VeryLazy',
     },
     {
-        'tom-anders/telescope-vim-bookmarks.nvim',
-        dependencies = {
-            'nvim-telescope/telescope.nvim',
-            'MattesGroeger/vim-bookmarks',
-        },
-    },
-    event = 'VeryLazy',
-    {
-        'MattesGroeger/vim-bookmarks',
+        'tomasky/bookmarks.nvim',
+        dependencies = { 'nvim-telescope/telescope.nvim' },
+        config = function()
+            require('plugin-config/bookmarks')
+        end,
         event = 'VeryLazy',
     },
     {
