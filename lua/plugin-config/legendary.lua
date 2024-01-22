@@ -30,8 +30,18 @@ require('legendary').setup({
                 { '<leader>k',  ':Legendary<CR>',                           description = 'open legendary search box' },
                 { '<leader>td', ':TodoTelescope<CR>',                       description = 'search todo items with Telescope' },
                 { '<leader>tf', ':Telescope find_files<CR>',                description = 'search files with Telescope' },
-                { '<leader>tm', ':Telescope bookmarks list<CR>',            description = 'search bookmarks with Telescope' },
-                { '<leader>e',  ':HopWord<CR>',                             description = 'hop jump words' },
+                {
+                    '<leader>tm',
+                    function()
+                        local layout_opts = {
+                            layout_strategy = 'vertical',
+                            layout_config = { width = 0.5 },
+                        }
+                        require('telescope').extensions.bookmarks.list(layout_opts)
+                    end,
+                    description = 'search bookmarks with Telescope'
+                },
+                { '<leader>e', ':HopWord<CR>', description = 'hop jump words' },
                 {
                     '<leader>z',
                     function()
