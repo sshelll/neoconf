@@ -32,6 +32,7 @@ local pluglist = {
     {
         "b0o/incline.nvim",
         lazy = false,
+        dependencies = { 'lewis6991/gitsigns.nvim', 'nvim-tree/nvim-web-devicons' },
         config = function()
             require('plugin-config/incline')
         end
@@ -290,13 +291,21 @@ local pluglist = {
         'rhysd/clever-f.vim',
         event = 'VeryLazy',
     },
+    -- {
+    --     'tomasky/bookmarks.nvim',
+    --     dependencies = { 'nvim-telescope/telescope.nvim' },
+    --     config = function()
+    --         require('plugin-config/bookmarks')
+    --     end,
+    --     event = 'VeryLazy',
+    -- },
     {
-        'tomasky/bookmarks.nvim',
-        dependencies = { 'nvim-telescope/telescope.nvim' },
+        'crusj/bookmarks.nvim',
+        branch = 'main',
+        dependencies = { 'nvim-web-devicons', 'nvim-telescope/telescope.nvim' },
         config = function()
-            require('plugin-config/bookmarks')
-        end,
-        event = 'VeryLazy',
+            require("plugin-config/bookmarks")
+        end
     },
     {
         'sindrets/diffview.nvim',
