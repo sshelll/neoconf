@@ -1,7 +1,7 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "0236521ea582747b58869cb72f70ccfa967d2e89" },
   "barbar.nvim": { "branch": "master", "commit": "c3ab0dbfe143ffb89a245e5b530f5349d6bb64e1" },
-  "bookmarks.nvim": { "branch": "main", "commit": "17d8f6e3e8a8ef0b086b5f84a9ddd64d246bf992" },
+  "bookmarks.nvim": { "branch": "feat_virt_pattern_enhance", "commit": "23204aeff64fdfd04092be191a353e0f12e4a4a5" },
   "clever-f.vim": { "branch": "master", "commit": "6a3ac5e3688598af9411ab741737f98c47370c22" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
   "cmp-cmdline": { "branch": "main", "commit": "8ee981b4a91f536f52add291594e89fb6645e451" },
