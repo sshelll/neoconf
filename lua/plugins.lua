@@ -178,7 +178,7 @@ local pluglist = {
     },
     {
         'lewis6991/gitsigns.nvim',
-        event = 'VeryLazy',
+        lazy = false,
         config = function()
             require('plugin-config/gitsigns')
         end
@@ -304,8 +304,8 @@ local pluglist = {
     --     event = 'VeryLazy',
     -- },
     {
-        'crusj/bookmarks.nvim',
-        branch = 'main',
+        'sshelll/bookmarks.nvim',
+        branch = 'feat_virt_pattern_enhance',
         dependencies = { 'nvim-web-devicons', 'nvim-telescope/telescope.nvim' },
         config = function()
             require("plugin-config/bookmarks")
