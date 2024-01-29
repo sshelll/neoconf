@@ -31,7 +31,7 @@ local pluglist = {
     },
     {
         "b0o/incline.nvim",
-        lazy = false,
+        event = 'VeryLazy',
         dependencies = { 'lewis6991/gitsigns.nvim', 'nvim-tree/nvim-web-devicons' },
         config = function()
             require('plugin-config/incline')
@@ -174,7 +174,7 @@ local pluglist = {
     },
     {
         'lewis6991/gitsigns.nvim',
-        lazy = false,
+        event = 'VeryLazy',
         config = function()
             require('plugin-config/gitsigns')
         end
