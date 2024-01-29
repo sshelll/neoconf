@@ -291,17 +291,9 @@ local pluglist = {
         'rhysd/clever-f.vim',
         event = 'VeryLazy',
     },
-    -- {
-    --     'tomasky/bookmarks.nvim',
-    --     dependencies = { 'nvim-telescope/telescope.nvim' },
-    --     config = function()
-    --         require('plugin-config/bookmarks')
-    --     end,
-    --     event = 'VeryLazy',
-    -- },
     {
-        'sshelll/bookmarks.nvim',
-        branch = 'feat_virt_pattern_enhance',
+        'crusj/bookmarks.nvim',
+        branch = 'main',
         dependencies = { 'nvim-web-devicons', 'nvim-telescope/telescope.nvim' },
         config = function()
             require("plugin-config/bookmarks")
