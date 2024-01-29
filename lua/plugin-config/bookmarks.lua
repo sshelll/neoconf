@@ -7,7 +7,7 @@ require("bookmarks").setup({
         jump = "<CR>", -- Jump from bookmarks(buf keymap)
         delete = "dd", -- Delete bookmarks(buf keymap)
         order = "<space><space>", -- Order bookmarks by frequency or updated_time(buf keymap)
-        delete_on_virt = "\\dd", -- Delete bookmark at virt text line(global keymap)
+        delete_on_virt = "dm", -- Delete bookmark at virt text line(global keymap)
         show_desc = "md", -- show bookmark desc(global keymap)
         focus_tags = "h", -- focus tags window
         focus_bookmarks = "l", -- focus bookmarks window
@@ -26,7 +26,7 @@ require("bookmarks").setup({
     border_style = "single", -- border style: "single", "double", "rounded"
     hl = {
         border = "TelescopeBorder", -- border highlight
-        cursorline = "guibg=Gray guifg=White", -- cursorline highlight
+        cursorline = "guifg=#7aa2f7 guibg=#3b4261", -- cursorline highlight
     }
 })
 

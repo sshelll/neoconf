@@ -39,5 +39,14 @@ require("mason-lspconfig").setup {
             }
         end,
         ["jdtls"] = function() end,
+        ["sqlls"] = function()
+            lspconfig.sqlls.setup {
+                cmd = { "sql-language-server", "up", "--method", "stdio" },
+                filetypes = { "sql" },
+            }
+        end,
+        ["sqls"] = function()
+            lspconfig.sqls.setup {}
+        end
     }
 }
