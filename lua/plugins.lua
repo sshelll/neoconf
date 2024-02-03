@@ -416,7 +416,10 @@ local pluglist = {
     {
         'hrsh7th/nvim-cmp',
         event = { "InsertEnter", "CmdlineEnter" },
-        dependencies = { 'neovim/nvim-lspconfig' }
+        dependencies = { 'neovim/nvim-lspconfig' },
+        config = function ()
+            require('plugin-config/nvim-cmp')
+        end
     },
     {
         'hrsh7th/cmp-path',
