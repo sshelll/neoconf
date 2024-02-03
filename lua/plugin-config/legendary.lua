@@ -147,6 +147,8 @@ require('legendary').setup({
                             require('util/golang').ui_run()
                         elseif fileType == 'javascript' then
                             require('util/nodejs').ui_run()
+                        elseif fileType == 'sh' then
+                            require('util/bash').ui_run()
                         elseif fileType == 'rust' then
                             local common = require('util/common')
                             local envs = common.readInput('envs: ')
