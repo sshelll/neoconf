@@ -34,4 +34,8 @@ function util.run_cmd(input, keep)
     end
 end
 
+function util.term_exec_cmd(cmd)
+    vim.api.nvim_command("TermExec cmd=\"" .. cmd .. "\"")
+end
+
 return util
