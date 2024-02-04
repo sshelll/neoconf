@@ -43,6 +43,7 @@ require("mason-lspconfig").setup {
             lspconfig.sqlls.setup {
                 cmd = { "sql-language-server", "up", "--method", "stdio" },
                 filetypes = { "sql" },
+                root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
             }
         end,
         ["sqls"] = function()
