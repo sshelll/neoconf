@@ -20,6 +20,7 @@ require("mason-lspconfig").setup {
         ["gopls"] = function()
             lspconfig.gopls.setup {
                 cmd = { "gopls", "serve" },
+                capabilities = capabilities,
                 settings = {
                     gopls = {
                         directoryFilters = { "-vendor" },
@@ -48,6 +49,18 @@ require("mason-lspconfig").setup {
         end,
         ["sqls"] = function()
             lspconfig.sqls.setup {}
+        end,
+        ["biome"] = function()
+            lspconfig.biome.setup {}
+        end,
+        ["tsserver"] = function()
+            lspconfig.tsserver.setup {
+                capabilities = capabilities,
+                on_attach = function(client)
+                    client.resolved_capabilities.document_formatting = false
+                    client.resolved_capabilities.document_range_formatting = false
+                end
+            }
         end
     }
 }
