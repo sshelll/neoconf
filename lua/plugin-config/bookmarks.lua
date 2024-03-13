@@ -23,7 +23,7 @@ require("bookmarks").setup({
     sign_icon = "", -- if it is not empty, show icon in signColumn.
     virt_pattern = { "*" }, -- Show virt text only on matched pattern
     virt_ignore_pattern = {},
-    border_style = "single", -- border style: "single", "double", "rounded"
+    border_style = "rounded", -- border style: "single", "double", "rounded"
     hl = {
         border = "TelescopeBorder", -- border highlight
         cursorline = "guifg=#7aa2f7 guibg=#3b4261", -- cursorline highlight

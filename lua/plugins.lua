@@ -102,12 +102,25 @@ local pluglist = {
         'tpope/vim-dispatch',
         event = 'VeryLazy',
     },
+    -- no need to use hop.nvim since I decided to use flash.nvim
+    -- {
+    --     'phaazon/hop.nvim',
+    --     event = 'VeryLazy',
+    --     config = function()
+    --         require('hop').setup()
+    --     end,
+    -- },
     {
-        'phaazon/hop.nvim',
+        'folke/flash.nvim',
         event = 'VeryLazy',
-        config = function()
-            require('hop').setup()
-        end,
+        opts = {},
+        keys = {
+            { "s",     mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
+            { "S",     mode = { "n", "x", "o" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
+            { "r",     mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
+            { "R",     mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+            { "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
+        },
     },
     {
         'sshelll/gott.nvim',
@@ -413,7 +426,7 @@ local pluglist = {
         'hrsh7th/nvim-cmp',
         event = { "InsertEnter", "CmdlineEnter" },
         dependencies = { 'neovim/nvim-lspconfig' },
-        config = function ()
+        config = function()
             require('plugin-config/nvim-cmp')
         end
     },
