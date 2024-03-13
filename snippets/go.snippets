@@ -82,3 +82,11 @@ snippet ifreturn "if err != nil { return }"
 	if err != nil {
 		return
 	}
+
+snippet fori "for i := 0; i < ${1:10}; i++"
+	for i := 0; i < ${1:10}; i++ {
+		${2}
+	}
+
+snippet bytes "[]byte"
+	[]byte(${1})
