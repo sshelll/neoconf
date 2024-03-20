@@ -43,12 +43,16 @@ require("mason-lspconfig").setup {
         ["sqlls"] = function()
             lspconfig.sqlls.setup {
                 cmd = { "sql-language-server", "up", "--method", "stdio" },
-                filetypes = { "sql" },
+                filetypes = { "sql", "mysql" },
                 root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
             }
         end,
         ["sqls"] = function()
-            lspconfig.sqls.setup {}
+            lspconfig.sqls.setup {
+                cmd = { "sqls", "-config", "~/.config/sqls/config.yml" },
+                filetypes = { "sql", "mysql" },
+                root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
+            }
         end,
         ["biome"] = function()
             lspconfig.biome.setup {}
