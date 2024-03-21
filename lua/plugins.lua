@@ -368,10 +368,17 @@ local pluglist = {
         end
     },
     {
-        'petertriho/nvim-scrollbar',
+        'dstein64/nvim-scrollview',
         event = 'VeryLazy',
         config = function()
-            require('plugin-config/scrollbar')
+            require('scrollview').setup({
+                excluded_filetypes = { 'nerdtree' },
+                current_only = true,
+                base = 'right',
+                column = 1,
+                signs_on_startup = { 'all' },
+                diagnostics_severities = { vim.diagnostic.severity.ERROR }
+            })
         end
     },
     {
