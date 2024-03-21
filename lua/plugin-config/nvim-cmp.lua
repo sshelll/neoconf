@@ -43,15 +43,20 @@ local kind_icons = {
 cmp.setup {
     formatting = {
         format = function(entry, vim_item)
-            vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-            vim_item.menu = ({
-                path = "[Path]",
-                buffer = "[Buffer]",
-                nvim_lsp = "[LSP]",
-                luasnip = "[LuaSnip]",
-                vsnip = "[VSnip]",
-                nvim_lua = "[Lua]",
-            })[entry.source.name]
+            if entry.source.name == 'vim-dadbod-completion' then
+                vim_item.kind = "󰡦 [SQL]"
+                vim_item.menu = "[SQL]"
+            else
+                vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+                vim_item.menu = ({
+                    path = "[Path]",
+                    buffer = "[Buffer]",
+                    nvim_lsp = "[LSP]",
+                    luasnip = "[LuaSnip]",
+                    vsnip = "[VSnip]",
+                    nvim_lua = "[Lua]",
+                })[entry.source.name]
+            end
             return vim_item
         end
     },
@@ -97,6 +102,18 @@ cmp.setup {
         { name = 'buffer',   priority = 500 },
     },
 }
+
+-- autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
+
+local db_ui_sources = {
+    sources = cmp.config.sources({
+        { name = 'vim-dadbod-completion' },
+    }, {
+        { name = 'buffer' }
+    })
+}
+cmp.setup.filetype('sql', db_ui_sources)
+cmp.setup.filetype('mysql', db_ui_sources)
 
 -- `/` cmdline setup.
 cmp.setup.cmdline({ '/', '?' }, {
