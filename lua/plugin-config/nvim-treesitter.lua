@@ -26,17 +26,4 @@ require 'nvim-treesitter.configs'.setup {
             scope_incremental = '<TAB>',
         }
     },
-
-    -- 启用基于Treesitter的代码格式化(=) . NOTE: This is an experimental feature.
-    --indent = {
-    --enable = true
-    --}
 }
-
--- 开启 Folding
--- zc = 折叠, zo = 展开
-vim.wo.foldmethod = 'expr'
-vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
--- 默认不要折叠
--- https://stackoverflow.com/questions/8316139/how-to-set-the-default-to-unfolded-when-you-open-a-file
-vim.wo.foldlevel = 99
