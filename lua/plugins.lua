@@ -376,7 +376,7 @@ local pluglist = {
         event = 'VeryLazy',
         config = function()
             require('scrollview').setup({
-                excluded_filetypes = { 'nerdtree' },
+                excluded_filetypes = { 'NvimTree' },
                 current_only = true,
                 base = 'right',
                 column = 1,
