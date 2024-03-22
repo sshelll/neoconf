@@ -1,5 +1,15 @@
 local pluglist = {
     {
+        "kevinhwang91/nvim-ufo",
+        event = 'VeryLazy',
+        dependencies = {
+            "kevinhwang91/promise-async",
+        },
+        config = function()
+            require('plugin-config/nvim-ufo')
+        end
+    },
+    {
         "ziontee113/icon-picker.nvim",
         config = function()
             require("icon-picker").setup({ disable_legacy_commands = true })
