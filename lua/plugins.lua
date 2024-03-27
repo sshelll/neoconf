@@ -135,14 +135,6 @@ local pluglist = {
         'tpope/vim-dispatch',
         event = 'VeryLazy',
     },
-    -- no need to use hop.nvim since I decided to use flash.nvim
-    -- {
-    --     'phaazon/hop.nvim',
-    --     event = 'VeryLazy',
-    --     config = function()
-    --         require('hop').setup()
-    --     end,
-    -- },
     {
         'folke/flash.nvim',
         event = 'VeryLazy',
@@ -151,6 +143,9 @@ local pluglist = {
             { "<leader>e", mode = { "n", "x", "o" }, function() require("flash").jump() end,       desc = "Flash" },
             { "S",         mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
         },
+        config = function()
+            vim.cmd('hi FlashCursor guifg=yellow guibg=black')
+        end
     },
     {
         'sshelll/gott.nvim',
@@ -291,14 +286,6 @@ local pluglist = {
             require('plugin-config/tokyo-night')
         end
     },
-    -- no need to use this plug since I decided to use noice.nvim
-    -- {
-    --     'kevinhwang91/nvim-hlslens',
-    --     event = 'VeryLazy',
-    --     config = function()
-    --         require('plugin-config/hlslens')
-    --     end
-    -- },
     {
         'lukas-reineke/indent-blankline.nvim',
         event = 'VeryLazy',
