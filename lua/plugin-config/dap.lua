@@ -10,6 +10,15 @@ dap.adapters.delve = {
     }
 }
 
+dap.adapters.delve_no_optimize = {
+    type = 'server',
+    port = '${port}',
+    executable = {
+        command = 'dlv',
+        args = { '--build-flags="-gcflags=\'all=-N -l\'"', 'dap', '-l', '127.0.0.1:${port}', '--check-go-version=false' },
+    }
+}
+
 dap.adapters.codelldb = {
     type = 'server',
     port = '${port}',
@@ -46,6 +55,19 @@ dap.configurations.go = {
     {
         type = "delve",
         name = "Debug Test",
+        request = "launch",
+        mode = "test",
+        program = "./${relativeFileDirname}"
+    },
+    {
+        type = "delve_no_optimize",
+        name = 'Debug with gcflags="all=-N -l"',
+        request = "launch",
+        program = "${file}"
+    },
+    {
+        type = "delve_no_optimize",
+        name = 'Debug Test with gcflags="all=-N -l"',
         request = "launch",
         mode = "test",
         program = "./${relativeFileDirname}"
