@@ -1,9 +1,11 @@
 if vim.g.neovide then
     vim.g.neovide_cursor_vfx_mode = 'railgun'
     vim.g.neovide_hide_mouse_when_typing = true
-    vim.o.guifont = "MesloLGS Nerd Font:h12:#h-normal"
+    -- vim.o.guifont = "MesloLGS Nerd Font:h12:#h-full"
+    vim.o.guifont = "JetBrainsMono Nerd Font:h12:#h-full"
     vim.g.neovide_fullscreen = true
     vim.opt.linespace = 0
+    vim.g.neovide_scale_factor = 1.0
     vim.g.neovide_padding_top = 0
     vim.g.neovide_padding_bottom = 0
     vim.g.neovide_padding_right = 0
