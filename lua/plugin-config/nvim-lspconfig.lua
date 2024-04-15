@@ -30,10 +30,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set('n', 'gr', ':Telescope lsp_references<CR>', opts)
         vim.keymap.set('n', '<leader>f', function()
             local fileType = vim.bo.filetype
+            local file = vim.fn.expand('%:p')
             if fileType == 'sh' then
-                local file = vim.fn.expand('%:p')
-                vim.cmd("silent !shfmt -l -w " .. file)
+                vim.cmd("!shfmt -l -w " .. file)
                 vim.cmd("edit")
+                return
+            elseif fileType == 'json' then
+                vim.cmd("!biome check --apply " .. file)
                 return
             end
             vim.lsp.buf.format { async = true }

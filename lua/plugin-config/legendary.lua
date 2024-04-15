@@ -15,7 +15,7 @@ require('legendary').setup({
                 { '<leader>p', 'p', description = 'paste last', mode = { 'n', 'v' } },
                 { '<leader>y', '"+y', description = 'copy to os', mode = { 'n', 'v' } },
                 { '<D-c>', '"+y', description = 'copy to os', mode = { 'n', 'v' } },
-                { '<D-v>', '"+p', description = 'paste from os', mode = { 'n', 'v' } },
+                { '<D-v>', '"+p', description = 'paste from os', mode = { 'n', 'v', 'i' } },
                 { '<leader>v', '"+p', description = 'paste from os', mode = { 'n', 'v' } },
                 { '…', ':ExecNormal<CR>', description = 'enter cmd mode', mode = { 'n' } },
                 { '…', ':ExecVisual<CR>', description = 'enter cmd mode', mode = { 'v' } },
