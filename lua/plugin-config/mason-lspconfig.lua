@@ -55,7 +55,12 @@ require("mason-lspconfig").setup {
             }
         end,
         ["biome"] = function()
-            lspconfig.biome.setup {}
+            lspconfig.biome.setup {
+                cmd = { "biome", "lsp-proxy" },
+                filetypes = { "javascript", "javascriptreact", "json", "jsonc", "typescript", "typescript.tsx", "typescriptreact", "astro", "svelte", "vue" },
+                root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
+                single_file_support = true,
+            }
         end,
         ["tsserver"] = function()
             lspconfig.tsserver.setup {
