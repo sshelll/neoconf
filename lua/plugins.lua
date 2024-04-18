@@ -111,11 +111,11 @@ local pluglist = {
         end
     },
     {
-        "ellisonleao/glow.nvim",
-        event = 'VeryLazy',
-        config = function()
-            require("glow").setup()
-        end,
+        "lukas-reineke/headlines.nvim",
+        dependencies = "nvim-treesitter/nvim-treesitter",
+        config = function ()
+            require('plugin-config/headlines')
+        end
     },
     {
         'Wansmer/treesj',
