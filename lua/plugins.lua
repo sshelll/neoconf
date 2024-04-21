@@ -113,7 +113,7 @@ local pluglist = {
     {
         "lukas-reineke/headlines.nvim",
         dependencies = "nvim-treesitter/nvim-treesitter",
-        config = function ()
+        config = function()
             require('plugin-config/headlines')
         end
     },
@@ -165,11 +165,6 @@ local pluglist = {
         config = function()
             require('plugin-config/nvim-notify')
         end
-    },
-    {
-        'nvim-telescope/telescope-dap.nvim',
-        dependencies = { 'nvim-telescope/telescope.nvim' },
-        lazy = true,
     },
     {
         'paopaol/telescope-git-diffs.nvim',
@@ -227,6 +222,7 @@ local pluglist = {
     },
     {
         'stevearc/dressing.nvim',
+        dependencies = { 'nvim-telescope/telescope.nvim' },
         config = function()
             require('plugin-config/dressing')
         end
@@ -268,6 +264,7 @@ local pluglist = {
     {
         'mfussenegger/nvim-dap',
         lazy = true,
+        dependencies = { 'nvim-telescope/telescope.nvim' },
         config = function()
             require('plugin-config/dap')
         end

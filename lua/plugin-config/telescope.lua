@@ -10,7 +10,6 @@ require('telescope').setup {
     },
     pickers = {
         find_files = {
-            -- theme = "dropdown",
             layout_strategy = "vertical",
             layout_config = {
                 height = 0.8,
@@ -69,10 +68,8 @@ require('telescope').setup {
 }
 
 require('telescope').load_extension('bookmarks')
-require("telescope").load_extension("ui-select")
 require("telescope").load_extension("fzf")
 require('telescope').load_extension('git_diffs')
-require('telescope').load_extension('dap')
 require('telescope').load_extension('notify')
 require('telescope').load_extension('projects')
 require('telescope').load_extension('gott')
