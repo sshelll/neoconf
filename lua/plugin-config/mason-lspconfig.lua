@@ -70,6 +70,14 @@ require("mason-lspconfig").setup {
                     client.resolved_capabilities.document_range_formatting = false
                 end
             }
+        end,
+        ["marksman"] = function()
+            lspconfig.marksman.setup {
+                cmd = { "marksman", "server" },
+                filetypes = { 'markdown', 'markdown.mdx' },
+                root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
+                single_file_support = true,
+            }
         end
     }
 }
