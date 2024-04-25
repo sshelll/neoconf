@@ -38,6 +38,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
             elseif fileType == 'json' then
                 vim.cmd("!biome check --apply " .. file)
                 return
+            elseif fileType == 'sql' then
+                vim.cmd("!sql-formatter -o " .. file .. " " .. file)
+                return
             end
             vim.lsp.buf.format { async = true }
         end, opts)
