@@ -43,7 +43,7 @@ local kind_icons = {
 cmp.setup {
     formatting = {
         format = function(entry, vim_item)
-            if entry.source.name == 'vim-dadbod-completion' then
+            if entry.source.name == 'cmp-dbee' then
                 vim_item.kind = "󰡦 [SQL]"
                 vim_item.menu = "[SQL]"
             else
@@ -96,24 +96,13 @@ cmp.setup {
     sources = {
         { name = 'nvim_lsp', priority = 1000 },
         { name = 'vsnip',    priority = 900 },
-        { name = 'orgmode',  priority = 850 },
+        { name = 'cmp-dbee', priority = 800 },
+        { name = 'orgmode',  priority = 800 },
         { name = 'nvim_lua', priority = 800 },
         { name = 'path',     priority = 800 },
         { name = 'buffer',   priority = 500 },
     },
 }
-
--- autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
-
-local db_ui_sources = {
-    sources = cmp.config.sources({
-        { name = 'vim-dadbod-completion' },
-    }, {
-        { name = 'buffer' }
-    })
-}
-cmp.setup.filetype('sql', db_ui_sources)
-cmp.setup.filetype('mysql', db_ui_sources)
 
 -- `/` cmdline setup.
 cmp.setup.cmdline({ '/', '?' }, {
