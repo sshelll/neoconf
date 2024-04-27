@@ -16,20 +16,15 @@ local pluglist = {
         end
     },
     {
-        'kristijanhusak/vim-dadbod-ui',
+        "kndndrj/nvim-dbee",
         dependencies = {
-            { 'tpope/vim-dadbod',                     lazy = true },
-            { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
+            "MunifTanjim/nui.nvim",
         },
-        cmd = {
-            'DBUI',
-            'DBUIToggle',
-            'DBUIAddConnection',
-            'DBUIFindBuffer',
-        },
-        init = function()
-            -- Your DBUI configuration
-            vim.g.db_ui_use_nerd_fonts = 1
+        build = function()
+            require("dbee").install()
+        end,
+        config = function()
+            require("dbee").setup( --[[optional config]])
         end,
     },
     {
@@ -453,7 +448,13 @@ local pluglist = {
     {
         'hrsh7th/nvim-cmp',
         event = { "InsertEnter", "CmdlineEnter" },
-        dependencies = { 'neovim/nvim-lspconfig' },
+        dependencies = {
+            'neovim/nvim-lspconfig',
+            {
+                'MattiasMTS/cmp-dbee',
+                ft = { 'sql', 'mysql', 'plsql' },
+            },
+        },
         config = function()
             require('plugin-config/nvim-cmp')
         end
