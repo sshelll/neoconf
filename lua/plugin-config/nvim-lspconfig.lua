@@ -39,7 +39,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
                 vim.cmd("!biome check --apply " .. file)
                 return
             elseif fileType == 'sql' then
-                vim.cmd("!sql-formatter -o " .. file .. " " .. file)
+                vim.cmd("!sql-formatter --fix " .. file)
                 return
             end
             vim.lsp.buf.format { async = true }
