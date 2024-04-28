@@ -61,7 +61,7 @@ require('telescope').setup {
             test_args_list = {
                 "-v",
                 "-v -vet=off",
-                '-v -gcflags=\"all=-l -N\"',
+                "-v -gcflags=\"all=-l -N\"",
                 "-v -vet=off -gcflags=\"all=-l -N\"",
             },
             keep = function()
