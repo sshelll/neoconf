@@ -9,6 +9,7 @@ require("mason-lspconfig").setup {
         "rust_analyzer",
         "jdtls",
         "bufls",
+        "biome",
     },
     automatic_installation = false,
     handlers = {
