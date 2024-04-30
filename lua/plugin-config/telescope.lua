@@ -69,6 +69,11 @@ require('telescope').setup {
             end,
             render = 'default',
             theme = 'dropdown',
+            display_with_buf = {
+                enabled = true,
+                modifiable = false,
+                height = 20,
+            },
         },
     }
 }
