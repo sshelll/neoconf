@@ -150,6 +150,11 @@ local pluglist = {
         end,
     },
     {
+        'sshelll/telescope-switch.nvim',
+        dependencies = { 'nvim-telescope/telescope.nvim' },
+        lazy = true,
+    },
+    {
         'sshelll/telescope-gott.nvim',
         dependencies = { 'nvim-telescope/telescope.nvim' },
         lazy = true,
