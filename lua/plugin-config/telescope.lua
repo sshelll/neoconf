@@ -81,11 +81,12 @@ require('telescope').setup {
                     name = "plugin config",
                     from = "/lua/plugins.lua$",
                     to = "/lua/plugin-config/*.lua",
+                    search = "/lua/plugin-config"
                 },
                 {
-                    name = "plugin list",
+                    name = "plugin entry",
                     from = "/lua/plugin%-config/.*.lua$",
-                    to = "/lua/plugins.lua",
+                    to = "/lua/*.lua",
                 },
                 {
                     name = "rust test",
