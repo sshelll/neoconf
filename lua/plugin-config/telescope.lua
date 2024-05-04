@@ -39,7 +39,7 @@ require('telescope').setup {
         },
     },
     extensions = {
-        fzf = {
+        fzf     = {
             fuzzy = true,                   -- false will only do exact matching
             override_generic_sorter = true, -- override the generic sorter
             override_file_sorter = true,    -- override the file sorter
@@ -56,7 +56,7 @@ require('telescope').setup {
             search_by = "title",
             sync_with_nvim_tree = true,
         },
-        gott = {
+        gott    = {
             test_args = "-v",
             test_args_list = {
                 "-v",
@@ -75,6 +75,25 @@ require('telescope').setup {
                 height = 20,
             },
         },
+        switch  = {
+            matchers = {
+                {
+                    name = "plugin config",
+                    from = "/lua/plugins.lua$",
+                    to = "/lua/plugin-config/*.lua",
+                },
+                {
+                    name = "plugin list",
+                    from = "/lua/plugin%-config/.*.lua$",
+                    to = "/lua/plugins.lua",
+                },
+                {
+                    name = "rust test",
+                    from = "/src/(.*).rs$",
+                    to = "/tests/*.rs",
+                },
+            }
+        }
     }
 }
 
@@ -84,5 +103,6 @@ require('telescope').load_extension('git_diffs')
 require('telescope').load_extension('notify')
 require('telescope').load_extension('projects')
 require('telescope').load_extension('gott')
+require('telescope').load_extension('switch')
 
 vim.g.ackhighlight = 1

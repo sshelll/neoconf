@@ -139,9 +139,9 @@ require('legendary').setup({
             description = 'keymaps for ide',
             icon = '',
             keymaps = {
-                { '<leader>s',  ':Other<CR>',          description = 'toggle other relative files' },
-                { '<F4>',       ':SymbolsOutline<CR>', description = 'toggle symbol outline' },
-                { '<leader>dd', ':TroubleToggle<CR>',  description = 'toggle trouble' },
+                { '<leader>s',  ':Telescope switch<CR>', description = 'toggle other relative files' },
+                { '<F4>',       ':SymbolsOutline<CR>',   description = 'toggle symbol outline' },
+                { '<leader>dd', ':TroubleToggle<CR>',    description = 'toggle trouble' },
                 {
                     '<leader>rr',
                     function()
