@@ -91,9 +91,9 @@ require('telescope').setup {
                 {
                     name = "rust test",
                     from = "/src/(.*).rs$",
-                    to = "/tests/*.rs",
+                    search = "/tests",
                 },
-            }
+            },
         }
     }
 }
