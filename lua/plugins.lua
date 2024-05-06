@@ -462,6 +462,7 @@ local pluglist = {
             {
                 'MattiasMTS/cmp-dbee',
                 ft = { 'sql', 'mysql', 'plsql' },
+                commit = '0feabc1a2ab56d1546038ddf934b17c6a44f6717',
             },
         },
         config = function()
