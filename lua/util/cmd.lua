@@ -38,4 +38,47 @@ function util.term_exec_cmd(cmd)
     vim.api.nvim_command("TermExec cmd=\"" .. cmd .. "\"")
 end
 
+-- opts = {
+--     notify = {
+--         keep = true,
+--     },
+--     buf = {
+--         height = 20,
+--         modifiable = false,
+--     },
+-- }
+function util.run_cmd_ui(cmd, opts)
+    local output = ""
+    if cmd and cmd ~= "" then
+        local parsed_cmd = vim.api.nvim_parse_cmd(cmd, {})
+        output = vim.api.nvim_cmd(parsed_cmd, { output = true })
+    end
+    if output == "" then
+        return
+    end
+    if opts.notify then
+        vim.notify(
+            output,
+            vim.log.levels.INFO,
+            {
+                title = "Exec Result",
+                icon = "",
+                timeout = 3000,
+                keep = function()
+                    return opts.notify.keep or false
+                end
+            }
+        )
+    elseif opts.buf then
+        local lines = require("util/common").split(output, "\n")
+        local buf = vim.api.nvim_create_buf(false, true)
+        vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
+        vim.api.nvim_buf_set_option(buf, "modifiable", opts.buf.modifiable or false)
+        local height = opts.buf.height or 20
+        vim.cmd('botright ' .. height .. ' split | ' .. buf .. 'buffer')
+    else
+        vim.api.nvim_err_writeln(output)
+    end
+end
+
 return util

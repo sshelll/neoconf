@@ -152,6 +152,8 @@ require('legendary').setup({
                             require('util/nodejs').ui_run()
                         elseif fileType == 'sh' then
                             require('util/bash').ui_run()
+                        elseif fileType == 'lua' then
+                            require("util/cmd").run_cmd_ui('!lua ' .. vim.fn.expand('%:p'), { buf = {} })
                         elseif fileType == 'rust' then
                             local common = require('util/common')
                             local envs = common.readInput('envs: ')
@@ -308,22 +310,6 @@ require('legendary').setup({
                         vim.cmd('!cargo build --release')
                     end,
                     description = 'build rust project with release flag'
-                }
-            },
-        },
-        {
-            itemgroup = 'nodejs',
-            description = 'commands for nodejs',
-            icon = '',
-            commands = {
-                {
-                    ':NodeRun',
-                    function()
-                        local file = vim.fn.expand('%:p')
-                        local cmd = '!node ' .. file
-                        require('util/cmd').run_cmd(cmd, true)
-                    end,
-                    description = 'run nodejs file'
                 }
             },
         },
