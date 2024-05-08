@@ -3,6 +3,16 @@ local dap, dapui = require("dap"), require("dapui")
 require('legendary').setup({
     keymaps = {
         {
+            itemgroup = 'ai',
+            description = 'ai keymaps',
+            icon = '',
+            keymaps = {
+                { '<leader>ai', ':CopilotChatOpen<CR>',    description = 'open copilot chat',          mode = { 'n' } },
+                { '<leader>ai', ":CopilotChatExplain<CR>", description = 'explain codes with copilot', mode = { 'v' } },
+                { '<leader>ar', ":CopilotChatReview<CR>",  description = 'review codes with copilot',  mode = { 'v' } },
+            }
+        },
+        {
             itemgroup = 'basic',
             description = 'basic keymaps',
             icon = '',
