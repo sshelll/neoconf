@@ -1,5 +1,23 @@
 local pluglist = {
     {
+        "CopilotC-Nvim/CopilotChat.nvim",
+        branch = "canary",
+        dependencies = {
+            { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
+            { "nvim-lua/plenary.nvim" },  -- for curl, log wrapper
+        },
+        opts = {
+            prompts = {
+                Explain = {
+                    prompt = '/COPILOT_EXPLAIN 解释一下选中的文本 / 代码',
+                },
+                Review = {
+                    prompt = '/COPILOT_REVIEW Review 一下选中的文本 / 代码',
+                },
+            }
+        },
+    },
+    {
         "kevinhwang91/nvim-ufo",
         event = 'VeryLazy',
         dependencies = {
