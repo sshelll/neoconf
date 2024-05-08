@@ -435,7 +435,7 @@ local pluglist = {
         end
     },
     {
-        'kyazdani42/nvim-tree.lua',
+        'nvim-tree/nvim-tree.lua',
         lazy = false,
         config = function()
             require('plugin-config/nvimtree')
