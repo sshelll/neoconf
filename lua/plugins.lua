@@ -13,6 +13,7 @@ local pluglist = {
                 },
                 Review = {
                     prompt = '/COPILOT_REVIEW Review 一下选中的文本 / 代码',
+                    callback = function() end
                 },
             }
         },
@@ -174,7 +175,10 @@ local pluglist = {
     },
     {
         'sshelll/telescope-gott.nvim',
-        dependencies = { 'nvim-telescope/telescope.nvim' },
+        dependencies = {
+            'nvim-telescope/telescope.nvim',
+            'nvim-lua/plenary.nvim',
+        },
         lazy = true,
     },
     {
