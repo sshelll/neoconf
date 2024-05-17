@@ -5,7 +5,6 @@ vim.cmd('syntax enable')
 vim.cmd('filetype on')
 
 vim.o.mouse = ''
-vim.o.t_Co = '256'
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.termguicolors = true
