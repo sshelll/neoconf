@@ -526,11 +526,14 @@ local pluglist = {
     },
     {
         'folke/trouble.nvim',
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-        event = 'VeryLazy',
-        config = function()
-            require('plugin-config/trouble')
-        end
+        opts = {},
+        keys = {
+            {
+                "<leader>dd",
+                "<cmd>Trouble diagnostics toggle<cr>",
+                desc = "Diagnostics (Trouble)",
+            },
+        },
     },
     {
         'windwp/nvim-autopairs',

@@ -93,7 +93,7 @@ cmp.setup {
             end
         end, { "i", "s" }),
     }),
-    sources = {
+    sources = cmp.config.sources({
         { name = 'nvim_lsp', priority = 1000 },
         { name = 'vsnip',    priority = 900 },
         { name = 'cmp-dbee', priority = 800 },
@@ -101,7 +101,7 @@ cmp.setup {
         { name = 'nvim_lua', priority = 800 },
         { name = 'path',     priority = 800 },
         { name = 'buffer',   priority = 500 },
-    },
+    }),
 }
 
 -- `/` cmdline setup.

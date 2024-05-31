@@ -1,5 +1,5 @@
 local lspconfig = require("lspconfig")
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 require("mason-lspconfig").setup {
     ensure_installed = {
@@ -21,7 +21,6 @@ require("mason-lspconfig").setup {
         ["gopls"] = function()
             lspconfig.gopls.setup {
                 cmd = { "gopls", "serve" },
-                capabilities = capabilities,
                 settings = {
                     gopls = {
                         directoryFilters = { "-vendor" },
@@ -65,7 +64,6 @@ require("mason-lspconfig").setup {
         end,
         ["tsserver"] = function()
             lspconfig.tsserver.setup {
-                capabilities = capabilities,
                 on_attach = function(client)
                     client.resolved_capabilities.document_formatting = false
                     client.resolved_capabilities.document_range_formatting = false
