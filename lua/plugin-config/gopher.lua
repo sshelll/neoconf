@@ -5,5 +5,6 @@ require("gopher").setup {
         gotests = "gotests",
         impl = "impl",
         iferr = "iferr",
+        dlv = "dlv",
     },
 }

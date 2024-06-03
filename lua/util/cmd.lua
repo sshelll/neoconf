@@ -1,59 +1,42 @@
-local util = {}
+local M = {}
 
-function util.enter_cmd(default, keep)
-    local input_opt = {
-        prompt = 'Exec Cmd',
-        completion = 'command',
-        default = default,
-    }
-    vim.ui.input(input_opt, util.run_cmd)
-end
-
-function util.run_cmd(input, keep)
-    if input and #input ~= "" then
-        local parsedCmd = vim.api.nvim_parse_cmd(input, {})
-        local output = vim.api.nvim_cmd(parsedCmd, { output = true })
-        if output == "" then
-            return
-        end
-        local displayed = vim.notify(
-            output,
-            vim.log.levels.INFO,
-            {
-                title = "Exec Result",
-                icon = "",
-                timeout = 3000,
-                keep = function()
-                    return keep
-                end
-            }
-        )
-        if not displayed then
-            vim.api.nvim_err_writeln(output)
-        end
-    end
-end
-
-function util.term_exec_cmd(cmd)
+--- Execute a command in a terminal buffer.
+--- @param cmd string
+function M.term_exec_cmd(cmd)
     vim.api.nvim_command("TermExec cmd=\"" .. cmd .. "\"")
 end
 
--- opts = {
---     notify = {
---         keep = true,
---     },
---     buf = {
---         height = 20,
---         modifiable = false,
---     },
--- }
-function util.run_cmd_ui(cmd, opts)
-    local output = ""
-    if cmd and cmd ~= "" then
-        local parsed_cmd = vim.api.nvim_parse_cmd(cmd, {})
-        output = vim.api.nvim_cmd(parsed_cmd, { output = true })
+--- Run a command and show the output in a notification window or buf.
+--- @param cmd string
+--- @param opts RunCmdUIOpts
+--- @return nil
+---
+--- @class RunCmdUIOpts
+--- @field notify? RunCmdUIOptsNotify
+--- @field buf? RunCmdUIOptsBuf
+--- 
+--- @class RunCmdUIOptsNotify
+--- @field keep boolean
+--- 
+--- @class RunCmdUIOptsBuf
+--- @field height? number
+--- @field modifiable? boolean
+--- opts = {
+---     notify = {
+---         keep = false,
+---     },
+---     buf = {
+---         height = 20,
+---         modifiable = false,
+---     },
+--- }
+function M.run_cmd_ui(cmd, opts)
+    if not cmd or cmd == "" then
+        return
     end
-    if output == "" then
+    local result = vim.api.nvim_exec2(cmd, { output = true })
+    local output = result.output
+    if not output or output == "" then
         return
     end
     if opts.notify then
@@ -73,7 +56,7 @@ function util.run_cmd_ui(cmd, opts)
         local lines = require("util/common").split(output, "\n")
         local buf = vim.api.nvim_create_buf(false, true)
         vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
-        vim.api.nvim_buf_set_option(buf, "modifiable", opts.buf.modifiable or false)
+        vim.api.nvim_set_option_value("modifiable", opts.buf.modifiable or false, { buf = buf })
         local height = opts.buf.height or 20
         vim.cmd('botright ' .. height .. ' split | ' .. buf .. 'buffer')
     else
@@ -81,4 +64,4 @@ function util.run_cmd_ui(cmd, opts)
     end
 end
 
-return util
+return M
