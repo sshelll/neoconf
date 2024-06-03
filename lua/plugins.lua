@@ -282,9 +282,7 @@ local pluglist = {
     {
         'theHamsta/nvim-dap-virtual-text',
         dependencies = { 'mfussenegger/nvim-dap' },
-        config = function()
-            require('plugin-config/dap-virtual-text')
-        end
+        opts = {},
     },
     {
         'rcarriga/nvim-dap-ui',
@@ -552,9 +550,7 @@ local pluglist = {
     {
         'windwp/nvim-autopairs',
         event = "InsertEnter",
-        config = function()
-            require('plugin-config/autopairs')
-        end
+        opts = {},
     },
     {
         'hrsh7th/vim-vsnip',
