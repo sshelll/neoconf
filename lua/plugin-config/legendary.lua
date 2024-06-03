@@ -1,15 +1,16 @@
 local dap, dapui = require("dap"), require("dapui")
+local telescope_builtin = require('telescope.builtin')
 
 require('legendary').setup({
     keymaps = {
         {
             itemgroup = 'ai',
             description = 'ai keymaps',
-            icon = '',
+            icon = 'function() ',
             keymaps = {
-                { '<leader>ai', ':CopilotChatOpen<CR>',    description = 'open copilot chat',          mode = { 'n' } },
-                { '<leader>ai', ":CopilotChatExplain<CR>", description = 'explain codes with copilot', mode = { 'v' } },
-                { '<leader>ar', ":CopilotChatReview<CR>",  description = 'review codes with copilot',  mode = { 'v' } },
+                { '<leader>ai', function() vim.cmd('CopilotChatOpen') end,    description = 'open copilot chat',          mode = { 'n' } },
+                { '<leader>ai', function() vim.cmd('CopilotChatExplain') end, description = 'explain codes with copilot', mode = { 'v' } },
+                { '<leader>ar', function() vim.cmd('CopilotChatReview') end,  description = 'review codes with copilot',  mode = { 'v' } },
             }
         },
         {
@@ -17,19 +18,19 @@ require('legendary').setup({
             description = 'basic keymaps',
             icon = '',
             keymaps = {
-                { '<F12>', ':vertical res+3<CR>', description = 'incr vertical window width' },
-                { '<F11>', ':vertical res-1<CR>', description = 'decr vertical window width' },
-                { '<F10>', ':res+3<CR>', description = 'incr horizontal window width' },
-                { '<F9>', ':res-1<CR>', description = 'decr horizontal window width' },
+                { '<F12>', function() vim.cmd('vertical res+3') end, description = 'incr vertical window width' },
+                { '<F11>', function() vim.cmd('vertical res-1') end, description = 'decr vertical window width' },
+                { '<F10>', function() vim.cmd('res+3') end, description = 'incr horizontal window width' },
+                { '<F9>', function() vim.cmd('res-1') end, description = 'decr horizontal window width' },
                 { 'p', '"0p', description = 'paste from the first nvim buffer' },
                 { '<leader>p', 'p', description = 'paste last', mode = { 'n', 'v' } },
                 { '<leader>y', '"+y', description = 'copy to os', mode = { 'n', 'v' } },
                 { '<D-c>', '"+y', description = 'copy to os', mode = { 'n', 'v' } },
                 { '<D-v>', '"+p', description = 'paste from os', mode = { 'n', 'v', 'i' } },
                 { '<leader>v', '"+p', description = 'paste from os', mode = { 'n', 'v' } },
-                { '…', ':ExecNormal<CR>', description = 'enter cmd mode', mode = { 'n' } },
-                { '…', ':ExecVisual<CR>', description = 'enter cmd mode', mode = { 'v' } },
-                { '<leader>l', ':noh<CR>', description = 'no highlight', mode = { 'n' } },
+                { '…', function() vim.cmd('ExecNormal') end, description = 'enter cmd mode', mode = { 'n' } },
+                { '…', function() vim.cmd('ExecVisual') end, description = 'enter cmd mode', mode = { 'v' } },
+                { '<leader>l', function() vim.cmd('noh') end, description = 'no highlight', mode = { 'n' } },
                 { '<C-w>N', '<C-\\><C-n>', description = 'change terminal mode', mode = { 't' } },
             },
         },
@@ -38,12 +39,12 @@ require('legendary').setup({
             description = 'keymaps for search',
             icon = '',
             keymaps = {
-                { '<C-p>',      ':Telescope live_grep<CR>',                 description = 'search in the current work dir with Telescope' },
-                { '<C-f>',      ':Telescope current_buffer_fuzzy_find<CR>', description = 'search in the current buffer with Telescope' },
-                { '<leader>k',  ':Legendary<CR>',                           description = 'open legendary search box' },
-                { '<leader>td', ':TodoTelescope<CR>',                       description = 'search todo items with Telescope' },
-                { '<leader>tf', ':Telescope find_files<CR>',                description = 'search files with Telescope' },
-                { '<leader>tm', ':Telescope bookmarks<CR>',                 description = 'search bookmarks with Telescope' },
+                { '<C-p>',      telescope_builtin.live_grep,                   description = 'search in the current work dir with Telescope' },
+                { '<C-f>',      telescope_builtin.current_buffer_fuzzy_find,   description = 'search in the current buffer with Telescope' },
+                { '<leader>k',  function() vim.cmd('Legendary') end,           description = 'open legendary search box' },
+                { '<leader>td', function() vim.cmd('TodoTelescope') end,       description = 'search todo items with Telescope' },
+                { '<leader>tf', telescope_builtin.find_files,                  description = 'search files with Telescope' },
+                { '<leader>tm', function() vim.cmd('Telescope bookmarks') end, description = 'search bookmarks with Telescope' },
                 {
                     '<leader>z',
                     function()
@@ -83,9 +84,9 @@ require('legendary').setup({
             description = 'keymaps for git',
             icon = '',
             keymaps = {
-                { '<leader>gg', ':LazyGit<CR>',      description = 'open lazygit window' },
-                { '<leader>bb', ':Git blame<CR>',    description = 'show git blame' },
-                { '<leader>gd', ':DiffviewOpen<CR>', description = 'open diffview' },
+                { '<leader>gg', function() vim.cmd('LazyGit') end,      description = 'open lazygit window' },
+                { '<leader>bb', function() vim.cmd('Git blame') end,    description = 'show git blame' },
+                { '<leader>gd', function() vim.cmd('DiffviewOpen') end, description = 'open diffview' },
             },
         },
         {
@@ -120,11 +121,11 @@ require('legendary').setup({
             description = 'keymaps for barbar',
             icon = '',
             keymaps = {
-                { '≤', ':BufferPrevious<CR>', description = 'previous buffer' },
-                { '≥', ':BufferNext<CR>', description = 'next buffer' },
-                { 'œ', ':BufferClose<CR>', description = 'close buffer' },
-                { 'π', ':BufferPin<CR>', description = 'pin buffer' },
-                { 'ç', ':BufferCloseAllButCurrentOrPinned<CR>', description = 'close all buffers but pinned' },
+                { '≤', function() vim.cmd('BufferPrevious') end, description = 'previous buffer' },
+                { '≥', function() vim.cmd('BufferNext') end, description = 'next buffer' },
+                { 'œ', function() vim.cmd('BufferClose') end, description = 'close buffer' },
+                { 'π', function() vim.cmd('BufferPin') end, description = 'pin buffer' },
+                { 'ç', function() vim.cmd('BufferCloseAllButCurrentOrPinned') end, description = 'close all buffers but pinned' },
             },
         },
         {
@@ -132,7 +133,11 @@ require('legendary').setup({
             description = 'other keymaps',
             icon = '',
             keymaps = {
-                { '<leader>tt', ':ToggleTerm size=15 direction=horizontal<CR>', description = 'toggle a terminal emulator at bottom' },
+                {
+                    '<leader>tt',
+                    function() vim.cmd('ToggleTerm size=20 direction=horizontal') end,
+                    description = 'toggle a terminal emulator at bottom'
+                },
                 {
                     '<F3>',
                     function()
@@ -148,8 +153,14 @@ require('legendary').setup({
             description = 'keymaps for ide',
             icon = '',
             keymaps = {
-                { '<leader>s', ':Telescope switch<CR>', description = 'toggle other relative files' },
-                { '<F4>',      ':SymbolsOutline<CR>',   description = 'toggle symbol outline' },
+                {
+                    '<leader>s',
+                    function()
+                        require("telescope").extensions.switch.switch()
+                    end,
+                    description = 'toggle other relative files'
+                },
+                { '<F4>', function() vim.cmd('SymbolsOutline') end, description = 'toggle symbol outline' },
                 {
                     '<leader>rr',
                     function()
@@ -185,7 +196,7 @@ require('legendary').setup({
                     function()
                         local fileType = vim.bo.filetype
                         if fileType == 'go' then
-                            vim.cmd('Telescope gott')
+                            require('telescope').extensions.gott.gott()
                         elseif fileType == 'rust' then
                             local args = require('util/common').readInput('args: ')
                             if args.canceled then
