@@ -24,6 +24,7 @@ require('Comment').setup {
     pre_hook = nil,
     ---Function to call after (un)comment
     post_hook = nil,
+    extra = {},
 }
 
 local ft = require('Comment.ft')
