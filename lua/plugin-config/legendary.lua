@@ -63,7 +63,7 @@ require('legendary').setup({
                 {
                     '<F2>',
                     function()
-                        require('notify').dismiss()
+                        require('notify').dismiss(_)
                     end,
                     description = 'clear go test notification',
                 },
@@ -72,7 +72,7 @@ require('legendary').setup({
                     function()
                         local filename = vim.fn.expand('%:t')
                         if string.find(filename, '_test.go') then
-                            vim.cmd(':GottFile -v')
+                            vim.cmd('GottFile -v')
                         end
                     end,
                     description = 'run all go tests in the current file with -v flag',
@@ -256,22 +256,6 @@ require('legendary').setup({
             icon = '',
             commands = {
                 {
-                    ':SearchLegendaryCommands',
-                    function()
-                        local commands = require('legendary.filters').commands()
-                        require('legendary').find({ filters = commands })
-                    end,
-                    description = 'open legendary to search commands'
-                },
-                {
-                    ':SearchFuncs',
-                    function()
-                        local funcs = require('legendary.filters').funcs()
-                        require('legendary').find({ filters = funcs })
-                    end,
-                    description = 'open legendary to search functions'
-                },
-                {
                     ':SearchGitCommits',
                     function()
                         require('telescope').extensions.git_diffs.diff_commits()
@@ -305,7 +289,7 @@ require('legendary').setup({
                 {
                     ":NotificationClear",
                     function()
-                        require('notify').dismiss()
+                        require('notify').dismiss(_)
                     end,
                     description = 'clear notifications'
                 },
