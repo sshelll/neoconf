@@ -58,7 +58,9 @@ cmp.setup {
                 })[entry.source.name]
             end
             return vim_item
-        end
+        end,
+        expandable_indicator = true,
+        fields = { 'abbr', 'kind', 'menu' }
     },
     snippet = {
         expand = function(args)
@@ -98,9 +100,12 @@ cmp.setup {
         { name = 'vsnip',    priority = 900 },
         { name = 'cmp-dbee', priority = 800 },
         { name = 'orgmode',  priority = 800 },
-        { name = 'nvim_lua', priority = 800 },
         { name = 'path',     priority = 800 },
         { name = 'buffer',   priority = 500 },
+        {
+            name = "lazydev",
+            group_index = 0, -- set group index to 0 to skip loading LuaLS completions
+        },
     }),
 }
 
