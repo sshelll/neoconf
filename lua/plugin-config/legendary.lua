@@ -63,9 +63,9 @@ require('legendary').setup({
                 {
                     '<F2>',
                     function()
-                        require('notify').dismiss(_)
+                        require('notify').dismiss({ pending = false, silent = false })
                     end,
-                    description = 'clear go test notification',
+                    description = 'clear notifications',
                 },
                 {
                     '<F5>',
@@ -259,20 +259,6 @@ require('legendary').setup({
                     description = 'search projects'
                 },
             }
-        },
-        {
-            itemgroup = 'notify',
-            description = 'commands for notify',
-            icon = '',
-            commands = {
-                {
-                    ":NotificationClear",
-                    function()
-                        require('notify').dismiss(_)
-                    end,
-                    description = 'clear notifications'
-                },
-            },
         },
         {
             itemgroup = 'rust',
