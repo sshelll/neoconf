@@ -18,20 +18,18 @@ require('legendary').setup({
             description = 'basic keymaps',
             icon = '',
             keymaps = {
-                { '<F12>', function() vim.cmd('vertical res+3') end, description = 'incr vertical window width' },
-                { '<F11>', function() vim.cmd('vertical res-1') end, description = 'decr vertical window width' },
-                { '<F10>', function() vim.cmd('res+3') end, description = 'incr horizontal window width' },
-                { '<F9>', function() vim.cmd('res-1') end, description = 'decr horizontal window width' },
-                { 'p', '"0p', description = 'paste from the first nvim buffer' },
-                { '<leader>p', 'p', description = 'paste last', mode = { 'n', 'v' } },
-                { '<leader>y', '"+y', description = 'copy to os', mode = { 'n', 'v' } },
-                { '<D-c>', '"+y', description = 'copy to os', mode = { 'n', 'v' } },
-                { '<D-v>', '"+p', description = 'paste from os', mode = { 'n', 'v', 'i' } },
-                { '<leader>v', '"+p', description = 'paste from os', mode = { 'n', 'v' } },
-                { '…', function() vim.cmd('ExecNormal') end, description = 'enter cmd mode', mode = { 'n' } },
-                { '…', function() vim.cmd('ExecVisual') end, description = 'enter cmd mode', mode = { 'v' } },
-                { '<leader>l', function() vim.cmd('noh') end, description = 'no highlight', mode = { 'n' } },
-                { '<C-w>N', '<C-\\><C-n>', description = 'change terminal mode', mode = { 't' } },
+                { '<F12>',     function() vim.cmd('vertical res+3') end, description = 'incr vertical window width' },
+                { '<F11>',     function() vim.cmd('vertical res-1') end, description = 'decr vertical window width' },
+                { '<F10>',     function() vim.cmd('res+3') end,          description = 'incr horizontal window width' },
+                { '<F9>',      function() vim.cmd('res-1') end,          description = 'decr horizontal window width' },
+                { 'p',         '"0p',                                    description = 'paste from the first nvim buffer' },
+                { '<leader>p', 'p',                                      description = 'paste last',                      mode = { 'n', 'v' } },
+                { '<leader>y', '"+y',                                    description = 'copy to os',                      mode = { 'n', 'v' } },
+                { '<D-c>',     '"+y',                                    description = 'copy to os',                      mode = { 'n', 'v' } },
+                { '<D-v>',     '"+p',                                    description = 'paste from os',                   mode = { 'n', 'v', 'i' } },
+                { '<leader>v', '"+p',                                    description = 'paste from os',                   mode = { 'n', 'v' } },
+                { '<leader>l', function() vim.cmd('noh') end,            description = 'no highlight',                    mode = { 'n' } },
+                { '<C-w>N',    '<C-\\><C-n>',                            description = 'change terminal mode',            mode = { 't' } },
             },
         },
         {
@@ -39,20 +37,13 @@ require('legendary').setup({
             description = 'keymaps for search',
             icon = '',
             keymaps = {
-                { '<C-p>',      telescope_builtin.live_grep,                   description = 'search in the current work dir with Telescope' },
-                { '<C-f>',      telescope_builtin.current_buffer_fuzzy_find,   description = 'search in the current buffer with Telescope' },
-                { '<leader>k',  function() vim.cmd('Legendary') end,           description = 'open legendary search box' },
-                { '<leader>td', function() vim.cmd('TodoTelescope') end,       description = 'search todo items with Telescope' },
-                { '<leader>tf', telescope_builtin.find_files,                  description = 'search files with Telescope' },
-                { '<leader>tm', function() vim.cmd('Telescope bookmarks') end, description = 'search bookmarks with Telescope' },
-                {
-                    '<leader>z',
-                    function()
-                        local api = require("nvim-tree.api")
-                        api.tree.find_file({ open = true, focus = true })
-                    end,
-                    description = 'nvim tree find file',
-                },
+                { '<C-p>',      telescope_builtin.live_grep,                                                           description = 'search in the current work dir with Telescope' },
+                { '<C-f>',      telescope_builtin.current_buffer_fuzzy_find,                                           description = 'search in the current buffer with Telescope' },
+                { '<leader>k',  function() vim.cmd('Legendary') end,                                                   description = 'open legendary search box' },
+                { '<leader>td', function() vim.cmd('TodoTelescope') end,                                               description = 'search todo items with Telescope' },
+                { '<leader>tf', telescope_builtin.find_files,                                                          description = 'search files with Telescope' },
+                { '<leader>tm', function() vim.cmd('Telescope bookmarks') end,                                         description = 'search bookmarks with Telescope' },
+                { '<leader>z',  function() require("nvim-tree.api").tree.find_file({ open = true, focus = true }) end, description = 'nvim tree find file', },
             },
         },
         {
@@ -60,13 +51,7 @@ require('legendary').setup({
             description = 'keymaps for golang',
             icon = '',
             keymaps = {
-                {
-                    '<F2>',
-                    function()
-                        require('notify').dismiss({ pending = false, silent = false })
-                    end,
-                    description = 'clear notifications',
-                },
+                { '<F2>', function() require('notify').dismiss({ pending = false, silent = false }) end, description = 'clear notifications', },
                 {
                     '<F5>',
                     function()
@@ -133,19 +118,8 @@ require('legendary').setup({
             description = 'other keymaps',
             icon = '',
             keymaps = {
-                {
-                    '<leader>tt',
-                    function() vim.cmd('ToggleTerm size=20 direction=horizontal') end,
-                    description = 'toggle a terminal emulator at bottom'
-                },
-                {
-                    '<F3>',
-                    function()
-                        local api = require("nvim-tree.api")
-                        api.tree.toggle()
-                    end,
-                    description = 'toggle NvimTree',
-                },
+                { '<leader>tt', function() vim.cmd('ToggleTerm size=20 direction=horizontal') end, description = 'toggle a terminal emulator at bottom' },
+                { '<F3>',       function() require("nvim-tree.api").tree.toggle() end,             description = 'toggle NvimTree', },
             },
         },
         {
@@ -153,14 +127,8 @@ require('legendary').setup({
             description = 'keymaps for ide',
             icon = '',
             keymaps = {
-                {
-                    '<leader>s',
-                    function()
-                        require("telescope").extensions.switch.switch()
-                    end,
-                    description = 'toggle other relative files'
-                },
-                { '<F4>', function() vim.cmd('SymbolsOutline') end, description = 'toggle symbol outline' },
+                { '<leader>s', function() require("telescope").extensions.switch.switch() end, description = 'toggle other relative files' },
+                { '<F4>',      function() vim.cmd('SymbolsOutline') end,                       description = 'toggle symbol outline' },
                 {
                     '<leader>rr',
                     function()
@@ -234,13 +202,7 @@ require('legendary').setup({
             description = 'commands for search',
             icon = '',
             commands = {
-                {
-                    ':SearchGitCommits',
-                    function()
-                        require('telescope').extensions.git_diffs.diff_commits()
-                    end,
-                    description = 'search git commits and open it in diffview'
-                },
+                { ':SearchGitCommits', function() require('telescope').extensions.git_diffs.diff_commits() end, description = 'search git commits and open it in diffview' },
                 {
                     ':SearchProjects',
                     function()
@@ -265,20 +227,8 @@ require('legendary').setup({
             description = 'commands for rust',
             icon = '',
             commands = {
-                {
-                    ':RustBuild',
-                    function()
-                        vim.cmd('!cargo build')
-                    end,
-                    description = 'build rust project'
-                },
-                {
-                    ':RustBuildRelease',
-                    function()
-                        vim.cmd('!cargo build --release')
-                    end,
-                    description = 'build rust project with release flag'
-                }
+                { ':RustBuild',        function() vim.cmd('!cargo build') end,           description = 'build rust project' },
+                { ':RustBuildRelease', function() vim.cmd('!cargo build --release') end, description = 'build rust project with release flag' }
             },
         },
     },
@@ -288,12 +238,7 @@ require('legendary').setup({
             description = 'functions for golang',
             icon = '',
             funcs = {
-                {
-                    description = 'go impl with ui',
-                    function()
-                        require('util/golang').ui_impl()
-                    end
-                },
+                { description = 'go impl with ui', function() require('util/golang').ui_impl() end },
             }
         },
         {
