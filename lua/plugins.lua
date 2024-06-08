@@ -272,7 +272,7 @@ local pluglist = {
         dependencies = { 'mfussenegger/nvim-dap' },
         lazy = true,
         config = function()
-            require('dap-python').setup('~/python/.virtualenvs/debugpy/bin/python3')
+            require('dap-python').setup('~/py/.virtualenvs/debugpy/bin/python3')
         end
     },
     {
