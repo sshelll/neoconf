@@ -46,6 +46,7 @@ local pluglist = {
     },
     {
         "kndndrj/nvim-dbee",
+        lazy = true,
         dependencies = {
             "MunifTanjim/nui.nvim",
         },
@@ -53,7 +54,7 @@ local pluglist = {
             require("dbee").install("go")
         end,
         config = function()
-            require("dbee").setup( --[[optional config]])
+            require("dbee").setup()
         end,
     },
     {
