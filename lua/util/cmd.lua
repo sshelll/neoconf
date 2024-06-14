@@ -11,16 +11,6 @@ end
 --- @param opts RunCmdUIOpts
 --- @return nil
 ---
---- @class RunCmdUIOpts
---- @field notify? RunCmdUIOptsNotify
---- @field buf? RunCmdUIOptsBuf
---- 
---- @class RunCmdUIOptsNotify
---- @field keep boolean
---- 
---- @class RunCmdUIOptsBuf
---- @field height? number
---- @field modifiable? boolean
 --- opts = {
 ---     notify = {
 ---         keep = false,
@@ -63,5 +53,16 @@ function M.run_cmd_ui(cmd, opts)
         vim.api.nvim_err_writeln(output)
     end
 end
+
+--- @class RunCmdUIOpts
+--- @field notify? RunCmdUIOptsNotify
+--- @field buf? RunCmdUIOptsBuf
+---
+--- @class RunCmdUIOptsNotify
+--- @field keep boolean
+---
+--- @class RunCmdUIOptsBuf
+--- @field height? number
+--- @field modifiable? boolean
 
 return M

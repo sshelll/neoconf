@@ -40,7 +40,9 @@ db.setup({
             {
                 desc = '󱤟 Database Client',
                 group = '@debug',
-                action = 'Dbee toggle',
+                action = function()
+                    require("dbee").toggle()
+                end,
                 key = 'd',
             },
             {
