@@ -24,14 +24,15 @@ require('telescope').setup {
             include_current_line = false,
             layout_strategy = "cursor",
             layout_config = {
-                height = 0.3
+                height = 0.3,
+                width = 0.5,
             },
         },
         lsp_implementations = {
             show_line = true,
             layout_strategy = "cursor",
             layout_config = {
-                height = 0.3
+                height = 0.3,
             },
         },
         lsp_document_symbols = {
