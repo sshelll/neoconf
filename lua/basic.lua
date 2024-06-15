@@ -25,3 +25,22 @@ vim.cmd('autocmd FileType go setlocal noexpandtab')
 
 vim.o.ignorecase = true
 vim.o.smartcase = true
+
+-- 启用 list 选项以显示空白字符
+vim.opt.list = true
+
+-- 设置 listchars 选项
+-- :h ibl.config.indent.char
+vim.opt.listchars = {
+    tab = '▎ ', -- 表示 tab 的符号
+    trail = '·', -- 表示行尾多余空格的符号
+    nbsp = '␣', -- 表示非断空格的符号
+    eol = '', -- 表示行尾的符号
+    extends = '>', -- 表示超过行末的字符
+    precedes = '<', -- 表示超过行首的字符
+    space = '·' -- 表示空格的符号
+}
+
+-- 对于下面的文件类型, 不显示 list
+vim.cmd(
+    'autocmd FileType help,terminal,dashboard,packer,lspinfo,TelescopePrompt,TelescopeResults,NvimTree,Trouble,Outline,gitcommit,gitrebase,svn,hgcommit setlocal nolist')
