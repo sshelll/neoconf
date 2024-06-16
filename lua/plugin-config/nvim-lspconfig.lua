@@ -46,6 +46,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
             elseif fileType == 'sql' then
                 vim.cmd("!sql-formatter --fix " .. file)
                 return
+            elseif fileType == 'python' then
+                vim.cmd("!black " .. file)
+                return
             end
             vim.lsp.buf.format { async = true }
         end, opts)
