@@ -59,18 +59,13 @@ require("mason-lspconfig").setup {
         ["biome"] = function()
             lspconfig.biome.setup {
                 cmd = { "biome", "lsp-proxy" },
-                filetypes = { "javascript", "javascriptreact", "json", "jsonc", "typescript", "typescript.tsx", "typescriptreact", "astro", "svelte", "vue" },
+                filetypes = { "json", "jsonc" },
                 root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
                 single_file_support = true,
             }
         end,
         ["tsserver"] = function()
-            lspconfig.tsserver.setup {
-                on_attach = function(client)
-                    client.resolved_capabilities.document_formatting = false
-                    client.resolved_capabilities.document_range_formatting = false
-                end
-            }
+            lspconfig.tsserver.setup {}
         end,
         ["marksman"] = function()
             lspconfig.marksman.setup {
