@@ -407,7 +407,7 @@ local pluglist = {
                 current_only = true,
                 base = 'right',
                 column = 1,
-                signs_on_startup = { 'all' },
+                signs_on_startup = { 'cursor' },
                 diagnostics_severities = { vim.diagnostic.severity.ERROR }
             })
         end
