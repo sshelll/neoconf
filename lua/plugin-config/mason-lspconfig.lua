@@ -11,7 +11,6 @@ require("mason-lspconfig").setup {
         "bufls",
         "biome",
         "tsserver",
-        "marksman",
     },
     automatic_installation = false,
     handlers = {
