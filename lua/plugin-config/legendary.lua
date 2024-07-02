@@ -220,6 +220,19 @@ require('legendary').setup({
                     end,
                     description = 'search projects'
                 },
+                {
+                    ':TelescopeIgnore',
+                    function()
+                        local ignore = require('util/common').readInput('ignore: ')
+                        require('telescope.builtin').live_grep({
+                            additional_args = function()
+                                return {
+                                    "--glob", ignore.input or "", }
+                            end
+                        })
+                    end,
+                    description = 'telescope live_grep with ignore pattern',
+                }
             }
         },
         {
